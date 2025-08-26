@@ -20,12 +20,12 @@ export default function UUIDGenerator() {
   const [quantity, setQuantity] = useState(1);
   const [uuids, setUuids] = useState<string[]>([]);
 
-  const generateUUIDs = () => {
+  const generateUUIDs = (quantity: number) => {
     const newUuids = Array.from({ length: quantity }, () => generateUUID());
     setUuids(newUuids);
   };
 
-  const generateMore = () => {
+  const generateMore = (quantity: number) => {
     const newUuids = Array.from({ length: quantity }, () => generateUUID());
     setUuids((prev) => [...prev, ...newUuids]);
   };
@@ -54,8 +54,8 @@ export default function UUIDGenerator() {
   };
 
   useEffect(() => {
-    generateUUIDs();
-  }, []);
+    generateUUIDs(quantity);
+  }, [quantity]);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -108,7 +108,7 @@ export default function UUIDGenerator() {
 
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               <Button
-                onClick={generateUUIDs}
+                onClick={() => generateUUIDs(quantity)}
                 className="flex items-center space-x-2"
               >
                 <RefreshCw className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function UUIDGenerator() {
               {uuids.length > 0 && (
                 <>
                   <Button
-                    onClick={generateMore}
+                    onClick={() => generateMore(quantity)}
                     variant="outline"
                     className="flex items-center space-x-2"
                   >

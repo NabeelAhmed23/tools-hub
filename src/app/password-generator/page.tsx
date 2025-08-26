@@ -34,7 +34,17 @@ export default function PasswordGenerator() {
   });
   const [entropy, setEntropy] = useState(0);
 
-  const generatePassword = () => {
+  const generatePassword = (
+    length: number,
+    options: {
+      includeUppercase: boolean;
+      includeLowercase: boolean;
+      includeNumbers: boolean;
+      includeSymbols: boolean;
+      excludeSimilar: boolean;
+      excludeAmbiguous: boolean;
+    }
+  ) => {
     const newPassword = generateSecurePassword({ length, ...options });
     setPassword(newPassword);
     setEntropy(calculatePasswordEntropy(newPassword));
@@ -73,7 +83,7 @@ export default function PasswordGenerator() {
   };
 
   useEffect(() => {
-    generatePassword();
+    generatePassword(length, options);
   }, [length, options]);
 
   const strength = getStrengthRating(entropy);
@@ -140,7 +150,10 @@ export default function PasswordGenerator() {
               />
               <div className="flex space-x-2">
                 <CopyButton text={password} size="default" className="flex-1" />
-                <Button variant="outline" onClick={generatePassword}>
+                <Button
+                  variant="outline"
+                  onClick={() => generatePassword(length, options)}
+                >
                   <RefreshCw className="w-4 h-4" />
                 </Button>
               </div>
@@ -270,7 +283,10 @@ export default function PasswordGenerator() {
               </div>
             </div>
 
-            <Button onClick={generatePassword} className="w-full">
+            <Button
+              onClick={() => generatePassword(length, options)}
+              className="w-full"
+            >
               Generate New Password
             </Button>
           </CardContent>

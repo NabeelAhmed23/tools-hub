@@ -79,9 +79,7 @@ export default function MyIP() {
             ipv6: ipv6Data.ip,
           }));
         }
-      } catch (error) {
-        // IPv6 not available, that's ok
-      }
+      } catch {}
     } catch (error) {
       setError("Failed to fetch IP address. Please check your connection.");
       console.error("Error fetching IP:", error);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { QrCode, Download } from "lucide-react";
 import {
@@ -29,7 +29,11 @@ export default function QRGenerator() {
   const [qrCodeDataURL, setQrCodeDataURL] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const generateQRCode = async () => {
+  const generateQRCode = async (
+    text: string,
+    size: string,
+    errorLevel: string
+  ) => {
     if (!text.trim()) {
       setQrCodeDataURL("");
       return;
@@ -97,15 +101,18 @@ export default function QRGenerator() {
   };
 
   useEffect(() => {
-    generateQRCode();
+    generateQRCode(text, size, errorLevel);
   }, [text, size, errorLevel]);
 
-  const errorLevelInfo = {
-    L: "~7% correction",
-    M: "~15% correction",
-    Q: "~25% correction",
-    H: "~30% correction",
-  };
+  const errorLevelInfo = useMemo(
+    () => ({
+      L: "~7% correction",
+      M: "~15% correction",
+      Q: "~25% correction",
+      H: "~30% correction",
+    }),
+    []
+  );
 
   return (
     <div className="container mx-auto px-4 py-8">

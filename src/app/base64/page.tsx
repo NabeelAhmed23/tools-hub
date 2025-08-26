@@ -29,7 +29,7 @@ export default function Base64Tool() {
   const [mode, setMode] = useState<"encode" | "decode">("encode");
   const [error, setError] = useState("");
 
-  const process = () => {
+  const process = (mode: "encode" | "decode", input: string) => {
     if (!input.trim()) {
       setOutput("");
       setError("");
@@ -45,7 +45,7 @@ export default function Base64Tool() {
         const decoded = decodeBase64(input);
         setOutput(decoded);
       }
-    } catch (err) {
+    } catch {
       setError(
         mode === "encode" ? "Failed to encode text" : "Invalid Base64 string"
       );
@@ -85,9 +85,8 @@ export default function Base64Tool() {
     URL.revokeObjectURL(url);
   };
 
-  // Auto-process when input changes
   useEffect(() => {
-    process();
+    process(mode, input);
   }, [input, mode]);
 
   return (

@@ -149,7 +149,11 @@ export default function UnitConverter() {
     return celsius;
   };
 
-  const convertUnits = () => {
+  const convertUnits = (
+    inputValue: string,
+    fromUnit: string,
+    toUnit: string
+  ) => {
     if (!inputValue || !fromUnit || !toUnit || !currentCategory) return;
 
     const value = parseFloat(inputValue);
@@ -193,8 +197,9 @@ export default function UnitConverter() {
 
   useEffect(() => {
     if (inputValue && fromUnit && toUnit) {
-      convertUnits();
+      convertUnits(inputValue, fromUnit, toUnit);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue, fromUnit, toUnit]);
 
   return (

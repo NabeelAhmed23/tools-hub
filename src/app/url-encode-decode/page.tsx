@@ -22,7 +22,7 @@ export default function URLEncodeDecode() {
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
 
-  const encode = () => {
+  const encode = (input: string) => {
     if (!input.trim()) {
       setOutput("");
       setError("");
@@ -33,13 +33,13 @@ export default function URLEncodeDecode() {
       setError("");
       const encoded = encodeURL(input);
       setOutput(encoded);
-    } catch (err) {
+    } catch {
       setError("Failed to encode URL");
       setOutput("");
     }
   };
 
-  const decode = () => {
+  const decode = (input: string) => {
     if (!input.trim()) {
       setOutput("");
       setError("");
@@ -50,7 +50,7 @@ export default function URLEncodeDecode() {
       setError("");
       const decoded = decodeURL(input);
       setOutput(decoded);
-    } catch (err) {
+    } catch {
       setError("Invalid URL encoded string");
       setOutput("");
     }
@@ -62,19 +62,20 @@ export default function URLEncodeDecode() {
     setError("");
   };
 
-  const detectAndProcess = () => {
+  const detectAndProcess = (input: string) => {
     if (!input.trim()) return;
 
     // Simple heuristic: if it contains %, it's likely encoded
     if (input.includes("%")) {
-      decode();
+      decode(input);
     } else {
-      encode();
+      encode(input);
     }
   };
 
   useEffect(() => {
-    detectAndProcess();
+    detectAndProcess(input);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   return (
@@ -141,10 +142,10 @@ export default function URLEncodeDecode() {
               )}
 
               <div className="flex space-x-4">
-                <Button onClick={encode} variant="outline">
+                <Button onClick={() => encode(input)} variant="outline">
                   Encode
                 </Button>
-                <Button onClick={decode} variant="outline">
+                <Button onClick={() => decode(input)} variant="outline">
                   Decode
                 </Button>
                 <Button onClick={clear} variant="outline">
