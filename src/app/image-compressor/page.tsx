@@ -356,6 +356,7 @@ export default function ImageCompressor() {
                   <CardTitle>Original Image</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={originalImage.url}
                     alt="Original image to be compressed"
@@ -378,6 +379,7 @@ export default function ImageCompressor() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {processedImage ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       src={processedImage.url}
                       alt="Compressed image result"

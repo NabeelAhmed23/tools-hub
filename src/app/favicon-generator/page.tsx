@@ -233,6 +233,7 @@ export default function FaviconGenerator() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="w-full h-64 bg-muted rounded flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={sourceImageUrl}
                     alt="Source image for favicon generation"
@@ -316,6 +317,7 @@ export default function FaviconGenerator() {
                         height: Math.min(favicon.size, 64)
                       }}
                     >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={favicon.url}
                         alt={`Generated favicon ${favicon.size}x${favicon.size} pixels`}

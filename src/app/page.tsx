@@ -228,7 +228,7 @@ export default function Home() {
             description="Compress and resize images directly in browser. No uploads required - your files stay private."
             href="/image-compressor"
             delay={0.2}
-            icon={<Image className="w-6 h-6" />}
+            icon={<Image className="w-6 h-6" alt="" />}
           />
           
           <ToolCard
