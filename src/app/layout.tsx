@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ToolsHub - Free Online Tools & Security Utilities",
   description:
-    "Free online tools including BMI calculator, currency converter, password generator, hash tools, and more security utilities. Fast, accurate, and privacy-focused.",
+    "Fast, accurate and free online tools including BMI calculator, currency converter, password generator, hash tools, and more security utilities.",
   keywords: [
     "online tools",
     "password generator",
@@ -37,6 +37,20 @@ export const metadata: Metadata = {
   },
 };
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ToolsHub",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ToolsHub",
+  description:
+    "Fast, accurate and free online tools including BMI calculator, currency converter, password generator, hash tools, and more security utilities.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,6 +58,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(orgSchema),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning
