@@ -14,6 +14,13 @@ A modern, privacy-focused web application built with Next.js 14 that provides fr
 - **QR Code Generator**: Create QR codes from text, URLs, WiFi passwords, and more
 - **What's My IP**: Discover your public IP address, location, and browser information
 
+### Design & Media Tools
+- **Color Picker & Converter**: Interactive color picker with HEX, RGB, HSL conversion and CSS variable export
+- **Image Compressor**: Client-side image compression and resizing with quality control and multiple formats
+- **Favicon Generator**: Generate complete favicon sets from any image with all standard sizes and ZIP download
+- **Gradient Generator**: Create beautiful CSS gradients with live preview and multiple export formats
+- **Emoji Picker**: Searchable emoji database with copy functionality and recent history tracking
+
 ### Calculators & Converters
 - **BMI Calculator**: Calculate Body Mass Index with support for metric and imperial units
 - **Currency Converter**: Convert between currencies with live exchange rates
@@ -36,6 +43,8 @@ A modern, privacy-focused web application built with Next.js 14 that provides fr
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **QR Generation**: qrcode
+- **File Handling**: jszip, file-saver (dynamic imports)
+- **Image Processing**: HTML5 Canvas API
 
 ## 📦 Installation
 
@@ -83,6 +92,7 @@ Uses [ipify.org](https://ipify.org) for IP address detection and [ipapi.co](http
 ### Homepage (`/`)
 - Overview of available tools organized by category
 - Security Tools section with 8 tools
+- Design & Media Tools section with 5 tools
 - Calculators & Converters section
 - SEO-optimized content and AdSense ad slots
 
@@ -95,6 +105,13 @@ Uses [ipify.org](https://ipify.org) for IP address detection and [ipapi.co](http
 - `/uuid-generator` - Bulk UUID v4 generation with download options
 - `/qr-generator` - QR code generation with customizable options
 - `/my-ip` - IP address lookup with optional geolocation
+
+### Design & Media Tools
+- `/color-picker` - Interactive color picker with HEX, RGB, HSL conversion and CSS variable export
+- `/image-compressor` - Client-side image compression and resizing with quality control
+- `/favicon-generator` - Generate complete favicon sets with all standard sizes and ZIP download
+- `/gradient-generator` - Create CSS gradients with live preview and multiple export formats
+- `/emoji-picker` - Searchable emoji database with copy functionality and recent history
 
 ### Calculators & Converters
 - `/bmi-calculator` - BMI calculation with metric/imperial units
@@ -186,8 +203,9 @@ If you have any questions or need help, please open an issue on GitHub.
 The application is optimized for performance:
 - **Homepage**: ~3.9KB + 202KB shared JS
 - **Security Tools**: ~4-12KB per tool + shared components
+- **Design & Media Tools**: ~8-15KB per tool + shared components (includes canvas/image processing)
 - **Total Bundle**: ~210KB gzipped for core functionality
-- **Dynamic Imports**: Tools load only required dependencies
+- **Dynamic Imports**: Tools load only required dependencies (JSZip, file-saver loaded on-demand)
 
 ---
 

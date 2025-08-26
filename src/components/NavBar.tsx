@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Calculator, ChevronDown, Menu } from "lucide-react";
+import { Shield, Calculator, ChevronDown, Menu, Palette } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   DropdownMenu,
@@ -101,6 +101,31 @@ export default function NavBar() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/gpa-calculator">GPA Calculator</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
+                <Palette className="w-4 h-4" />
+                <span>Creative</span>
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link href="/color-picker">Color Picker</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-compressor">Image Compressor</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/favicon-generator">Favicon Generator</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/gradient-generator">Gradient Generator</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/emoji-picker">Emoji Picker</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -215,6 +240,40 @@ export default function NavBar() {
                         <DropdownMenuItem asChild>
                           <Link href="/gpa-calculator" className="text-sm">
                             GPA Calculator
+                          </Link>
+                        </DropdownMenuItem>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-3">
+                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                        <Palette className="w-4 h-4" />
+                        <span>Creative</span>
+                      </div>
+                      <div className="space-y-1 pl-4">
+                        <DropdownMenuItem asChild>
+                          <Link href="/color-picker" className="text-sm">
+                            Color Picker
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-compressor" className="text-sm">
+                            Image Compressor
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/favicon-generator" className="text-sm">
+                            Favicon Generator
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/gradient-generator" className="text-sm">
+                            Gradient Generator
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/emoji-picker" className="text-sm">
+                            Emoji Picker
                           </Link>
                         </DropdownMenuItem>
                       </div>

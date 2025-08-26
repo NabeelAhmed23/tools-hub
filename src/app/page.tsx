@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { KeyRound, Shield, Hash, Code, Link, Fingerprint, QrCode, Network, Calculator, Calendar, TrendingUp, Ruler, Percent, CalendarDays, GraduationCap } from "lucide-react";
+import { KeyRound, Shield, Hash, Code, Link, Fingerprint, QrCode, Network, Calculator, Calendar, TrendingUp, Ruler, Percent, CalendarDays, GraduationCap, Palette, Image, Star, Rainbow, Smile } from "lucide-react";
 import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
@@ -198,10 +198,69 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mb-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 flex items-center justify-center space-x-2">
+            <Palette className="w-8 h-8 text-primary" />
+            <span>Design & Web Tools</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Professional design and web development tools for creators and developers.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+          <ToolCard
+            title="Color Picker & Converter"
+            description="Pick colors and convert between HEX, RGB, HSL formats with live preview. Generate CSS variables instantly."
+            href="/color-picker"
+            delay={0.1}
+            icon={<Palette className="w-6 h-6" />}
+          />
+          
+          <ToolCard
+            title="Image Compressor & Resizer"
+            description="Compress and resize images directly in browser. No uploads required - your files stay private."
+            href="/image-compressor"
+            delay={0.2}
+            icon={<Image className="w-6 h-6" />}
+          />
+          
+          <ToolCard
+            title="Favicon Generator"
+            description="Generate complete favicon sets from any image - all standard sizes with HTML snippet included."
+            href="/favicon-generator"
+            delay={0.3}
+            icon={<Star className="w-6 h-6" />}
+          />
+          
+          <ToolCard
+            title="Gradient Generator"
+            description="Create beautiful CSS gradients with live preview. Export as CSS, SCSS, or Tailwind config."
+            href="/gradient-generator"
+            delay={0.4}
+            icon={<Rainbow className="w-6 h-6" />}
+          />
+          
+          <ToolCard
+            title="Emoji Picker & Copy"
+            description="Browse, search, and copy emojis with keyboard navigation and recent history tracking."
+            href="/emoji-picker"
+            delay={0.5}
+            icon={<Smile className="w-6 h-6" />}
+          />
+        </div>
+      </section>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 0.8 }}
         className="max-w-4xl mx-auto mb-8"
       >
         <h2 className="text-2xl font-semibold mb-6 text-center">Why Choose ToolsHub?</h2>
