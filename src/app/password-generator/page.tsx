@@ -99,7 +99,7 @@ export default function PasswordGenerator() {
             name: "Password Generator",
             description:
               "Generate strong, secure passwords with customizable options including length, character types, and entropy calculation",
-            url: "https://toolshub.com/password-generator",
+            url: "https://www.the-tools-hub.com/password-generator",
             applicationCategory: "SecurityApplication",
             operatingSystem: "Web Browser",
             features: [
@@ -122,12 +122,19 @@ export default function PasswordGenerator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Password Generator
+            Password Generator - Create Strong Secure Passwords
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-4">
             Generate cryptographically secure passwords with customizable
-            options
+            length, character types, and entropy calculation. All processing
+            happens locally in your browser for maximum privacy and security.
           </p>
+          <div className="text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1">
+              <KeyRound className="w-4 h-4" />
+              Privacy-focused • No server storage • Instant generation
+            </span>
+          </div>
         </div>
 
         <Card className="mb-8">
@@ -305,26 +312,88 @@ export default function PasswordGenerator() {
 
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Password Security Tips</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">
+                Password Security Best Practices
+              </h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
-            <ul className="space-y-2">
-              <li>Use unique passwords for each of your accounts</li>
-              <li>
-                Longer passwords (12+ characters) are generally more secure
-              </li>
-              <li>
-                Include a mix of uppercase, lowercase, numbers, and symbols
-              </li>
-              <li>
-                Avoid common words, personal information, or keyboard patterns
-              </li>
-              <li>
-                Consider using a password manager to store your passwords
-                securely
-              </li>
-              <li>Enable two-factor authentication when available</li>
-            </ul>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">
+                  Essential Password Guidelines
+                </h3>
+                <ul className="space-y-2">
+                  <li>Use unique passwords for each of your accounts</li>
+                  <li>
+                    Longer passwords (12+ characters) are generally more secure
+                  </li>
+                  <li>
+                    Include a mix of uppercase, lowercase, numbers, and symbols
+                  </li>
+                  <li>
+                    Avoid common words, personal information, or keyboard
+                    patterns
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Advanced Security Tips</h3>
+                <ul className="space-y-2">
+                  <li>
+                    Consider using a password manager to store your passwords
+                    securely
+                  </li>
+                  <li>Enable two-factor authentication when available</li>
+                  <li>Regularly update passwords for sensitive accounts</li>
+                  <li>
+                    Use our entropy calculation to verify password strength
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">
+                How Our Password Generator Works
+              </h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Cryptographic Security</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Our password generator uses your browser&apos;s built-in
+                cryptographically secure pseudorandom number generator (CSPRNG)
+                to ensure maximum randomness and security. This is the same
+                technology used by security professionals and cryptographic
+                applications.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Entropy Calculation</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Password entropy measures the unpredictability of a password.
+                Higher entropy means a password is harder to crack. Our tool
+                calculates entropy based on character set size and password
+                length, helping you understand your password&apos;s true
+                strength.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Privacy Protection</h3>
+              <p className="text-sm text-muted-foreground">
+                All password generation happens entirely in your browser using
+                client-side JavaScript. No passwords are ever transmitted to our
+                servers, logged, or stored anywhere. Your generated passwords
+                remain completely private and secure.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </motion.div>

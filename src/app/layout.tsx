@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://www.the-tools-hub.com",
   },
   openGraph: {
     type: "website",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
       "Privacy-focused online tools for security, calculations, and conversions. All processing happens in your browser.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
-        height: 630,
+        height: 600,
         alt: "ToolsHub - Free Online Tools",
       },
     ],

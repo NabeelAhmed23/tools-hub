@@ -1,13 +1,33 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Password Generator - Strong Secure Passwords | ToolsHub",
-  description: "Generate cryptographically secure passwords with customizable options. Choose length, character types, and exclude similar characters. Free online password generator.",
-  keywords: ["password generator", "secure password", "random password", "strong password", "cryptographic password"],
+  title: "Password Generator - Create Strong Secure Passwords",
+  description: "Generate cryptographically secure passwords with customizable length, character types, and entropy calculation. Free online tool with privacy protection.",
+  keywords: ["password generator", "secure password", "random password", "strong password", "cryptographic password", "entropy calculator", "password security"],
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://www.the-tools-hub.com/password-generator",
+  },
   openGraph: {
-    title: "Free Password Generator - Create Strong Secure Passwords",
-    description: "Generate cryptographically secure passwords with customizable options. Free, secure, and privacy-focused.",
+    title: "Password Generator - Create Strong Secure Passwords",
+    description: "Generate cryptographically secure passwords with customizable length, character types, and entropy calculation. Free online tool with privacy protection.",
+    url: "https://www.the-tools-hub.com/password-generator",
+    siteName: "ToolsHub - Free Online Tools",
     type: "website",
+    images: [
+      {
+        url: "https://www.the-tools-hub.com/og-password-generator.png",
+        width: 1200,
+        height: 630,
+        alt: "Password Generator Tool - Create Strong Secure Passwords",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Password Generator - Create Strong Secure Passwords",
+    description: "Generate cryptographically secure passwords with customizable length, character types, and entropy calculation. Free online tool with privacy protection.",
+    images: ["https://www.the-tools-hub.com/og-password-generator.png"],
   },
 };
 
