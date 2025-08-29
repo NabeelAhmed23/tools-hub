@@ -180,10 +180,10 @@ export default function FaviconGenerator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Favicon Generator
+            Favicon Generator - Create Complete Favicon Sets
           </h1>
           <p className="text-lg text-muted-foreground">
-            Generate complete favicon sets from any image - all standard sizes included
+            Generate complete favicon sets from any image with all standard sizes and HTML snippet included. Perfect for websites and web apps with Apple Touch Icon support and web manifest generation.
           </p>
         </div>
 

@@ -157,10 +157,10 @@ export default function GradientGenerator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Gradient Generator
+            CSS Gradient Generator - Create Beautiful Gradients
           </h1>
           <p className="text-lg text-muted-foreground">
-            Create beautiful CSS gradients with live preview and multiple export formats
+            Create beautiful CSS gradients with live preview and multiple export formats. Generate linear and radial gradients, export as CSS, SCSS, or Tailwind config with instant preview.
           </p>
         </div>
 

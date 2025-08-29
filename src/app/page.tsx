@@ -27,8 +27,64 @@ import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
 export default function Home() {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ToolsHub",
+    url: "https://www.the-tools-hub.com",
+    description:
+      "Privacy-focused online tools for security, calculations, and conversions. All processing happens in your browser - your data never leaves your device.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.the-tools-hub.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const softwareApplicationSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "ToolsHub - Free Online Tools",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web Browser",
+    url: "https://www.the-tools-hub.com",
+    description:
+      "Comprehensive suite of privacy-focused online tools including password generators, calculators, converters, and security utilities.",
+    featureList: [
+      "Password Generator & Strength Checker",
+      "Hash Generator (MD5, SHA-1, SHA-256, SHA-512)",
+      "Base64 & URL Encoder/Decoder",
+      "BMI & Age Calculator",
+      "Currency & Unit Converter",
+      "Color Picker & Gradient Generator",
+      "Image Compressor & Favicon Generator",
+      "QR Code Generator",
+      "UUID Generator",
+      "Loan & GPA Calculator",
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -43,7 +99,7 @@ export default function Home() {
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           Privacy-focused tools for security, encryption, and calculations. All
           processing happens in your browser - your data never leaves your
-          device.
+          device. Generate passwords, calculate BMI, convert units, compress images, and more with our comprehensive suite of free online tools.
         </p>
       </motion.div>
 

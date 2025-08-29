@@ -114,10 +114,10 @@ export default function ColorPicker() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Color Picker & Converter
+            Color Picker & Converter - HEX, RGB, HSL Tools
           </h1>
           <p className="text-lg text-muted-foreground">
-            Pick colors and convert between HEX, RGB, and HSL formats
+            Professional color picker and converter tool. Pick colors and convert between HEX, RGB, HSL formats with live preview. Generate CSS variables and color codes instantly for web design projects.
           </p>
         </div>
 
@@ -292,6 +292,70 @@ export default function ColorPicker() {
             </div>
           </CardContent>
         </Card>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Color Format Guide</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">HEX Colors</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Hexadecimal color codes use six digits to represent RGB values. Perfect for web development 
+                  and CSS styling. Format: #RRGGBB (e.g., #FF0000 for red).
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">RGB Colors</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  RGB represents colors using Red, Green, and Blue values from 0-255. Ideal for digital 
+                  displays and programming. Format: rgb(255, 0, 0).
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">HSL Colors</h3>
+                <p className="text-sm text-muted-foreground">
+                  HSL uses Hue, Saturation, and Lightness values. More intuitive for color adjustments 
+                  and design work. Format: hsl(0, 100%, 50%).
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Color Picker Features</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">Interactive Color Selection</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Use the visual color picker or input specific values in any format. Real-time 
+                  conversion between HEX, RGB, and HSL formats with instant preview.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">CSS Variable Export</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Generate CSS custom properties for modern web development. Copy color codes 
+                  directly to clipboard in any format for immediate use in your projects.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Professional Design Tool</h3>
+                <p className="text-sm text-muted-foreground">
+                  Perfect for web designers, developers, and digital artists. Accurate color 
+                  representation across different formats ensures consistency in your designs.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         <Alert className="mb-8">
           <Palette className="h-4 w-4" />

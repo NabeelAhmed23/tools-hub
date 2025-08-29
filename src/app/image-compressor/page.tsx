@@ -190,10 +190,10 @@ export default function ImageCompressor() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Image Compressor & Resizer
+            Image Compressor & Resizer - Optimize Images Online
           </h1>
           <p className="text-lg text-muted-foreground">
-            Compress and resize images directly in your browser - no uploads required
+            Compress and resize images directly in your browser with no uploads required. Supports JPEG, PNG, WebP with quality control and privacy protection - your files stay private.
           </p>
         </div>
 

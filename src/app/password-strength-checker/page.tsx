@@ -10,8 +10,6 @@ import {
   XCircle,
   AlertTriangle,
   Clock,
-  Home,
-  ChevronRight,
   HelpCircle,
 } from "lucide-react";
 import {

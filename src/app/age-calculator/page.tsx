@@ -95,8 +95,33 @@ export default function AgeCalculator() {
     setAgeResult(null);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Age Calculator",
+    description:
+      "Calculate your exact age in years, months, days, hours, and minutes. Free online age calculator with next birthday countdown and total days lived calculation.",
+    url: "https://www.the-tools-hub.com/age-calculator",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Exact age calculation in years, months, and days",
+      "Next birthday countdown",
+      "Total days lived calculation",
+      "Total months calculation",
+      "Privacy-focused - no data stored",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -106,10 +131,12 @@ export default function AgeCalculator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Age Calculator
+            Age Calculator - Calculate Your Exact Age
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate your exact age and find out when your next birthday is
+            Calculate your exact age in years, months, and days. Find out when
+            your next birthday is and how many days you&apos;ve lived. All
+            calculations happen in your browser for complete privacy.
           </p>
         </div>
 
@@ -245,21 +272,80 @@ export default function AgeCalculator() {
           </motion.div>
         )}
 
-        <Card>
+        <Card className="mb-8">
           <CardHeader>
-            <CardTitle>About Age Calculation</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">
+                How Our Age Calculator Works
+              </h2>
+            </CardTitle>
           </CardHeader>
-          <CardContent className="prose prose-sm max-w-none">
-            <p>
-              This age calculator determines your exact age in years, months,
-              and days based on your birth date and today&apos;s date. It also
-              shows additional information like total days lived and countdown
-              to your next birthday.
-            </p>
-            <p>
-              The calculation accounts for leap years and varying month lengths
-              to provide the most accurate age calculation possible.
-            </p>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Precise Age Calculation</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Our age calculator determines your exact age in years, months,
+                and days based on your birth date and today&apos;s date. The
+                calculation accounts for leap years and varying month lengths to
+                provide the most accurate age calculation possible.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Additional Age Statistics</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Beyond your standard age, we calculate total days lived, total
+                months, and countdown to your next birthday. This gives you a
+                comprehensive view of your time on Earth and helps you celebrate
+                milestones.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Privacy Protection</h3>
+              <p className="text-sm text-muted-foreground">
+                All age calculations happen entirely in your browser using
+                client-side JavaScript. Your birth date is never transmitted to
+                our servers or stored anywhere, ensuring complete privacy and
+                security.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">
+                Age Calculator Uses & Benefits
+              </h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Personal Milestones</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Track important life milestones, plan birthday celebrations, or
+                simply satisfy your curiosity about how many days you&apos;ve
+                been alive. Perfect for creating milestone memories and special
+                occasion planning.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Professional Applications</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Useful for HR departments, insurance applications, age
+                verification, retirement planning, and any situation where
+                precise age calculation is required for official or legal
+                purposes.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Educational Tool</h3>
+              <p className="text-sm text-muted-foreground">
+                Great for teaching children about time, dates, and mathematics.
+                Helps students understand calendar systems, leap years, and
+                time-based calculations in an interactive and engaging way.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </motion.div>

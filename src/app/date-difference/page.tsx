@@ -95,8 +95,33 @@ export default function DateDifferenceCalculator() {
     return num.toLocaleString();
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Date Difference Calculator",
+    description:
+      "Calculate the exact difference between two dates in years, months, days, hours, minutes, and seconds. Free online date calculator with precise results.",
+    url: "https://www.the-tools-hub.com/date-difference",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Date difference in multiple units",
+      "Years, months, days calculation",
+      "Total time calculations",
+      "Quick date selection",
+      "Privacy-focused - no data stored",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -106,10 +131,10 @@ export default function DateDifferenceCalculator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Date Difference Calculator
+            Date Difference Calculator - Calculate Days Between Dates
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate the exact difference between two dates
+            Calculate the exact difference between two dates in years, months, days, hours, minutes, and seconds. Perfect for project planning, age calculations, and event planning with precise results.
           </p>
         </div>
 
@@ -334,7 +359,9 @@ export default function DateDifferenceCalculator() {
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Common Use Cases</CardTitle>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Common Use Cases</h2>
+              </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <ul className="space-y-1 text-sm">
@@ -350,7 +377,9 @@ export default function DateDifferenceCalculator() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Quick Tips</CardTitle>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Quick Tips</h2>
+              </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <ul className="space-y-1 text-sm">
@@ -366,7 +395,9 @@ export default function DateDifferenceCalculator() {
 
         <Card>
           <CardHeader>
-            <CardTitle>About Date Calculations</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About Date Calculations</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

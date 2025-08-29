@@ -151,8 +151,32 @@ export default function MyIP() {
 
   const { browser = "", os } = getBrowserInfo();
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "What's My IP Address - IP Lookup Tool",
+    description: "Discover your public IP address, user agent, and approximate location with privacy protection. Free IP lookup tool with browser and device information.",
+    url: "https://www.the-tools-hub.com/my-ip",
+    applicationCategory: "NetworkingApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Public IP address lookup",
+      "IPv4 and IPv6 support",
+      "Location information (optional)",
+      "Browser and OS detection",
+      "Privacy-focused design"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div

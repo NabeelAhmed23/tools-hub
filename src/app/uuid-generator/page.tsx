@@ -57,8 +57,32 @@ export default function UUIDGenerator() {
     generateUUIDs(quantity);
   }, [quantity]);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "UUID v4 Generator - Unique Identifier Generator",
+    description: "Generate cryptographically secure UUID version 4 identifiers in bulk. RFC 4122 compliant UUID generator for database keys, API tracking, and distributed systems.",
+    url: "https://www.the-tools-hub.com/uuid-generator",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "UUID v4 generation",
+      "Bulk generation (1-100)",
+      "RFC 4122 compliant",
+      "Cryptographically secure",
+      "Export to file"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div

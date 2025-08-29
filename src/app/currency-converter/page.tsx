@@ -133,8 +133,33 @@ export default function CurrencyConverter() {
     return rate.toFixed(6);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Currency Converter",
+    description:
+      "Convert currencies instantly with live exchange rates. Free online currency converter supporting 100+ currencies with real-time data.",
+    url: "https://www.the-tools-hub.com/currency-converter",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Real-time exchange rates",
+      "100+ currency support",
+      "Bidirectional conversion",
+      "Popular currency pairs",
+      "Live rate updates",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -144,10 +169,10 @@ export default function CurrencyConverter() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Currency Converter
+            Currency Converter - Live Exchange Rates
           </h1>
           <p className="text-lg text-muted-foreground">
-            Convert between different currencies with live exchange rates
+            Convert currencies instantly with live exchange rates. Free online currency converter supporting major world currencies with real-time data and accurate conversions.
           </p>
           {lastUpdated && (
             <p className="text-sm text-muted-foreground mt-2">
@@ -297,7 +322,9 @@ export default function CurrencyConverter() {
 
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Popular Currency Pairs</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Popular Currency Pairs</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -344,7 +371,9 @@ export default function CurrencyConverter() {
 
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>About Exchange Rates</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About Exchange Rates</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

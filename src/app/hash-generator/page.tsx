@@ -125,10 +125,10 @@ export default function HashGenerator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Hash Generator
+            Hash Generator - MD5, SHA-1, SHA-256, SHA-512 Tools
           </h1>
           <p className="text-lg text-muted-foreground">
-            Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text input
+            Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text input. Fast, secure hash generation tool with multiple algorithms and detailed security information for data integrity verification.
           </p>
         </div>
 

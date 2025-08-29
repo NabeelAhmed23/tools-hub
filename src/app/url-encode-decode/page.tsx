@@ -78,8 +78,32 @@ export default function URLEncodeDecode() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "URL Encoder/Decoder - Percent Encoding Tool",
+    description: "Encode and decode URLs with percent-encoding for safe URL transmission. Auto-detect encoding/decoding with support for all ASCII characters and special symbols.",
+    url: "https://www.the-tools-hub.com/url-encode-decode",
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "URL encoding (percent-encoding)",
+      "URL decoding",
+      "Auto-detection mode",
+      "Reserved character handling",
+      "Developer-friendly interface"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div

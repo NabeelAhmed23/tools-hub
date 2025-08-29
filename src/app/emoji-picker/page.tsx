@@ -139,10 +139,10 @@ export default function EmojiPicker() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Emoji Picker & Copy Tool
+            Emoji Picker & Copy Tool - Browse and Search Emojis
           </h1>
           <p className="text-lg text-muted-foreground">
-            Browse, search, and copy emojis with keyboard navigation and recent history
+            Browse, search, and copy emojis with keyboard navigation and recent history tracking. Comprehensive emoji database organized by categories with one-click copy functionality and text composition features.
           </p>
         </div>
 
@@ -299,6 +299,56 @@ export default function EmojiPicker() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">How to Use Emoji Picker</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">Search and Browse</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Use the search bar to find specific emojis by name or keyword. Browse by categories 
+                  like smileys, animals, food, activities, travel, objects, symbols, and flags.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Copy and Compose</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Click any emoji to copy it instantly to your clipboard. Use the text area to compose 
+                  messages with multiple emojis before copying the entire text.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Features & Benefits</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">Recent History</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Your recently used emojis are remembered and displayed for quick access. 
+                  The history is stored locally in your browser for privacy.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Comprehensive Database</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Access thousands of emojis from the latest Unicode standard, organized in 
+                  logical categories with full text search capabilities.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         <Alert className="mb-8">

@@ -93,8 +93,32 @@ export default function PercentageCalculator() {
     setSavingsAmount("");
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Percentage Calculator - Calculate Percentages & Discounts",
+    description: "Calculate percentages, percentage changes, and discounts online. Easy-to-use percentage calculator with multiple calculation modes for business, finance, and everyday use.",
+    url: "https://www.the-tools-hub.com/percentage-calculator",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Percentage calculation",
+      "Percentage change calculator",
+      "Discount calculator",
+      "Multiple calculation modes",
+      "Real-time results"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div

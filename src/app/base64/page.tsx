@@ -89,8 +89,33 @@ export default function Base64Tool() {
     process(mode, input);
   }, [input, mode]);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Base64 Encoder/Decoder",
+    description:
+      "Free Base64 encoder and decoder with UTF-8 support. Convert text to Base64 and decode Base64 strings back to text with privacy protection.",
+    url: "https://www.the-tools-hub.com/base64",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Base64 encoding and decoding",
+      "UTF-8 character support",
+      "Bidirectional conversion",
+      "Download results as file",
+      "Privacy-focused - no server processing",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -100,10 +125,10 @@ export default function Base64Tool() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Base64 Encoder / Decoder
+            Base64 Encoder/Decoder - Convert Text to Base64
           </h1>
           <p className="text-lg text-muted-foreground">
-            Encode and decode text using Base64 encoding with UTF-8 support
+            Free Base64 encoder and decoder with UTF-8 support. Convert text to Base64 and decode Base64 strings back to text. Perfect for data transmission and storage with complete privacy protection.
           </p>
         </div>
 
@@ -206,7 +231,7 @@ export default function Base64Tool() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <FileText className="w-5 h-5" />
-                <span>About Base64 Encoding</span>
+                <h2 className="text-xl font-semibold">About Base64 Encoding</h2>
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
@@ -229,7 +254,7 @@ export default function Base64Tool() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Code className="w-5 h-5" />
-                <span>Encoding Details</span>
+                <h2 className="text-xl font-semibold">Encoding Details</h2>
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
@@ -266,7 +291,9 @@ export default function Base64Tool() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Examples</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Base64 Examples</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">

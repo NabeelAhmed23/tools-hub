@@ -114,8 +114,32 @@ export default function QRGenerator() {
     []
   );
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "QR Code Generator - Create Custom QR Codes Online",
+    description: "Generate QR codes from text, URLs, or any data with customizable size and error correction. Download as PNG or SVG for business cards, marketing, and sharing.",
+    url: "https://www.the-tools-hub.com/qr-generator",
+    applicationCategory: "DesignApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Custom QR code generation",
+      "Multiple size options",
+      "Error correction levels",
+      "PNG and SVG download",
+      "Real-time preview"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div

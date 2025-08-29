@@ -180,8 +180,33 @@ export default function GPACalculator() {
     }
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "GPA Calculator",
+    description:
+      "Calculate your Grade Point Average with multiple subjects and credit hours. Supports both letter grades and numeric grades with accurate GPA calculation.",
+    url: "https://www.the-tools-hub.com/gpa-calculator",
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Letter and numeric grade support",
+      "Multiple subjects and credit hours",
+      "Academic classification",
+      "Credit-weighted GPA calculation",
+      "Add/remove subjects dynamically",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -191,11 +216,10 @@ export default function GPACalculator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            GPA Calculator
+            GPA Calculator - Calculate Grade Point Average
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate your Grade Point Average with multiple subjects and credit
-            hours
+            Calculate your Grade Point Average with multiple subjects and credit hours. Supports both letter grades and numeric grades with accurate GPA calculation and academic classification.
           </p>
         </div>
 

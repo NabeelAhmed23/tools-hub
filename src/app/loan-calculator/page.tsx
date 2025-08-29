@@ -98,8 +98,33 @@ export default function LoanCalculator() {
     }).format(amount);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Loan Calculator - EMI Calculator",
+    description:
+      "Calculate monthly EMI, total interest, and loan breakdown with visual charts. Perfect for home loans, personal loans, and auto loans with detailed amortization schedule.",
+    url: "https://www.the-tools-hub.com/loan-calculator",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Monthly EMI calculation",
+      "Total interest calculation",
+      "Loan repayment breakdown",
+      "Visual charts and graphs",
+      "Multiple loan types support",
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
@@ -109,11 +134,10 @@ export default function LoanCalculator() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Loan & EMI Calculator
+            Loan Calculator - EMI Calculator with Amortization
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate your monthly EMI, total interest, and loan repayment
-            amount
+            Calculate monthly EMI, total interest, and loan breakdown with visual charts. Perfect for home loans, personal loans, and auto loans with detailed amortization schedule and repayment analysis.
           </p>
         </div>
 

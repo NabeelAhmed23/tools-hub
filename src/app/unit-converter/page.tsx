@@ -202,8 +202,33 @@ export default function UnitConverter() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue, fromUnit, toUnit]);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Unit Converter - Convert Length, Weight, Temperature & More",
+    description: "Convert between different units of measurement including length, weight, temperature, speed, and volume. Accurate unit converter with 40+ units and real-time conversion.",
+    url: "https://www.the-tools-hub.com/unit-converter",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Web Browser",
+    featureList: [
+      "Length conversion (metric/imperial)",
+      "Weight and mass conversion",
+      "Temperature conversion (C/F/K)",
+      "Speed conversion",
+      "Volume conversion",
+      "40+ supported units"
+    ]
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData),
+        }}
+      />
+
       <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
