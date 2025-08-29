@@ -102,7 +102,7 @@ export default function PasswordGenerator() {
             url: "https://www.the-tools-hub.com/password-generator",
             applicationCategory: "SecurityApplication",
             operatingSystem: "Web Browser",
-            features: [
+            featureList: [
               "Customizable length (8-64 characters)",
               "Multiple character set options",
               "Entropy calculation",
