@@ -32,7 +32,7 @@ Allow: /emoji-picker
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://toolshub.dev/sitemap.xml
+Sitemap: https://www.the-tools-hub.com/sitemap.xml
 
 # Crawl delay (optional - be respectful to servers)
 Crawl-delay: 1
