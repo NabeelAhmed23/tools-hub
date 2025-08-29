@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               img-src 'self' blob: data: https:;
               font-src 'self' https://fonts.gstatic.com;
-              connect-src 'self' https://www.google-analytics.com https://api.exchangerate-api.com;
+              connect-src 'self' https://www.google-analytics.com https://api.exchangerate-api.com https://api.ipify.org https://api6.ipify.org https://ipapi.co;
               frame-src 'self' https://pagead2.googlesyndication.com;
               object-src 'none';
               base-uri 'self';

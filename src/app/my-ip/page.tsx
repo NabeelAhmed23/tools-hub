@@ -45,15 +45,7 @@ export default function MyIP() {
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationEnabled, setLocationEnabled] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    // Get user agent immediately
-    const userAgent = navigator.userAgent;
-    setIpInfo((prev) => ({ ...prev, userAgent }));
-
-    // Fetch IP address
-    fetchIPAddress();
-  }, []);
+  const [browserInfo, setBrowserInfo] = useState({ browser: "", os: "" });
 
   const fetchIPAddress = async () => {
     try {
@@ -126,30 +118,37 @@ export default function MyIP() {
     }
   };
 
-  const getBrowserInfo = () => {
+
+  useEffect(() => {
+    // Get user agent immediately
+    const userAgent = navigator.userAgent;
+    setIpInfo((prev) => ({ ...prev, userAgent }));
+
+    // Detect browser and OS
     const ua = navigator.userAgent;
     let browser = "Unknown";
     let os = "Unknown";
 
-    // Detect browser
-    if (ua.includes("Chrome") && !ua.includes("Edg")) browser = "Chrome";
-    else if (ua.includes("Firefox")) browser = "Firefox";
-    else if (ua.includes("Safari") && !ua.includes("Chrome"))
-      browser = "Safari";
+    // Detect browser (order matters for accuracy)
+    if (ua.includes("Opera") || ua.includes("OPR")) browser = "Opera";
     else if (ua.includes("Edg")) browser = "Edge";
-    else if (ua.includes("Opera")) browser = "Opera";
+    else if (ua.includes("Chrome")) browser = "Chrome";
+    else if (ua.includes("Firefox")) browser = "Firefox";
+    else if (ua.includes("Safari")) browser = "Safari";
 
-    // Detect OS
-    if (ua.includes("Windows")) os = "Windows";
+    // Detect OS (more specific checks first)
+    if (ua.includes("iPhone") || ua.includes("iPad") || ua.includes("iPod")) os = "iOS";
+    else if (ua.includes("Android")) os = "Android";
+    else if (ua.includes("Win")) os = "Windows";
     else if (ua.includes("Mac")) os = "macOS";
     else if (ua.includes("Linux")) os = "Linux";
-    else if (ua.includes("Android")) os = "Android";
-    else if (ua.includes("iOS")) os = "iOS";
+    else if (ua.includes("CrOS")) os = "Chrome OS";
 
-    return { browser, os };
-  };
+    setBrowserInfo({ browser, os });
 
-  const { browser = "", os } = getBrowserInfo();
+    // Fetch IP address
+    fetchIPAddress();
+  }, []);
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -370,7 +369,7 @@ export default function MyIP() {
                       Browser
                     </label>
                     <p className="text-lg" suppressHydrationWarning>
-                      {browser || ""}
+                      {browserInfo.browser || "Detecting..."}
                     </p>
                   </div>
                   <div>
@@ -378,7 +377,7 @@ export default function MyIP() {
                       Operating System
                     </label>
                     <p className="text-lg" suppressHydrationWarning>
-                      {os}
+                      {browserInfo.os || "Detecting..."}
                     </p>
                   </div>
                 </div>
