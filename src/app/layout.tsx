@@ -16,9 +16,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ToolsHub - Free Online Tools & Security Utilities",
+  metadataBase: new URL("https://www.the-tools-hub.com"),
+  title: {
+    template: "%s | ToolsHub",
+    default: "ToolsHub - Free Online Tools",
+  },
   description:
-    "Fast, accurate and free online tools including BMI calculator, currency converter, password generator, hash tools, and more security utilities.",
+    "Privacy-focused online tools for security, calculations, and conversions. All processing happens in your browser - your data never leaves your device.",
   keywords: [
     "online tools",
     "password generator",
@@ -27,13 +31,52 @@ export const metadata: Metadata = {
     "currency converter",
     "security tools",
     "free calculator",
+    "privacy first",
+    "client-side tools",
   ],
   authors: [{ name: "ToolsHub" }],
+  creator: "ToolsHub",
+  publisher: "ToolsHub",
+  applicationName: "ToolsHub",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "ToolsHub - Free Online Tools & Security Utilities",
-    description:
-      "Free online tools including security utilities, calculators, and converters",
     type: "website",
+    locale: "en_US",
+    url: "https://www.the-tools-hub.com",
+    siteName: "ToolsHub",
+    title: "ToolsHub - Free Online Tools",
+    description:
+      "Privacy-focused online tools for security, calculations, and conversions. All processing happens in your browser.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ToolsHub - Free Online Tools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ToolsHub - Free Online Tools",
+    description:
+      "Privacy-focused online tools for security, calculations, and conversions. Client-side processing only.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -41,14 +84,24 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "ToolsHub",
+  url: "https://www.the-tools-hub.com",
+  logo: "https://www.the-tools-hub.com/logo.png",
+  description:
+    "Privacy-focused online tools and utilities for security, calculations, and conversions.",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "ToolsHub",
+  url: "https://www.the-tools-hub.com",
   description:
-    "Fast, accurate and free online tools including BMI calculator, currency converter, password generator, hash tools, and more security utilities.",
+    "Privacy-focused online tools for security, calculations, and conversions. All processing happens in your browser - your data never leaves your device.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.the-tools-hub.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({

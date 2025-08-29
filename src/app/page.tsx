@@ -59,8 +59,7 @@ export default function Home() {
             <span>Security Tools</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Generate passwords, analyze security, encode data, and more with our
-            privacy-first security utilities.
+            Generate secure passwords, analyze password strength, create hash values, and encode data with our comprehensive security utilities. All processing happens locally in your browser for maximum privacy and security.
           </p>
         </motion.div>
 
@@ -143,7 +142,7 @@ export default function Home() {
             <span>Calculators & Converters</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Practical tools for everyday calculations and conversions.
+            Essential calculation and conversion tools for daily use. Calculate BMI, age, loan EMI, convert currencies and units, determine percentages, and more. All calculations are performed instantly with accurate results and detailed explanations.
           </p>
         </motion.div>
 
@@ -254,8 +253,7 @@ export default function Home() {
             <span>Design & Web Tools</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Professional design and web development tools for creators and
-            developers.
+            Professional design and web development tools for creators, developers, and designers. Pick and convert colors, compress and resize images, generate favicons, create CSS gradients, and browse emojis. All tools work offline with no file uploads required.
           </p>
         </motion.div>
 
@@ -319,7 +317,7 @@ export default function Home() {
             </div>
             <h3 className="font-semibold mb-2">Privacy First</h3>
             <p className="text-muted-foreground text-sm">
-              All tools run in your browser - your data never leaves your device
+              All tools run entirely in your browser using client-side JavaScript. Your sensitive data never leaves your device, ensuring complete privacy and security for personal information, passwords, and documents.
             </p>
           </div>
 
@@ -341,7 +339,7 @@ export default function Home() {
             </div>
             <h3 className="font-semibold mb-2">100% Free</h3>
             <p className="text-muted-foreground text-sm">
-              No registration, no hidden fees, completely free to use
+              No registration required, no hidden fees, no premium subscriptions. All tools are completely free to use with unlimited access. No credit card or personal information needed to get started.
             </p>
           </div>
 
@@ -363,7 +361,7 @@ export default function Home() {
             </div>
             <h3 className="font-semibold mb-2">Lightning Fast</h3>
             <p className="text-muted-foreground text-sm">
-              Instant results with optimized, lightweight tools
+              Instant results with optimized, lightweight tools that load quickly and process data efficiently. No waiting for server responses or file uploads - everything happens immediately in your browser.
             </p>
           </div>
         </div>
