@@ -19,29 +19,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import AdPlaceholder from "@/components/AdPlaceholder";
+import { ALL_CURRENCIES, POPULAR_CURRENCIES, getCurrencyByCode, getCurrencyDisplay } from "@/constants/currencies";
 
 interface ExchangeRates {
   [key: string]: number;
 }
-
-interface Currency {
-  code: string;
-  name: string;
-  symbol: string;
-}
-
-const popularCurrencies: Currency[] = [
-  { code: "USD", name: "US Dollar", symbol: "$" },
-  { code: "EUR", name: "Euro", symbol: "€" },
-  { code: "GBP", name: "British Pound", symbol: "£" },
-  { code: "JPY", name: "Japanese Yen", symbol: "¥" },
-  { code: "CAD", name: "Canadian Dollar", symbol: "C$" },
-  { code: "AUD", name: "Australian Dollar", symbol: "A$" },
-  { code: "CHF", name: "Swiss Franc", symbol: "Fr" },
-  { code: "CNY", name: "Chinese Yuan", symbol: "¥" },
-  { code: "INR", name: "Indian Rupee", symbol: "₹" },
-  { code: "BRL", name: "Brazilian Real", symbol: "R$" },
-];
 
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState("1");
@@ -136,17 +118,18 @@ export default function CurrencyConverter() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Currency Converter",
+    name: "Currency Converter - All World Currencies",
     description:
-      "Convert currencies instantly with live exchange rates. Free online currency converter supporting 100+ currencies with real-time data.",
+      "Convert between 180+ world currencies instantly with live exchange rates. Comprehensive currency converter supporting all major and minor world currencies with real-time data.",
     url: "https://www.the-tools-hub.com/currency-converter",
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web Browser",
     featureList: [
+      "180+ world currencies",
       "Real-time exchange rates",
-      "100+ currency support",
-      "Bidirectional conversion",
-      "Popular currency pairs",
+      "Major and minor currencies",
+      "Currency symbols display",
+      "Organized currency selection",
       "Live rate updates",
     ],
   };
@@ -169,10 +152,10 @@ export default function CurrencyConverter() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Currency Converter - Live Exchange Rates
+            Currency Converter - All World Currencies Live Rates
           </h1>
           <p className="text-lg text-muted-foreground">
-            Convert currencies instantly with live exchange rates. Free online currency converter supporting major world currencies with real-time data and accurate conversions.
+            Convert between 180+ world currencies instantly with live exchange rates. Comprehensive currency converter supporting all major and minor currencies with real-time data.
           </p>
           {lastUpdated && (
             <p className="text-sm text-muted-foreground mt-2">
@@ -223,12 +206,28 @@ export default function CurrencyConverter() {
                     <SelectTrigger className="w-full">
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
-                      {popularCurrencies.map((currency) => (
-                        <SelectItem key={currency.code} value={currency.code}>
-                          {currency.code} - {currency.name}
-                        </SelectItem>
-                      ))}
+                    <SelectContent className="max-h-60">
+                      <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b">
+                        Popular Currencies
+                      </div>
+                      {POPULAR_CURRENCIES.map((code) => {
+                        const currency = getCurrencyByCode(code);
+                        return currency ? (
+                          <SelectItem key={currency.code} value={currency.code}>
+                            {getCurrencyDisplay(currency)}
+                          </SelectItem>
+                        ) : null;
+                      })}
+                      <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b border-t">
+                        All Currencies
+                      </div>
+                      {ALL_CURRENCIES.filter(currency => !POPULAR_CURRENCIES.includes(currency.code))
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((currency) => (
+                          <SelectItem key={currency.code} value={currency.code}>
+                            {getCurrencyDisplay(currency)}
+                          </SelectItem>
+                        ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -239,12 +238,28 @@ export default function CurrencyConverter() {
                     <SelectTrigger className="w-full">
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent className="w-full">
-                      {popularCurrencies.map((currency) => (
-                        <SelectItem key={currency.code} value={currency.code}>
-                          {currency.code} - {currency.name}
-                        </SelectItem>
-                      ))}
+                    <SelectContent className="max-h-60">
+                      <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b">
+                        Popular Currencies
+                      </div>
+                      {POPULAR_CURRENCIES.map((code) => {
+                        const currency = getCurrencyByCode(code);
+                        return currency ? (
+                          <SelectItem key={currency.code} value={currency.code}>
+                            {getCurrencyDisplay(currency)}
+                          </SelectItem>
+                        ) : null;
+                      })}
+                      <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b border-t">
+                        All Currencies
+                      </div>
+                      {ALL_CURRENCIES.filter(currency => !POPULAR_CURRENCIES.includes(currency.code))
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((currency) => (
+                          <SelectItem key={currency.code} value={currency.code}>
+                            {getCurrencyDisplay(currency)}
+                          </SelectItem>
+                        ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -300,10 +315,10 @@ export default function CurrencyConverter() {
               <CardContent className="p-6">
                 <div className="text-center space-y-4">
                   <div className="text-2xl font-semibold text-muted-foreground">
-                    {amount} {fromCurrency} =
+                    {getCurrencyByCode(fromCurrency)?.symbol || ""} {amount} {fromCurrency} =
                   </div>
                   <div className="text-4xl font-bold text-primary">
-                    {convertedAmount.toLocaleString(undefined, {
+                    {getCurrencyByCode(toCurrency)?.symbol || ""} {convertedAmount.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}{" "}
@@ -314,11 +329,35 @@ export default function CurrencyConverter() {
                       1 {fromCurrency} = {getRate()} {toCurrency}
                     </div>
                   )}
+                  <div className="text-xs text-muted-foreground mt-2">
+                    {getCurrencyByCode(fromCurrency)?.name} → {getCurrencyByCode(toCurrency)?.name}
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
         )}
+
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <Card>
+            <CardContent className="p-6 text-center">
+              <div className="text-3xl font-bold text-primary mb-2">{ALL_CURRENCIES.length}</div>
+              <div className="text-sm text-muted-foreground">World Currencies</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <div className="text-3xl font-bold text-primary mb-2">{POPULAR_CURRENCIES.length}</div>
+              <div className="text-sm text-muted-foreground">Popular Currencies</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <div className="text-3xl font-bold text-primary mb-2">Real-time</div>
+              <div className="text-sm text-muted-foreground">Exchange Rates</div>
+            </CardContent>
+          </Card>
+        </div>
 
         <Card className="mb-8">
           <CardHeader>

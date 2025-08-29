@@ -1,27 +1,30 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Currency Converter - Live Exchange Rates Calculator",
+  title: "Currency Converter - All World Currencies Live Rates",
   description:
-    "Convert currencies instantly with live exchange rates. Free online currency converter supporting 100+ currencies including USD, EUR, GBP, JPY, and more.",
+    "Convert between 180+ world currencies instantly with live exchange rates. Comprehensive currency converter supporting all major and minor currencies from USD, EUR, GBP to exotic currencies.",
   keywords: [
     "currency converter",
+    "all world currencies",
+    "180 currencies",
     "exchange rates",
     "currency exchange",
     "money converter",
     "forex rates",
-    "USD to EUR",
-    "international money",
+    "international currency",
+    "exotic currencies",
     "currency calculator",
+    "world currency converter",
   ],
   robots: "index, follow",
   alternates: {
     canonical: "https://www.the-tools-hub.com/currency-converter",
   },
   openGraph: {
-    title: "Currency Converter - Live Exchange Rates Calculator",
+    title: "Currency Converter - All World Currencies Live Rates",
     description:
-      "Convert currencies instantly with live exchange rates. Free online converter supporting 100+ currencies with real-time data.",
+      "Convert between 180+ world currencies instantly with live exchange rates. Comprehensive support for all major and minor world currencies.",
     url: "https://www.the-tools-hub.com/currency-converter",
     siteName: "ToolsHub - Free Online Tools",
     type: "website",
@@ -30,15 +33,15 @@ export const metadata: Metadata = {
         url: "https://www.the-tools-hub.com/og-image.webp",
         width: 1200,
         height: 600,
-        alt: "Currency Converter Tool - Live Exchange Rates",
+        alt: "Currency Converter Tool - All World Currencies",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Currency Converter - Live Exchange Rates Calculator",
+    title: "Currency Converter - All World Currencies Live Rates",
     description:
-      "Convert currencies instantly with live rates. Support for 100+ currencies worldwide.",
+      "Convert between 180+ world currencies instantly. Support for all major and minor currencies worldwide.",
     images: ["https://www.the-tools-hub.com/og-image.webp"],
   },
 };
