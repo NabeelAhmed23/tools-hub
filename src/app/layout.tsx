@@ -158,7 +158,10 @@ export default function RootLayout({
           content="/android-chrome-192x192.png"
         />
         <meta name="msapplication-TileColor" content="#ffffff" />
-
+        <meta
+          name="google-adsense-account"
+          content={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -175,7 +178,7 @@ export default function RootLayout({
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-        ></script>
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
