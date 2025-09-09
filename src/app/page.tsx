@@ -58,6 +58,7 @@ export default function Home() {
       "Currency & Unit Converter",
       "Color Picker & Gradient Generator",
       "Image Compressor & Favicon Generator",
+      "Image Format Converters (JPG/PNG/WebP)",
       "QR Code Generator",
       "UUID Generator",
       "Loan & GPA Calculator",
@@ -353,6 +354,96 @@ export default function Home() {
             href="/emoji-picker"
             delay={0.5}
             icon={<Smile className="w-6 h-6" />}
+          />
+        </div>
+
+        {/* Image Converter Tools */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="text-center mb-8 mt-12"
+        >
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+            Image Format Converters
+          </h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Convert images between JPG, PNG, and WebP formats with professional quality. Server-side processing ensures consistent results and optimal compression.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+          <ToolCard
+            title="JPG to PNG Converter"
+            description="Convert JPEG images to PNG format with transparency support and lossless quality."
+            href="/image-converter/jpg-to-png"
+            delay={0.1}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            }
+          />
+
+          <ToolCard
+            title="JPG to WebP Converter"
+            description="Convert JPEG to modern WebP format for 25-35% smaller file sizes and faster loading."
+            href="/image-converter/jpg-to-webp"
+            delay={0.2}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            }
+          />
+
+          <ToolCard
+            title="PNG to JPG Converter"
+            description="Convert PNG to JPEG for significantly smaller file sizes and universal compatibility."
+            href="/image-converter/png-to-jpg"
+            delay={0.3}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            }
+          />
+
+          <ToolCard
+            title="PNG to WebP Converter"
+            description="Convert PNG to WebP format while preserving transparency and reducing file size."
+            href="/image-converter/png-to-webp"
+            delay={0.4}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+              </svg>
+            }
+          />
+
+          <ToolCard
+            title="WebP to JPG Converter"
+            description="Convert WebP to JPEG format for maximum compatibility across all devices and platforms."
+            href="/image-converter/webp-to-jpg"
+            delay={0.5}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+              </svg>
+            }
+          />
+
+          <ToolCard
+            title="WebP to PNG Converter"
+            description="Convert WebP to PNG format with preserved transparency and lossless quality."
+            href="/image-converter/webp-to-png"
+            delay={0.6}
+            icon={
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            }
           />
         </div>
       </section>

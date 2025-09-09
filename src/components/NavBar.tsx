@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Calculator, ChevronDown, Menu, Palette } from "lucide-react";
+import { Shield, Calculator, ChevronDown, Menu, Palette, ArrowLeftRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   DropdownMenu,
@@ -101,6 +101,34 @@ export default function NavBar() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/gpa-calculator">GPA Calculator</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
+                <ArrowLeftRight className="w-4 h-4" />
+                <span>Image Converters</span>
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/jpg-to-png">JPG to PNG</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/jpg-to-webp">JPG to WebP</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/png-to-jpg">PNG to JPG</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/png-to-webp">PNG to WebP</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/webp-to-jpg">WebP to JPG</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/image-converter/webp-to-png">WebP to PNG</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -240,6 +268,45 @@ export default function NavBar() {
                         <DropdownMenuItem asChild>
                           <Link href="/gpa-calculator" className="text-sm">
                             GPA Calculator
+                          </Link>
+                        </DropdownMenuItem>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-3">
+                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                        <ArrowLeftRight className="w-4 h-4" />
+                        <span>Image Converters</span>
+                      </div>
+                      <div className="space-y-1 pl-4">
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/jpg-to-png" className="text-sm">
+                            JPG to PNG
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/jpg-to-webp" className="text-sm">
+                            JPG to WebP
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/png-to-jpg" className="text-sm">
+                            PNG to JPG
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/png-to-webp" className="text-sm">
+                            PNG to WebP
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/webp-to-jpg" className="text-sm">
+                            WebP to JPG
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/image-converter/webp-to-png" className="text-sm">
+                            WebP to PNG
                           </Link>
                         </DropdownMenuItem>
                       </div>
