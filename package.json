@@ -7,7 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "npm rebuild sharp --platform=linux --arch=x64"
+    "postinstall": "npm install --os=linux --cpu=x64 sharp"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.16",
