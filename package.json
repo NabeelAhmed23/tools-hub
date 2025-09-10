@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint",
-    "postinstall": "npm install --os=linux --cpu=x64 sharp"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.16",
@@ -28,7 +27,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "recharts": "^3.1.2",
-    "sharp": "^0.34.3",
+    "sharp": "^0.32.4",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
