@@ -25,6 +25,13 @@ import {
 } from "lucide-react";
 import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   const websiteSchema = {
@@ -94,14 +101,84 @@ export default function Home() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-          Free Online Tools &
-          <span className="text-primary block mt-2">Security Utilities</span>
+          Professional Free Online Tools &
+          <span className="text-primary block mt-2">Educational Utilities</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Privacy-focused tools for security, encryption, and calculations. All
-          processing happens in your browser - your data never leaves your
-          device. Generate passwords, calculate BMI, convert units, compress images, and more with our comprehensive suite of free online tools.
+        <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6">
+          Professional online tools designed for security, calculations, image
+          processing, and data conversions. Each tool includes comprehensive
+          tutorials, step-by-step guides, and educational content to help you
+          understand both the process and the results. Privacy-focused design
+          ensures your data remains secure.
         </p>
+        <div className="max-w-4xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold mb-6 text-center">
+            What Makes ToolsHub Different?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Card className="gap-2">
+              <CardHeader>
+                <CardTitle className="text-lg font-medium text-primary flex items-center gap-2">
+                  <span aria-hidden="true">🎓</span>
+                  Educational Focus
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm">
+                  Every tool includes detailed explanations, use cases, and
+                  learning resources to help you understand the concepts behind
+                  the calculations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gap-2">
+              <CardHeader>
+                <CardTitle className="text-lg font-medium text-primary flex items-center gap-2">
+                  <span aria-hidden="true">🔒</span>
+                  Privacy-First Design
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm">
+                  Most processing happens in your browser. When server-side
+                  processing is used for performance, data is processed
+                  immediately and never stored.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gap-2">
+              <CardHeader>
+                <CardTitle className="text-lg font-medium text-primary flex items-center gap-2">
+                  <span aria-hidden="true">⚡</span>
+                  Professional Quality
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm">
+                  Built with modern web technologies and industry best practices
+                  to ensure accurate results and optimal performance.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gap-2">
+              <CardHeader>
+                <CardTitle className="text-lg font-medium text-primary flex items-center gap-2">
+                  <span aria-hidden="true">📚</span>
+                  Comprehensive Guides
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm">
+                  Step-by-step instructions, FAQ sections, and practical
+                  examples help you get the most out of each tool.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </motion.div>
 
       <section className="mb-16">
@@ -115,8 +192,15 @@ export default function Home() {
             <Shield className="w-8 h-8 text-primary" />
             <span>Security Tools</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Generate secure passwords, analyze password strength, create hash values, and encode data with our comprehensive security utilities. All processing happens locally in your browser for maximum privacy and security.
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Professional security tools designed for developers, IT
+            professionals, and security-conscious users. Generate
+            cryptographically secure passwords, analyze password strength with
+            detailed feedback, create hash values for data integrity, and safely
+            encode sensitive data. Each tool includes comprehensive educational
+            content explaining the underlying security concepts, best practices,
+            and real-world applications. All processing happens locally in your
+            browser for maximum privacy and security.
           </p>
         </motion.div>
 
@@ -198,8 +282,15 @@ export default function Home() {
             <Calculator className="w-8 h-8 text-primary" />
             <span>Calculators & Converters</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Essential calculation and conversion tools for daily use. Calculate BMI, age, loan EMI, convert currencies and units, determine percentages, and more. All calculations are performed instantly with accurate results and detailed explanations.
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Professional calculation and conversion tools for students,
+            professionals, and everyday users. Our comprehensive suite includes
+            health calculators (BMI, age), financial tools (loan EMI, currency
+            conversion), mathematical utilities (percentages, unit conversions),
+            and academic calculators (GPA). Each tool provides detailed
+            explanations of formulas, step-by-step calculations, and practical
+            examples to help you understand the methodology behind the results.
+            Perfect for learning and professional use.
           </p>
         </motion.div>
 
@@ -309,8 +400,16 @@ export default function Home() {
             <Palette className="w-8 h-8 text-primary" />
             <span>Design & Web Tools</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Professional design and web development tools for creators, developers, and designers. Pick and convert colors, compress and resize images, generate favicons, create CSS gradients, and browse emojis. All tools work offline with no file uploads required.
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Professional design and web development tools for creators,
+            developers, and designers. Our suite includes color manipulation
+            tools with format conversion, advanced image processing with
+            compression and format conversion, professional favicon generation
+            for web projects, CSS gradient creation, and emoji utilities. Each
+            tool provides educational content about design principles, web
+            standards, and optimization techniques. Advanced image tools use
+            server-side processing for professional-quality results while
+            maintaining privacy.
           </p>
         </motion.div>
 
@@ -368,7 +467,9 @@ export default function Home() {
             Image Format Converters
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Convert images between JPG, PNG, and WebP formats with professional quality. Server-side processing ensures consistent results and optimal compression.
+            Convert images between JPG, PNG, and WebP formats with professional
+            quality. Server-side processing ensures consistent results and
+            optimal compression.
           </p>
         </motion.div>
 
@@ -379,8 +480,18 @@ export default function Home() {
             href="/image-converter/jpg-to-png"
             delay={0.1}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
             }
           />
@@ -391,8 +502,18 @@ export default function Home() {
             href="/image-converter/jpg-to-webp"
             delay={0.2}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
               </svg>
             }
           />
@@ -403,9 +524,24 @@ export default function Home() {
             href="/image-converter/png-to-jpg"
             delay={0.3}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
               </svg>
             }
           />
@@ -416,8 +552,18 @@ export default function Home() {
             href="/image-converter/png-to-webp"
             delay={0.4}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                />
               </svg>
             }
           />
@@ -428,8 +574,18 @@ export default function Home() {
             href="/image-converter/webp-to-jpg"
             delay={0.5}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+                />
               </svg>
             }
           />
@@ -440,8 +596,18 @@ export default function Home() {
             href="/image-converter/webp-to-png"
             delay={0.6}
             icon={
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
               </svg>
             }
           />
@@ -452,26 +618,32 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="max-w-4xl mx-auto mb-8"
+        className="max-w-6xl mx-auto mb-16"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center">
+        <h2 className="text-3xl font-semibold mb-8 text-center">
           Why Choose ToolsHub?
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-6 h-6 text-primary" />
+            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <Shield className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-semibold mb-2">Privacy First</h3>
-            <p className="text-muted-foreground text-sm">
-              All tools run entirely in your browser using client-side JavaScript. Your sensitive data never leaves your device, ensuring complete privacy and security for personal information, passwords, and documents.
+            <h3 className="font-semibold mb-3 text-lg">
+              Privacy & Security First
+            </h3>
+            <p className="text-muted-foreground">
+              Most tools run entirely in your browser using client-side
+              processing. When server-side processing is used for performance
+              (like image tools), data is processed immediately and never
+              stored. Your sensitive information, passwords, and documents
+              remain completely private and secure.
             </p>
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-6 h-6 text-primary"
+                className="w-8 h-8 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -480,20 +652,26 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 />
               </svg>
             </div>
-            <h3 className="font-semibold mb-2">100% Free</h3>
-            <p className="text-muted-foreground text-sm">
-              No registration required, no hidden fees, no premium subscriptions. All tools are completely free to use with unlimited access. No credit card or personal information needed to get started.
+            <h3 className="font-semibold mb-3 text-lg">
+              Educational & Comprehensive
+            </h3>
+            <p className="text-muted-foreground">
+              Every tool includes detailed explanations, tutorials, and
+              educational content. Learn about the concepts, formulas, and best
+              practices behind each calculation. Perfect for students,
+              professionals, and anyone looking to understand the methodology
+              behind the results.
             </p>
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-6 h-6 text-primary"
+                className="w-8 h-8 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -506,10 +684,97 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <h3 className="font-semibold mb-2">Lightning Fast</h3>
-            <p className="text-muted-foreground text-sm">
-              Instant results with optimized, lightweight tools that load quickly and process data efficiently. No waiting for server responses or file uploads - everything happens immediately in your browser.
+            <h3 className="font-semibold mb-3 text-lg">
+              Professional Quality & Speed
+            </h3>
+            <p className="text-muted-foreground">
+              Built with modern web technologies and industry best practices.
+              Instant results with optimized, lightweight tools that deliver
+              professional-quality output. Advanced features like server-side
+              Sharp processing for images ensure the highest quality results.
             </p>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="bg-muted/30 rounded-2xl p-8">
+          <h2 className="text-3xl font-semibold mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left">
+                  Are these tools really free to use?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes, all tools on ToolsHub are completely free with no hidden
+                  costs, registration requirements, or premium subscriptions.
+                  You can use any tool unlimited times without providing
+                  personal information or payment details.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left">
+                  How do you ensure data privacy and security?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Most of our tools use client-side processing, meaning your
+                  data never leaves your browser. For tools requiring
+                  server-side processing (like image conversion), data is
+                  processed immediately and never stored on our servers. We
+                  follow privacy-by-design principles.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left">
+                  What makes ToolsHub different from other online tools?
+                </AccordionTrigger>
+                <AccordionContent>
+                  ToolsHub focuses on education and comprehensive guidance. Each
+                  tool includes detailed explanations, tutorials, and real-world
+                  examples. We prioritize professional quality, user privacy,
+                  and educational value over simple functionality.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left">
+                  Do I need to install anything to use these tools?
+                </AccordionTrigger>
+                <AccordionContent>
+                  No installation required. All tools work directly in your web
+                  browser on any device - desktop, tablet, or mobile. Simply
+                  visit the tool page and start using it immediately.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left">
+                  Are the calculations and results accurate?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes, all tools use industry-standard algorithms and formulas.
+                  We provide detailed explanations of the methodology and
+                  formulas used, allowing you to verify the accuracy and
+                  understand how results are calculated.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="text-left">
+                  Can I use these tools for professional or commercial purposes?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Absolutely! Our tools are designed for both personal and
+                  professional use. Many professionals, students, and businesses
+                  rely on ToolsHub for their daily calculations and conversions.
+                  All results are suitable for professional applications.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </motion.div>
