@@ -325,8 +325,8 @@ export default function PasswordStrengthChecker() {
                   <li className="flex items-start space-x-2">
                     <span className="text-red-600 font-bold">•</span>
                     <span>
-                      Avoid keyboard patterns like &qout;qwerty&qout; or
-                      &qout;123456&qout;
+Avoid keyboard patterns like &quot;qwerty&quot; or
+                      &quot;123456&quot;
                     </span>
                   </li>
                   <li className="flex items-start space-x-2">
