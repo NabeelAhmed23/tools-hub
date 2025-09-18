@@ -266,6 +266,7 @@ export default function FaviconGenerator() {
                   onChange={(e) =>
                     e.target.files && handleFileSelect(e.target.files[0])
                   }
+                  aria-label="Choose image file for favicon generation"
                   className="hidden"
                 />
               </div>
@@ -326,6 +327,7 @@ export default function FaviconGenerator() {
                     value={appName}
                     onChange={(e) => setAppName(e.target.value)}
                     placeholder="My Awesome App"
+                    aria-label="App name for PWA manifest"
                   />
                 </div>
 
@@ -338,6 +340,7 @@ export default function FaviconGenerator() {
                       type="color"
                       value={backgroundColor}
                       onChange={(e) => setBackgroundColor(e.target.value)}
+                      aria-label="Background color picker"
                       className="w-12 h-10 p-1 border rounded cursor-pointer"
                     />
                     <Input
@@ -345,6 +348,7 @@ export default function FaviconGenerator() {
                       value={backgroundColor}
                       onChange={(e) => setBackgroundColor(e.target.value)}
                       placeholder="#ffffff"
+                      aria-label="Background color hex code"
                       className="flex-1"
                     />
                   </div>
@@ -469,12 +473,14 @@ export default function FaviconGenerator() {
                 value={htmlSnippet}
                 readOnly
                 rows={12}
+                aria-label="HTML implementation code for favicon"
                 className="font-mono text-sm resize-none"
               />
               <Button
                 onClick={copyHtmlSnippet}
                 className="absolute top-2 right-2"
                 size="sm"
+                aria-label="Copy HTML implementation code"
               >
                 <Copy className="w-4 h-4" />
               </Button>

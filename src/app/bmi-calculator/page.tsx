@@ -158,6 +158,7 @@ export default function BMICalculator() {
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     className="flex-1"
+                    aria-label="Weight input"
                   />
                   <Select value={weightUnit} onValueChange={setWeightUnit}>
                     <SelectTrigger className="w-20">
@@ -180,6 +181,7 @@ export default function BMICalculator() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     className="flex-1"
+                    aria-label="Height input"
                   />
                   <Select value={heightUnit} onValueChange={setHeightUnit}>
                     <SelectTrigger className="w-20">

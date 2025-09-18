@@ -152,12 +152,14 @@ export default function PasswordGenerator() {
                 readOnly
                 className="font-mono text-lg"
                 placeholder="Click generate to create a password"
+                aria-label="Generated password"
               />
               <div className="flex space-x-2">
                 <CopyButton text={password} size="default" className="flex-1" />
                 <Button
                   variant="outline"
                   onClick={() => generatePassword(length, options)}
+                  aria-label="Generate new password"
                 >
                   <RefreshCw className="w-4 h-4" />
                 </Button>
@@ -209,15 +211,18 @@ export default function PasswordGenerator() {
                 value={length}
                 onChange={(e) => setLength(parseInt(e.target.value))}
                 className="w-full"
+                aria-label="Password length"
+                id="password-length-slider"
               />
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">
+                <label htmlFor="uppercase-switch" className="text-sm font-medium">
                   Include uppercase letters
                 </label>
                 <Switch
+                  id="uppercase-switch"
                   className="ml-4"
                   checked={options.includeUppercase}
                   onCheckedChange={(checked) =>
@@ -227,10 +232,11 @@ export default function PasswordGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">
+                <label htmlFor="lowercase-switch" className="text-sm font-medium">
                   Include lowercase letters
                 </label>
                 <Switch
+                  id="lowercase-switch"
                   className="ml-4"
                   checked={options.includeLowercase}
                   onCheckedChange={(checked) =>
@@ -240,8 +246,9 @@ export default function PasswordGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">Include numbers</label>
+                <label htmlFor="numbers-switch" className="text-sm font-medium">Include numbers</label>
                 <Switch
+                  id="numbers-switch"
                   className="ml-4"
                   checked={options.includeNumbers}
                   onCheckedChange={(checked) =>
@@ -251,8 +258,9 @@ export default function PasswordGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">Include symbols</label>
+                <label htmlFor="symbols-switch" className="text-sm font-medium">Include symbols</label>
                 <Switch
+                  id="symbols-switch"
                   className="ml-4"
                   checked={options.includeSymbols}
                   onCheckedChange={(checked) =>
@@ -262,10 +270,11 @@ export default function PasswordGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">
+                <label htmlFor="exclude-similar-switch" className="text-sm font-medium">
                   Exclude similar characters (i, l, 1, L, o, 0, O)
                 </label>
                 <Switch
+                  id="exclude-similar-switch"
                   className="ml-4"
                   checked={options.excludeSimilar}
                   onCheckedChange={(checked) =>
@@ -275,10 +284,11 @@ export default function PasswordGenerator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">
+                <label htmlFor="exclude-ambiguous-switch" className="text-sm font-medium">
                   Exclude ambiguous characters
                 </label>
                 <Switch
+                  id="exclude-ambiguous-switch"
                   className="ml-4"
                   checked={options.excludeAmbiguous}
                   onCheckedChange={(checked) =>
@@ -358,6 +368,42 @@ export default function PasswordGenerator() {
           <CardHeader>
             <CardTitle>
               <h2 className="text-xl font-semibold">
+                How to Use the Password Generator
+              </h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Click "Generate New Password" to create your first secure password instantly</li>
+                <li>Adjust the length slider to set your desired password length (8-64 characters)</li>
+                <li>Toggle character type options to include or exclude uppercase, lowercase, numbers, and symbols</li>
+                <li>Use "Exclude similar characters" to avoid confusing characters like 0, O, l, 1</li>
+                <li>Click the "Copy" button to copy your password to clipboard</li>
+                <li>Click the refresh icon to generate a new password with the same settings</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Understanding Password Strength</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                Our tool displays password entropy in bits, which measures unpredictability. Higher entropy means stronger security:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                <li>Very Weak (0-30 bits): Easily cracked in seconds</li>
+                <li>Weak (30-50 bits): Can be cracked in minutes to hours</li>
+                <li>Good (50-70 bits): Takes days to weeks to crack</li>
+                <li>Strong (70-90 bits): Takes years to crack</li>
+                <li>Very Strong (90+ bits): Takes centuries to crack</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">
                 How Our Password Generator Works
               </h2>
             </CardTitle>
@@ -370,7 +416,9 @@ export default function PasswordGenerator() {
                 cryptographically secure pseudorandom number generator (CSPRNG)
                 to ensure maximum randomness and security. This is the same
                 technology used by security professionals and cryptographic
-                applications.
+                applications. The Web Crypto API provides access to a
+                cryptographically strong random number generator that&apos;s
+                suitable for generating passwords, tokens, and other security-sensitive values.
               </p>
             </div>
             <div>
@@ -380,7 +428,9 @@ export default function PasswordGenerator() {
                 Higher entropy means a password is harder to crack. Our tool
                 calculates entropy based on character set size and password
                 length, helping you understand your password&apos;s true
-                strength.
+                strength. The formula is: entropy = log2(character_set_size^password_length).
+                For example, a 16-character password using all 94 printable ASCII characters
+                has approximately 105 bits of entropy.
               </p>
             </div>
             <div>
@@ -389,7 +439,9 @@ export default function PasswordGenerator() {
                 All password generation happens entirely in your browser using
                 client-side JavaScript. No passwords are ever transmitted to our
                 servers, logged, or stored anywhere. Your generated passwords
-                remain completely private and secure.
+                remain completely private and secure. This approach ensures that
+                even we cannot see or access your passwords, providing maximum
+                privacy and security for your sensitive data.
               </p>
             </div>
           </CardContent>

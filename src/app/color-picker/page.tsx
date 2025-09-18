@@ -66,6 +66,7 @@ export default function ColorPicker() {
       variant="outline"
       size="sm"
       onClick={() => copyToClipboard(text, format)}
+      aria-label={`Copy ${format.toUpperCase()} color code`}
       className="shrink-0"
     >
       {copiedFormat === format ? (
@@ -149,6 +150,7 @@ export default function ColorPicker() {
                   type="color"
                   value={color.hex}
                   onChange={(e) => updateColorFromHex(e.target.value)}
+                  aria-label="Color picker"
                   className="w-full h-12 rounded cursor-pointer border border-border"
                 />
               </div>
@@ -178,6 +180,7 @@ export default function ColorPicker() {
                       color.rgb.b
                     )
                   }
+                  aria-label="Red color value slider"
                   className="w-full h-2 bg-red-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
@@ -198,6 +201,7 @@ export default function ColorPicker() {
                       color.rgb.b
                     )
                   }
+                  aria-label="Green color value slider"
                   className="w-full h-2 bg-green-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
@@ -218,6 +222,7 @@ export default function ColorPicker() {
                       parseInt(e.target.value)
                     )
                   }
+                  aria-label="Blue color value slider"
                   className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
@@ -241,6 +246,7 @@ export default function ColorPicker() {
                   <Input
                     value={hexFormat}
                     onChange={(e) => updateColorFromHex(e.target.value)}
+                    aria-label="HEX color code input"
                     className="flex-1"
                   />
                   <CopyButton text={hexFormat} format="hex" />
@@ -250,7 +256,7 @@ export default function ColorPicker() {
               <div className="space-y-2">
                 <label className="text-sm font-medium">RGB</label>
                 <div className="flex gap-2">
-                  <Input value={rgbFormat} readOnly className="flex-1" />
+                  <Input value={rgbFormat} readOnly aria-label="RGB color code display" className="flex-1" />
                   <CopyButton text={rgbFormat} format="rgb" />
                 </div>
               </div>
@@ -258,7 +264,7 @@ export default function ColorPicker() {
               <div className="space-y-2">
                 <label className="text-sm font-medium">HSL</label>
                 <div className="flex gap-2">
-                  <Input value={hslFormat} readOnly className="flex-1" />
+                  <Input value={hslFormat} readOnly aria-label="HSL color code display" className="flex-1" />
                   <CopyButton text={hslFormat} format="hsl" />
                 </div>
               </div>
@@ -266,7 +272,7 @@ export default function ColorPicker() {
               <div className="space-y-2">
                 <label className="text-sm font-medium">CSS Variable</label>
                 <div className="flex gap-2">
-                  <Input value={cssVariable} readOnly className="flex-1" />
+                  <Input value={cssVariable} readOnly aria-label="CSS variable display" className="flex-1" />
                   <CopyButton text={cssVariable} format="css" />
                 </div>
               </div>
@@ -296,6 +302,7 @@ export default function ColorPicker() {
                       color.rgb.b
                     )
                   }
+                  aria-label="Red color value input"
                 />
               </div>
               <div className="space-y-2">
@@ -312,6 +319,7 @@ export default function ColorPicker() {
                       color.rgb.b
                     )
                   }
+                  aria-label="Green color value input"
                 />
               </div>
               <div className="space-y-2">
@@ -328,6 +336,7 @@ export default function ColorPicker() {
                       parseInt(e.target.value) || 0
                     )
                   }
+                  aria-label="Blue color value input"
                 />
               </div>
             </div>
@@ -405,6 +414,61 @@ export default function ColorPicker() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Color Picker</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Use the visual color picker to select a color by clicking on the color input</li>
+                <li>Adjust RGB values using the red, green, and blue sliders for precise control</li>
+                <li>Enter specific RGB values in the number inputs for exact color matching</li>
+                <li>Edit the HEX code directly in the HEX input field for web development</li>
+                <li>Copy any color format (HEX, RGB, HSL, CSS Variable) using the copy buttons</li>
+                <li>View real-time color preview and format conversions as you make changes</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Professional Design Applications</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                This color picker is essential for web designers, UI/UX professionals, digital artists, and developers who need precise color selection and conversion. Generate consistent color schemes, create CSS variables for design systems, and ensure color accessibility across different formats and platforms.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Color Theory and Web Design</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Understanding Color Formats</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Different color formats serve specific purposes in design and development. HEX codes are standard for web CSS, RGB values are ideal for digital displays and programming, HSL provides intuitive color adjustments, and CSS variables enable modern design system management with consistent color theming across applications.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Color Accessibility and Contrast</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                When selecting colors for web design, consider accessibility standards like WCAG guidelines for color contrast ratios. Use this tool to find colors that meet minimum contrast requirements for text readability, ensure your designs are inclusive for users with visual impairments, and create professional, accessible digital experiences.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Design System Integration</h3>
+              <p className="text-sm text-muted-foreground">
+                Generate CSS custom properties for modern design systems and component libraries. Copy color codes in the exact format needed for your project, maintain consistent branding across platforms, and streamline your design-to-development workflow with precise color specifications.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         <Alert className="mb-8">
           <Palette className="h-4 w-4" />

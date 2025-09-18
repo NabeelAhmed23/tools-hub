@@ -234,7 +234,7 @@ export default function MyIP() {
                         <label className="text-sm font-medium">
                           IPv4 Address
                         </label>
-                        {ipInfo.ip && <CopyButton text={ipInfo.ip} size="sm" />}
+                        {ipInfo.ip && <CopyButton text={ipInfo.ip} size="sm" aria-label="Copy IPv4 address" />}
                       </div>
                       <div className="p-3 bg-muted/20 rounded-lg font-mono text-lg">
                         {ipInfo.ip || "Not available"}
@@ -247,7 +247,7 @@ export default function MyIP() {
                           <label className="text-sm font-medium">
                             IPv6 Address
                           </label>
-                          <CopyButton text={ipInfo.ipv6} size="sm" />
+                          <CopyButton text={ipInfo.ipv6} size="sm" aria-label="Copy IPv6 address" />
                         </div>
                         <div className="p-3 bg-muted/20 rounded-lg font-mono text-sm break-all">
                           {ipInfo.ipv6}
@@ -387,7 +387,7 @@ export default function MyIP() {
                     <label className="text-sm font-medium text-muted-foreground">
                       Full User Agent
                     </label>
-                    <CopyButton text={ipInfo.userAgent} size="sm" />
+                    <CopyButton text={ipInfo.userAgent} size="sm" aria-label="Copy user agent string" />
                   </div>
                   <div className="p-3 bg-muted/20 rounded-lg font-mono text-xs break-all">
                     {ipInfo.userAgent}

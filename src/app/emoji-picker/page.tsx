@@ -172,6 +172,7 @@ export default function EmojiPicker() {
                     placeholder="Search emojis..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    aria-label="Search emojis by name or keyword"
                     className="pl-10"
                   />
                 </div>
@@ -230,6 +231,7 @@ export default function EmojiPicker() {
                   onChange={(e) => setTextArea(e.target.value)}
                   placeholder="Click emojis to add them here..."
                   rows={4}
+                  aria-label="Text composition area for emojis"
                   className="w-full p-2 border border-border rounded-md resize-none bg-background"
                 />
                 <div className="flex gap-2">

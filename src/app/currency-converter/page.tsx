@@ -202,6 +202,7 @@ export default function CurrencyConverter() {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   step="0.01"
+                  aria-label="Amount to convert"
                 />
               </div>
 
@@ -431,6 +432,67 @@ export default function CurrencyConverter() {
                   </div>
                 </Button>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use Our Currency Converter</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Enter the amount you want to convert in the "Amount" field</li>
+                <li>Select your source currency from the "From" dropdown menu</li>
+                <li>Choose your target currency from the "To" dropdown menu</li>
+                <li>Click the "Convert" button to see the converted amount</li>
+                <li>Use the "Swap" button to quickly reverse currency pairs</li>
+                <li>Click "Reset" to clear all fields and start over</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Currency Selection Features</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Our converter organizes currencies into popular and comprehensive sections. Popular currencies like USD, EUR, GBP, and JPY are listed first for quick access. The complete list includes over 180 world currencies, sorted alphabetically for easy browsing.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Benefits and Use Cases</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Travel Planning</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Perfect for international travelers who need to budget expenses in foreign currencies. Calculate costs for hotels, meals, and activities before your trip to avoid surprises and manage your travel budget effectively.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">International Business</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Essential for businesses dealing with international suppliers, customers, or partners. Quickly estimate costs, pricing, and profits when working with multiple currencies in global trade operations.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Investment Analysis</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Useful for investors tracking international stocks, bonds, or cryptocurrency values. Convert investment amounts to understand real value in your home currency and make informed financial decisions.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Educational Purposes</h3>
+              <p className="text-sm text-muted-foreground">
+                Great for students learning about global economics, exchange rates, and international finance. Understand how currency values fluctuate and impact international trade and economic relationships.
+              </p>
             </div>
           </CardContent>
         </Card>

@@ -34,13 +34,17 @@ export default function NavBar() {
             </motion.div>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-6">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
-                <Shield className="w-4 h-4" />
-                <span>Security Tools</span>
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
+          <ul role="menubar" className="hidden md:flex items-center space-x-6">
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Security Tools menu"
+                >
+                  <Shield className="w-4 h-4" />
+                  <span>Security Tools</span>
+                  <ChevronDown className="w-4 h-4" />
+                </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
                   <Link href="/password-generator">Password Generator</Link>
@@ -69,14 +73,19 @@ export default function NavBar() {
                   <Link href="/my-ip">What&apos;s My IP</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+              </DropdownMenu>
+            </li>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
-                <Calculator className="w-4 h-4" />
-                <span>Calculators</span>
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Calculators menu"
+                >
+                  <Calculator className="w-4 h-4" />
+                  <span>Calculators</span>
+                  <ChevronDown className="w-4 h-4" />
+                </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
                   <Link href="/bmi-calculator">BMI Calculator</Link>
@@ -103,14 +112,19 @@ export default function NavBar() {
                   <Link href="/gpa-calculator">GPA Calculator</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+              </DropdownMenu>
+            </li>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
-                <ArrowLeftRight className="w-4 h-4" />
-                <span>Image Converters</span>
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Image Converters menu"
+                >
+                  <ArrowLeftRight className="w-4 h-4" />
+                  <span>Image Converters</span>
+                  <ChevronDown className="w-4 h-4" />
+                </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
                   <Link href="/image-converter/jpg-to-png">JPG to PNG</Link>
@@ -131,14 +145,19 @@ export default function NavBar() {
                   <Link href="/image-converter/webp-to-png">WebP to PNG</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+              </DropdownMenu>
+            </li>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
-                <Palette className="w-4 h-4" />
-                <span>Creative</span>
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Creative tools menu"
+                >
+                  <Palette className="w-4 h-4" />
+                  <span>Creative</span>
+                  <ChevronDown className="w-4 h-4" />
+                </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
                   <Link href="/color-picker">Color Picker</Link>
@@ -156,8 +175,9 @@ export default function NavBar() {
                   <Link href="/emoji-picker">Emoji Picker</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+              </DropdownMenu>
+            </li>
+          </ul>
 
           <div className="flex items-center space-x-4">
             <ThemeToggle />
@@ -172,12 +192,12 @@ export default function NavBar() {
                   sideOffset={8}
                 >
                   <div className="p-2">
-                    <div className="mb-3">
-                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                    <section className="mb-3">
+                      <header className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
                         <Shield className="w-4 h-4" />
                         <span>Security Tools</span>
-                      </div>
-                      <div className="space-y-1 pl-4">
+                      </header>
+                      <nav className="space-y-1 pl-4">
                         <DropdownMenuItem asChild>
                           <Link href="/password-generator" className="text-sm">
                             Password Generator
@@ -221,15 +241,15 @@ export default function NavBar() {
                             What&apos;s My IP
                           </Link>
                         </DropdownMenuItem>
-                      </div>
-                    </div>
+                      </nav>
+                    </section>
 
-                    <div className="border-t pt-3">
-                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                    <section className="border-t pt-3">
+                      <header className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
                         <Calculator className="w-4 h-4" />
                         <span>Calculators</span>
-                      </div>
-                      <div className="space-y-1 pl-4">
+                      </header>
+                      <nav className="space-y-1 pl-4">
                         <DropdownMenuItem asChild>
                           <Link href="/bmi-calculator" className="text-sm">
                             BMI Calculator
@@ -270,15 +290,15 @@ export default function NavBar() {
                             GPA Calculator
                           </Link>
                         </DropdownMenuItem>
-                      </div>
-                    </div>
+                      </nav>
+                    </section>
 
-                    <div className="border-t pt-3">
-                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                    <section className="border-t pt-3">
+                      <header className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
                         <ArrowLeftRight className="w-4 h-4" />
                         <span>Image Converters</span>
-                      </div>
-                      <div className="space-y-1 pl-4">
+                      </header>
+                      <nav className="space-y-1 pl-4">
                         <DropdownMenuItem asChild>
                           <Link href="/image-converter/jpg-to-png" className="text-sm">
                             JPG to PNG
@@ -309,15 +329,15 @@ export default function NavBar() {
                             WebP to PNG
                           </Link>
                         </DropdownMenuItem>
-                      </div>
-                    </div>
+                      </nav>
+                    </section>
 
-                    <div className="border-t pt-3">
-                      <div className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
+                    <section className="border-t pt-3">
+                      <header className="flex items-center space-x-2 text-sm font-medium text-foreground mb-2">
                         <Palette className="w-4 h-4" />
                         <span>Creative</span>
-                      </div>
-                      <div className="space-y-1 pl-4">
+                      </header>
+                      <nav className="space-y-1 pl-4">
                         <DropdownMenuItem asChild>
                           <Link href="/color-picker" className="text-sm">
                             Color Picker
@@ -343,8 +363,8 @@ export default function NavBar() {
                             Emoji Picker
                           </Link>
                         </DropdownMenuItem>
-                      </div>
-                    </div>
+                      </nav>
+                    </section>
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>

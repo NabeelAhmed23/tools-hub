@@ -177,6 +177,7 @@ export default function QRGenerator() {
                   placeholder="Enter text, URL, email, phone number, or any data..."
                   className="min-h-32"
                   rows={6}
+                  aria-label="QR code content input"
                 />
                 <div className="text-xs text-muted-foreground">
                   {text.length} characters
@@ -376,6 +377,99 @@ export default function QRGenerator() {
                     tel:+1-555-123-4567
                   </code>
                 </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>How to Use the QR Code Generator</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Step-by-Step Instructions</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Enter your content in the text area - this can be any text, URL, email, phone number, or formatted data</li>
+                <li>Choose your preferred QR code size from 128px to 1024px based on where you&apos;ll use it</li>
+                <li>Select error correction level: Low for clean environments, High for damaged or dirty surfaces</li>
+                <li>Preview your QR code in real-time as you type or adjust settings</li>
+                <li>Download your QR code as PNG for web use or SVG for scalable printing</li>
+                <li>Test your QR code with multiple devices before using in production</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Advanced Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                <li><strong>Multiple Formats:</strong> Support for URLs, emails, phone numbers, WiFi credentials, and plain text</li>
+                <li><strong>Error Correction:</strong> Choose from Low (7%), Medium (15%), Quartile (25%), or High (30%) correction levels</li>
+                <li><strong>High Resolution:</strong> Generate QR codes up to 1024px for professional printing applications</li>
+                <li><strong>Real-time Preview:</strong> See your QR code update instantly as you type or change settings</li>
+                <li><strong>Multiple Download Options:</strong> PNG for web use and SVG for vector graphics and scalable printing</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Benefits and Use Cases</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Key Benefits</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Marketing Efficiency:</strong> Bridge physical and digital marketing by adding QR codes to brochures, business cards, and advertisements</li>
+                <li><strong>Contactless Sharing:</strong> Share WiFi passwords, contact information, and website links without typing or verbal communication</li>
+                <li><strong>Professional Branding:</strong> Create consistent, high-quality QR codes that maintain your brand&apos;s professional appearance</li>
+                <li><strong>Cross-Platform Compatibility:</strong> QR codes work on all modern smartphones and devices without requiring specific apps</li>
+                <li><strong>Privacy Protection:</strong> All QR code generation happens locally in your browser - no data is sent to external servers</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Real-World Applications</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Business Cards:</strong> Include contact information, LinkedIn profiles, or portfolio websites for instant networking</li>
+                <li><strong>Restaurant Menus:</strong> Create touchless menu access for customers using their smartphones</li>
+                <li><strong>Event Management:</strong> Share event details, registration links, or location information with attendees</li>
+                <li><strong>Product Packaging:</strong> Link to user manuals, warranty information, or customer support resources</li>
+                <li><strong>Real Estate:</strong> Provide property details, virtual tours, or contact information on signs and flyers</li>
+                <li><strong>Educational Materials:</strong> Link to additional resources, videos, or interactive content in textbooks and handouts</li>
+                <li><strong>WiFi Sharing:</strong> Allow guests to connect to your network instantly without sharing passwords verbally</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">What&apos;s the difference between error correction levels?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Error correction allows QR codes to be read even when partially damaged. Low (7%) is suitable for clean digital displays, Medium (15%) for normal printing, Quartile (25%) for outdoor use, and High (30%) for surfaces that may get dirty or damaged. Higher correction means larger QR codes.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">What&apos;s the maximum amount of data I can encode?</h3>
+                <p className="text-sm text-muted-foreground">
+                  QR codes can store up to 4,296 alphanumeric characters or 7,089 numeric characters. However, more data creates denser, harder-to-scan codes. For best results, keep URLs under 100 characters and use URL shorteners for longer links.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">Should I choose PNG or SVG format?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use PNG for web display, social media, and digital screens where file size matters. Choose SVG for printing, business cards, and situations where you need to scale the QR code to different sizes without quality loss. SVG files are vector-based and infinitely scalable.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">How do I create a WiFi QR code?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Use this format: WIFI:T:WPA;S:NetworkName;P:password;; Replace &quot;WPA&quot; with your security type (WPA, WEP, or leave blank for open), &quot;NetworkName&quot; with your WiFi name, and &quot;password&quot; with your WiFi password. The double semicolon at the end is required.
+                </p>
               </div>
             </div>
           </CardContent>

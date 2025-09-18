@@ -158,6 +158,7 @@ export default function LoanCalculator() {
                 <Input
                   type="number"
                   placeholder="Enter loan amount"
+                  aria-label="Loan amount in dollars"
                   value={loanAmount}
                   onChange={(e) => setLoanAmount(e.target.value)}
                   step="1000"
@@ -171,6 +172,7 @@ export default function LoanCalculator() {
                 <Input
                   type="number"
                   placeholder="Enter interest rate"
+                  aria-label="Annual interest rate percentage"
                   value={interestRate}
                   onChange={(e) => setInterestRate(e.target.value)}
                   step="0.1"
@@ -184,6 +186,7 @@ export default function LoanCalculator() {
                 <Input
                   type="number"
                   placeholder="Enter tenure"
+                  aria-label="Loan tenure period"
                   value={tenure}
                   onChange={(e) => setTenure(e.target.value)}
                 />
@@ -354,9 +357,72 @@ export default function LoanCalculator() {
           </motion.div>
         )}
 
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Loan Calculator</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Enter the total loan amount you need to borrow in dollars</li>
+                <li>Input the annual interest rate offered by your lender (as a percentage)</li>
+                <li>Specify the loan tenure (duration) in years or months</li>
+                <li>Select whether your tenure is in years or months from the dropdown</li>
+                <li>Click "Calculate EMI" to see your monthly payment and loan breakdown</li>
+                <li>Review the visual charts and detailed breakdown for complete analysis</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Understanding the Results</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                The calculator provides your monthly EMI, total interest payable, and total payment amount. The pie chart shows the proportion of principal versus interest in your total payment, helping you understand the true cost of borrowing.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Loan Types and Applications</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Home Loans and Mortgages</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Calculate EMI for home loans, mortgages, and property purchases. Compare different loan terms and interest rates to find the most affordable monthly payment that fits your budget and long-term financial planning.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Personal Loans</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Evaluate personal loan options for debt consolidation, medical expenses, education, or major purchases. Understand the total cost of borrowing and plan your repayment strategy effectively.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Auto Loans and Vehicle Financing</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Calculate car loan EMI for new or used vehicle purchases. Compare different financing options from dealers, banks, and credit unions to secure the best terms for your automotive financing needs.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Business and Commercial Loans</h3>
+              <p className="text-sm text-muted-foreground">
+                Plan business expansion, equipment purchases, or working capital needs with accurate EMI calculations. Essential for cash flow planning and determining the impact of loan payments on business operations.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
-            <CardTitle>About EMI Calculation</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About EMI Calculation</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

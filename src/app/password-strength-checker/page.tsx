@@ -135,6 +135,8 @@ export default function PasswordStrengthChecker() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="pr-12"
+                aria-label="Password to analyze"
+                aria-describedby="password-analysis"
               />
               <Button
                 type="button"
@@ -142,6 +144,7 @@ export default function PasswordStrengthChecker() {
                 size="sm"
                 className="absolute right-0 top-0 h-full px-3 py-2"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
               >
                 {showPassword ? (
                   <EyeOff className="h-4 w-4" />

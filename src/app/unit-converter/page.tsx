@@ -284,12 +284,13 @@ export default function UnitConverter() {
                           <Input
                             type="number"
                             placeholder="Enter value"
+                            aria-label="Value to convert from"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             className="flex-1"
                           />
                           <Select value={fromUnit} onValueChange={setFromUnit}>
-                            <SelectTrigger className="w-32">
+                            <SelectTrigger className="w-32" aria-label="Select unit to convert from">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
@@ -314,10 +315,11 @@ export default function UnitConverter() {
                             value={result}
                             readOnly
                             placeholder="Result"
+                            aria-label="Converted result value"
                             className="flex-1 bg-muted/50"
                           />
                           <Select value={toUnit} onValueChange={setToUnit}>
-                            <SelectTrigger className="w-32">
+                            <SelectTrigger className="w-32" aria-label="Select unit to convert to">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
@@ -390,9 +392,79 @@ export default function UnitConverter() {
           </CardContent>
         </Card>
 
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Unit Converter</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Select the category of units you want to convert (Length, Weight, Temperature, Speed, or Volume)</li>
+                <li>Enter the value you want to convert in the "From" input field</li>
+                <li>Choose the source unit from the dropdown menu next to the input</li>
+                <li>Select the target unit from the "To" dropdown menu</li>
+                <li>The conversion result appears automatically in real-time</li>
+                <li>Use "Swap Units" to quickly reverse the conversion direction</li>
+                <li>Click "Reset" to clear all values and start over</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Understanding Conversion Results</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                All conversions are performed using internationally recognized conversion factors and precise mathematical formulas. Results are displayed with up to 6 decimal places for maximum accuracy. Temperature conversions use special formulas to properly convert between Celsius, Fahrenheit, and Kelvin scales.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Conversion Categories and Applications</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Length and Distance Measurements</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Convert between metric units (millimeters, centimeters, meters, kilometers) and imperial units (inches, feet, yards, miles). Essential for construction projects, engineering calculations, travel planning, and everyday measurements. Supports precise conversions for both short distances and long geographical measurements.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Weight and Mass Conversions</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Handle weight conversions between metric system (milligrams, grams, kilograms, metric tons) and imperial system (ounces, pounds, stones). Perfect for cooking recipes, shipping calculations, fitness tracking, scientific experiments, and international commerce where different weight standards are used.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Temperature Scale Conversions</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Convert between Celsius, Fahrenheit, and Kelvin temperature scales using precise mathematical formulas. Essential for weather forecasting, cooking temperatures, scientific research, HVAC systems, and international temperature reporting. Handles both positive and negative temperatures accurately.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Speed and Velocity Measurements</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Convert between different speed units including meters per second, kilometers per hour, miles per hour, feet per second, and knots. Useful for automotive applications, aviation calculations, maritime navigation, sports performance analysis, and physics calculations.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Volume and Capacity Conversions</h3>
+              <p className="text-sm text-muted-foreground">
+                Handle liquid and dry volume conversions between metric units (milliliters, liters, cubic meters) and US customary units (fluid ounces, cups, pints, quarts, gallons). Perfect for cooking measurements, fuel calculations, chemical solutions, and container capacity planning.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
-            <CardTitle>About Unit Conversion</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About Unit Conversion</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

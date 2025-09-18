@@ -187,6 +187,7 @@ export default function PercentageCalculator() {
                         <Input
                           type="number"
                           placeholder="Enter percentage"
+                          aria-label="Percentage value"
                           value={percentValue}
                           onChange={(e) => setPercentValue(e.target.value)}
                         />
@@ -196,6 +197,7 @@ export default function PercentageCalculator() {
                         <Input
                           type="number"
                           placeholder="Enter base number"
+                          aria-label="Base number for percentage calculation"
                           value={baseValue}
                           onChange={(e) => setBaseValue(e.target.value)}
                         />
@@ -431,9 +433,69 @@ export default function PercentageCalculator() {
           </Card>
         </div>
 
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Percentage Calculator</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Three Calculation Types</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li><strong>Find Percentage:</strong> Enter a percentage and base number to calculate the result (e.g., 25% of 200)</li>
+                <li><strong>Percentage Change:</strong> Enter original and new values to find the percentage increase or decrease</li>
+                <li><strong>Discount Calculator:</strong> Enter original price and discount percentage to find final price and savings</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Select the appropriate tab based on your calculation needs, enter the required values in the input fields, and click the calculate button. Results are displayed instantly with detailed explanations and visual formatting.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Applications and Use Cases</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Business and Finance</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Calculate profit margins, commission rates, tax amounts, and investment returns. Essential for financial analysis, budgeting, and business planning. Determine percentage-based fees, interest calculations, and financial ratios.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Sales and Marketing</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Calculate discount amounts for promotions, determine markup percentages, and analyze sales performance. Perfect for pricing strategies, promotional campaigns, and revenue analysis.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Academic and Statistics</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Convert test scores to percentages, calculate grade distributions, and analyze statistical data. Useful for educational assessments, research data analysis, and academic performance tracking.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Personal Finance</h3>
+              <p className="text-sm text-muted-foreground">
+                Calculate tips at restaurants, determine savings percentages, analyze expense ratios, and track budget allocations. Helpful for personal budgeting, expense tracking, and financial goal planning.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
-            <CardTitle>About Percentage Calculations</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About Percentage Calculations</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

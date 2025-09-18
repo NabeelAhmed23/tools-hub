@@ -155,6 +155,7 @@ export default function DateDifferenceCalculator() {
                 <div className="flex space-x-2">
                   <Input
                     type="date"
+                    aria-label="Start date selection"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
                     className="flex-1"
@@ -175,6 +176,7 @@ export default function DateDifferenceCalculator() {
                 <div className="flex space-x-2">
                   <Input
                     type="date"
+                    aria-label="End date selection"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
                     min={startDate}
@@ -392,6 +394,67 @@ export default function DateDifferenceCalculator() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Date Difference Calculator</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Select your start date using the date picker or click "Today" for the current date</li>
+                <li>Choose your end date (must be after the start date)</li>
+                <li>Click "Calculate Difference" to see the results</li>
+                <li>Review the primary difference in years, months, and days</li>
+                <li>Check the total differences in various time units</li>
+                <li>View the detailed summary with formatted dates</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Understanding the Results</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                The calculator provides two types of results: the primary difference breaks down the time span into exact years, months, and days, while the total differences show the complete duration in single units like total days, weeks, hours, minutes, and seconds.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Benefits and Applications</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Personal Life Planning</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Calculate important personal milestones like exact age, relationship anniversaries, or time since significant life events. Perfect for tracking personal goals, celebrating milestones, and planning future events with precise timing.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Professional Project Management</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Essential for project managers to calculate exact project durations, sprint lengths, and milestone timing. Helps in creating accurate timelines, estimating work periods, and tracking project progress with precision.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Legal and Financial Applications</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Useful for calculating employment periods, contract durations, loan terms, and legal timeframes. Provides exact calculations needed for official documentation, compliance reporting, and financial planning.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Historical Research</h3>
+              <p className="text-sm text-muted-foreground">
+                Perfect for researchers, students, and history enthusiasts who need to calculate time periods between historical events. Accurately handles leap years and calendar changes for precise historical analysis.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         <Card>
           <CardHeader>

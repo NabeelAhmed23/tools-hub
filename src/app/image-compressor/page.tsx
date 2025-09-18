@@ -254,6 +254,7 @@ export default function ImageCompressor() {
                   onChange={(e) =>
                     e.target.files && handleFileSelect(e.target.files[0])
                   }
+                  aria-label="Choose image file to compress"
                   className="hidden"
                 />
               </div>
@@ -295,6 +296,7 @@ export default function ImageCompressor() {
                           quality: parseFloat(e.target.value),
                         }))
                       }
+                      aria-label="Image quality slider"
                       className={`w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer ${
                         settings.format === "png"
                           ? "opacity-50 cursor-not-allowed"
@@ -318,6 +320,7 @@ export default function ImageCompressor() {
                           maxWidth: e.target.value,
                         }))
                       }
+                      aria-label="Maximum width in pixels"
                     />
                   </div>
 
@@ -335,6 +338,7 @@ export default function ImageCompressor() {
                           maxHeight: e.target.value,
                         }))
                       }
+                      aria-label="Maximum height in pixels"
                     />
                   </div>
 
@@ -350,6 +354,7 @@ export default function ImageCompressor() {
                           format: e.target.value as "jpeg" | "png" | "webp",
                         }))
                       }
+                      aria-label="Output image format"
                       className="w-full p-2 border border-border rounded-md bg-background"
                     >
                       <option value="jpeg">JPEG</option>
@@ -503,6 +508,96 @@ export default function ImageCompressor() {
             </div>
           </>
         )}
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the Image Compressor</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Upload your image by dragging and dropping it onto the upload area or clicking "Choose Image"</li>
+                <li>Adjust the quality slider to control compression level (lower quality = smaller file size)</li>
+                <li>Set maximum width and height dimensions if you need to resize the image</li>
+                <li>Choose your preferred output format: JPEG for photos, PNG for graphics with transparency, WebP for best compression</li>
+                <li>Click "Compress Image" to process your file using advanced client-side algorithms</li>
+                <li>Compare the original and compressed versions side by side with detailed statistics</li>
+                <li>Download your optimized image when satisfied with the results</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Compression Benefits and Applications</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Image compression is essential for web optimization, email attachments, social media uploads, and storage management. Our tool reduces file sizes by up to 80% while maintaining visual quality, helping you save bandwidth, improve website loading times, and optimize storage space across all your digital platforms.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Image Format Guide and Best Practices</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">JPEG Format - Best for Photographs</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                JPEG is ideal for photographs and images with many colors and gradients. It uses lossy compression that significantly reduces file sizes while maintaining acceptable quality for most use cases. Perfect for website images, social media photos, and email attachments where file size matters more than perfect quality.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">PNG Format - Best for Graphics and Transparency</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                PNG uses lossless compression and supports transparency, making it perfect for logos, icons, graphics with text, and images requiring transparent backgrounds. While file sizes are typically larger than JPEG, PNG preserves every pixel of the original image without quality loss.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">WebP Format - Modern Web Standard</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                WebP provides superior compression compared to both JPEG and PNG, typically reducing file sizes by 25-35% while maintaining equivalent quality. It supports both lossy and lossless compression plus transparency, making it excellent for modern web applications and progressive web apps.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Quality Settings and Optimization Tips</h3>
+              <p className="text-sm text-muted-foreground">
+                Quality settings between 70-90% typically provide the best balance of file size and visual quality for most images. For web use, aim for quality levels that keep individual images under 1MB. Use dimensions settings to resize large images before compression for maximum file size reduction.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Privacy and Security Features</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Client-Side Processing</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                All image compression and resizing happens directly in your browser using advanced HTML5 Canvas and Web APIs. Your images never leave your device, ensuring complete privacy and security. No uploads to external servers means no risk of data breaches or unauthorized access to your files.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">No Registration or Storage Required</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Use our image compressor immediately without creating accounts or providing personal information. We don't store, cache, or track any of your images or usage patterns. Process unlimited images with complete anonymity and peace of mind.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Professional Quality Results</h3>
+              <p className="text-sm text-muted-foreground">
+                Our compression algorithms use industry-standard techniques to ensure optimal results for both web and print applications. Advanced quality controls allow fine-tuning for specific use cases, whether you need maximum compression for web delivery or minimal quality loss for professional photography.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         <Alert className="mb-8">
           <ImageIcon className="h-4 w-4" />

@@ -156,6 +156,7 @@ export default function AgeCalculator() {
                   value={birthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   max={new Date().toISOString().split("T")[0]}
+                  aria-label="Date of birth"
                 />
               </div>
             </div>

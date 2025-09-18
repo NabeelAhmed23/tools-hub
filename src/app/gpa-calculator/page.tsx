@@ -281,6 +281,7 @@ export default function GPACalculator() {
                     </label>
                     <Input
                       placeholder="e.g., Mathematics"
+                      aria-label="Subject name"
                       value={subject.name}
                       onChange={(e) =>
                         updateSubject(subject.id, "name", e.target.value)
@@ -296,6 +297,7 @@ export default function GPACalculator() {
                       type="number"
                       min="1"
                       max="10"
+                      aria-label="Credit hours for this subject"
                       value={subject.credits}
                       onChange={(e) =>
                         updateSubject(
@@ -337,6 +339,7 @@ export default function GPACalculator() {
                     <Button
                       variant="outline"
                       size="sm"
+                      aria-label="Remove this subject"
                       onClick={() => removeSubject(subject.id)}
                       disabled={subjects.length <= 1}
                       className="w-full"
@@ -531,9 +534,72 @@ export default function GPACalculator() {
           </Card>
         </div>
 
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the GPA Calculator</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Choose your grading system (Letter Grades A-F or Numeric Grades 0-100)</li>
+                <li>Enter the subject name for each course you want to include</li>
+                <li>Input the credit hours for each subject (typically 1-6 credits per course)</li>
+                <li>Select the grade you received for each subject from the dropdown</li>
+                <li>Add more subjects using the "Add Subject" button as needed</li>
+                <li>Click "Calculate GPA" to see your Grade Point Average</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Understanding Credit Hours</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Credit hours represent the academic weight of each course. Most standard courses are worth 3-4 credit hours, while labs, seminars, or intensive courses may vary. Higher credit courses have more impact on your overall GPA calculation.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Benefits and Applications</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Academic Planning</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Plan your course selections strategically by calculating potential GPA outcomes. Understand how different grade scenarios will impact your cumulative GPA and make informed decisions about course difficulty and workload.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Scholarship and Honor Requirements</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Many scholarships, honor societies, and academic programs require specific GPA thresholds. Use this calculator to track your progress toward these goals and maintain eligibility for academic recognition and financial aid.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Graduate School Preparation</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Graduate programs often have minimum GPA requirements for admission. Calculate your current standing and plan remaining coursework to meet competitive GPA standards for your target programs.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Academic Standing Monitoring</h3>
+              <p className="text-sm text-muted-foreground">
+                Stay informed about your academic standing to avoid probation and maintain good standing. Early GPA monitoring helps identify when additional academic support or study strategies may be needed.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
-            <CardTitle>About GPA Calculation</CardTitle>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">About GPA Calculation</h2>
+            </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
             <p>

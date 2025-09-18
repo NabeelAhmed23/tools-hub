@@ -156,6 +156,7 @@ export default function HashGenerator() {
               placeholder="Enter your text here..."
               className="min-h-32 font-mono"
               rows={6}
+              aria-label="Text input for hash generation"
             />
 
             <div className="flex space-x-4">
@@ -257,6 +258,37 @@ export default function HashGenerator() {
 
         <Card className="mb-8">
           <CardHeader>
+            <CardTitle>How to Use the Hash Generator Tool</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Step-by-Step Instructions</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Enter or paste your text into the input field above</li>
+                <li>Click the "Generate Hashes" button to create hash values for all four algorithms</li>
+                <li>Select the desired hash algorithm tab (MD5, SHA-1, SHA-256, or SHA-512) to view specific results</li>
+                <li>Review the algorithm information including output size and security considerations</li>
+                <li>Click the copy button next to any hash value to copy it to your clipboard</li>
+                <li>Use "Clear All" to reset the input and start with new text</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Why Choose Different Hash Algorithms?</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                Each hash algorithm serves different purposes based on security requirements and compatibility needs:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                <li><strong>SHA-256:</strong> Recommended for modern security applications, blockchain, and general-purpose hashing</li>
+                <li><strong>SHA-512:</strong> Higher security level with longer hash output, ideal for high-security applications</li>
+                <li><strong>MD5:</strong> Legacy support only - use for non-security purposes like file integrity checks</li>
+                <li><strong>SHA-1:</strong> Transitional use where legacy compatibility is required but being phased out</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
             <CardTitle>About Hash Functions</CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none">
@@ -301,6 +333,68 @@ export default function HashGenerator() {
                   sent to our servers.
                 </AlertDescription>
               </Alert>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Benefits and Use Cases</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Key Benefits</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Data Integrity:</strong> Verify that data hasn't been altered or corrupted during transmission or storage</li>
+                <li><strong>Security Applications:</strong> Generate unique fingerprints for passwords, digital signatures, and authentication systems</li>
+                <li><strong>Multiple Algorithms:</strong> Support for MD5, SHA-1, SHA-256, and SHA-512 for various compatibility requirements</li>
+                <li><strong>Privacy Protection:</strong> All processing happens locally in your browser - no data is transmitted to our servers</li>
+                <li><strong>Instant Results:</strong> Generate hash values immediately without waiting for server processing</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Real-World Applications</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Software Development:</strong> Generate checksums for file integrity verification and version control</li>
+                <li><strong>Digital Forensics:</strong> Create unique identifiers for evidence files and maintain chain of custody</li>
+                <li><strong>Blockchain Development:</strong> Generate SHA-256 hashes for cryptocurrency transactions and smart contracts</li>
+                <li><strong>Password Security:</strong> Create secure hash values for password storage systems (with proper salting)</li>
+                <li><strong>Data Deduplication:</strong> Identify duplicate files by comparing hash values instead of entire file contents</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">What's the difference between hash algorithms?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Different hash algorithms produce different output lengths and security levels. SHA-256 (256 bits) and SHA-512 (512 bits) are currently considered secure, while MD5 (128 bits) and SHA-1 (160 bits) are deprecated for security applications due to vulnerability discoveries.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">Can I reverse a hash to get the original text?</h3>
+                <p className="text-sm text-muted-foreground">
+                  No, hash functions are designed to be one-way. It's computationally infeasible to reverse a hash back to its original input. However, identical inputs will always produce identical hashes, which is why rainbow table attacks exist for common passwords.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">Which hash algorithm should I use?</h3>
+                <p className="text-sm text-muted-foreground">
+                  For security applications, use SHA-256 or SHA-512. For legacy compatibility where security isn't critical, MD5 may be acceptable. Avoid using MD5 or SHA-1 for new security-sensitive applications as they have known vulnerabilities.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Is this tool secure for sensitive data?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, all hash generation happens locally in your browser using JavaScript. Your input text never leaves your device and is not sent to our servers. However, avoid hashing highly sensitive information like passwords without proper salting.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>

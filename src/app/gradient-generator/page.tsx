@@ -215,6 +215,7 @@ export default function GradientGenerator() {
                       max="360"
                       value={angle}
                       onChange={(e) => setAngle(parseInt(e.target.value))}
+                      aria-label="Gradient angle slider"
                       className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
@@ -231,6 +232,7 @@ export default function GradientGenerator() {
                     size="sm"
                     onClick={addColorStop}
                     disabled={colorStops.length >= 6}
+                    aria-label="Add color stop"
                   >
                     <Plus className="w-4 h-4" />
                   </Button>
@@ -250,6 +252,7 @@ export default function GradientGenerator() {
                         onChange={(e) =>
                           updateColorStop(index, { color: e.target.value })
                         }
+                        aria-label={`Color picker for stop ${index + 1}`}
                         className="w-12 h-8 rounded cursor-pointer border border-border"
                       />
 
@@ -260,6 +263,7 @@ export default function GradientGenerator() {
                           onChange={(e) =>
                             updateColorStop(index, { color: e.target.value })
                           }
+                          aria-label={`Color code for stop ${index + 1}`}
                         />
                         <Input
                           type="number"
@@ -272,6 +276,7 @@ export default function GradientGenerator() {
                             })
                           }
                           placeholder="Position %"
+                          aria-label={`Position percentage for stop ${index + 1}`}
                         />
                       </div>
 
@@ -280,6 +285,7 @@ export default function GradientGenerator() {
                           size="sm"
                           variant="outline"
                           onClick={() => removeColorStop(index)}
+                          aria-label={`Remove color stop ${index + 1}`}
                         >
                           <Minus className="w-4 h-4" />
                         </Button>
@@ -361,6 +367,7 @@ export default function GradientGenerator() {
                       size="sm"
                       variant="outline"
                       onClick={() => copyToClipboard(cssOutput, "css")}
+                      aria-label="Copy CSS gradient code"
                     >
                       {copiedFormat === "css" ? "Copied!" : "Copy"}
                     </Button>
@@ -369,6 +376,7 @@ export default function GradientGenerator() {
                     value={cssOutput}
                     readOnly
                     rows={2}
+                    aria-label="CSS gradient code output"
                     className="font-mono text-sm resize-none"
                   />
                 </div>
@@ -380,6 +388,7 @@ export default function GradientGenerator() {
                       size="sm"
                       variant="outline"
                       onClick={() => copyToClipboard(scssOutput, "scss")}
+                      aria-label="Copy SCSS gradient variable"
                     >
                       {copiedFormat === "scss" ? "Copied!" : "Copy"}
                     </Button>
@@ -388,6 +397,7 @@ export default function GradientGenerator() {
                     value={scssOutput}
                     readOnly
                     rows={2}
+                    aria-label="SCSS gradient variable output"
                     className="font-mono text-sm resize-none"
                   />
                 </div>
@@ -403,6 +413,7 @@ export default function GradientGenerator() {
                       onClick={() =>
                         copyToClipboard(tailwindOutput, "tailwind")
                       }
+                      aria-label="Copy Tailwind CSS gradient config"
                     >
                       {copiedFormat === "tailwind" ? "Copied!" : "Copy"}
                     </Button>
@@ -411,6 +422,7 @@ export default function GradientGenerator() {
                     value={tailwindOutput}
                     readOnly
                     rows={3}
+                    aria-label="Tailwind CSS gradient config output"
                     className="font-mono text-sm resize-none"
                   />
                 </div>
@@ -425,6 +437,138 @@ export default function GradientGenerator() {
             <strong>Tip:</strong> Linear gradients flow in a straight line at
             the specified angle. Radial gradients emanate from the center
             outward in a circular pattern.
+          </AlertDescription>
+        </Alert>
+
+        {/* How to Use Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">How to Use the CSS Gradient Generator</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
+              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                <li>Choose between Linear or Radial gradient types using the buttons</li>
+                <li>For linear gradients, adjust the angle using the slider (0° to 360°)</li>
+                <li>Add color stops by clicking the plus button (up to 6 colors supported)</li>
+                <li>Select colors using the color picker or enter hex codes manually</li>
+                <li>Adjust position percentages for each color stop to control the gradient flow</li>
+                <li>Use preset gradients for quick inspiration and starting points</li>
+                <li>Preview your gradient in real-time in the preview panel</li>
+                <li>Copy CSS, SCSS, or Tailwind code using the export buttons</li>
+                <li>Download your gradient as a PNG image for design mockups</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Advanced Gradient Techniques</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Create sophisticated gradients by combining multiple color stops with precise positioning. Linear gradients work best for backgrounds, buttons, and overlays, while radial gradients are perfect for spotlight effects, buttons, and decorative elements. Experiment with angle adjustments to create diagonal flows that complement your design layout.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Benefits and Applications */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Benefits of CSS Gradients</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">Performance and Scalability</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  CSS gradients are vector-based and scale perfectly across all screen sizes without quality loss. They load faster than image files, reduce HTTP requests, and consume less bandwidth. Modern browsers hardware-accelerate gradient rendering for smooth performance across devices.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Design Flexibility</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Create unlimited color combinations without needing image editing software. Easily modify colors, positions, and angles through CSS. Gradients work seamlessly with responsive design, dark mode themes, and can be combined with other CSS effects like shadows and transitions.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Modern Web Standards</h3>
+                <p className="text-sm text-muted-foreground">
+                  CSS gradients are supported by all modern browsers and provide fallback options for older browsers. They integrate perfectly with CSS frameworks like Tailwind CSS, Bootstrap, and custom design systems. Use them for backgrounds, borders, text effects, and complex UI elements.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <h2 className="text-xl font-semibold">Gradient Applications in Web Design</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium mb-2">User Interface Elements</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Enhance buttons, navigation bars, and form elements with subtle gradients that provide depth and visual hierarchy. Create hover effects and state changes that guide user interaction. Use gradients for progress bars, loading indicators, and status badges.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Background Design</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Design compelling hero sections, card backgrounds, and section dividers using gradient backgrounds. Create overlay effects for images and videos. Implement branded color schemes that reinforce your visual identity across web pages and applications.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Creative Effects and Branding</h3>
+                <p className="text-sm text-muted-foreground">
+                  Generate Instagram-style story backgrounds, product showcase effects, and artistic elements. Use gradients for logo backgrounds, promotional banners, and social media graphics. Create color schemes that match your brand guidelines and design system requirements.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Export Formats Guide */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              <h2 className="text-xl font-semibold">Export Formats and Integration Guide</h2>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-medium mb-2">CSS Integration</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Copy the generated CSS background property directly into your stylesheets. Works with inline styles, external CSS files, and CSS-in-JS solutions. Perfect for React, Vue, Angular, and vanilla HTML projects. Use the background property on any element that supports CSS backgrounds.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">SCSS and Sass Variables</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Save gradients as SCSS variables for reusable design tokens in your preprocessor workflow. Easily maintain consistent gradients across large projects and design systems. Combine with mixins and functions for dynamic gradient generation based on theme variables.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">Tailwind CSS Configuration</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Add custom gradients to your Tailwind CSS configuration file for utility-first development. Use generated gradients as background image utilities throughout your project. Perfect for component libraries and design system implementations with consistent gradient patterns.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">PNG Download for Design Tools</h3>
+              <p className="text-sm text-muted-foreground">
+                Download gradients as high-quality PNG images for use in design software like Figma, Sketch, Adobe XD, and Photoshop. Create textures, overlays, and background elements for print design, presentations, and marketing materials. Perfect for design mockups and client presentations.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Alert className="mb-8">
+          <Rainbow className="h-4 w-4" />
+          <AlertDescription>
+            <strong>Privacy Note:</strong> All gradient generation happens in your browser. No gradient data is sent to our servers or stored anywhere. Your creative work remains completely private.
           </AlertDescription>
         </Alert>
       </motion.div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Password Strength Checker - Test Password Security | ToolsHub",
+  title: "Password Strength Checker - Test Password Security",
   description:
     "Check your password strength with our free online tool. Get security recommendations, crack time estimates, and entropy analysis. Privacy-focused - passwords never leave your browser.",
   keywords: [

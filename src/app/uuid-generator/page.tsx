@@ -124,6 +124,7 @@ export default function UUIDGenerator() {
                     )
                   }
                   className="w-24"
+                  aria-label="Number of UUIDs to generate"
                 />
               </div>
               <div className="flex-1" />
@@ -264,6 +265,100 @@ export default function UUIDGenerator() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>How to Use the UUID Generator</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Step-by-Step Instructions</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
+                <li>Set the quantity of UUIDs you need (1-100) using the number input</li>
+                <li>Click "Generate New" to create fresh UUIDs and replace any existing ones</li>
+                <li>Use "Generate More" to add additional UUIDs to your current list</li>
+                <li>Click on any individual UUID to copy it to your clipboard instantly</li>
+                <li>Use "Copy All" to copy all generated UUIDs as a list separated by line breaks</li>
+                <li>Click "Download" to save all UUIDs as a text file for later use</li>
+                <li>Use "Clear" to remove all generated UUIDs and start fresh</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Advanced Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                <li><strong>Bulk Generation:</strong> Generate up to 100 UUIDs at once for large-scale projects</li>
+                <li><strong>Incremental Generation:</strong> Add more UUIDs without losing existing ones</li>
+                <li><strong>Auto-numbering:</strong> Each UUID is numbered for easy reference and organization</li>
+                <li><strong>File Export:</strong> Download UUIDs with timestamp-based filename for version control</li>
+                <li><strong>Cryptographic Security:</strong> Uses browser&apos;s secure random number generator</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Benefits and Use Cases</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-3">Key Benefits</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Database Design:</strong> Perfect for primary keys in distributed databases where auto-increment IDs aren&apos;t suitable</li>
+                <li><strong>System Integration:</strong> Unique identifiers that work across different systems and platforms without coordination</li>
+                <li><strong>Performance Optimization:</strong> No need for centralized ID generation, reducing bottlenecks in distributed systems</li>
+                <li><strong>Data Privacy:</strong> Non-sequential IDs prevent enumeration attacks and information leakage</li>
+                <li><strong>Offline Generation:</strong> Create unique identifiers without network connectivity</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Real-World Applications</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><strong>Database Primary Keys:</strong> Non-sequential keys for user accounts, orders, and transactions</li>
+                <li><strong>API Development:</strong> Request IDs, session tokens, and correlation tracking across microservices</li>
+                <li><strong>File Management:</strong> Unique filenames for uploads, temporary files, and content management systems</li>
+                <li><strong>Message Queues:</strong> Message IDs for RabbitMQ, Apache Kafka, and other messaging systems</li>
+                <li><strong>Distributed Systems:</strong> Node identification and transaction IDs in blockchain and distributed ledgers</li>
+                <li><strong>Game Development:</strong> Player IDs, session IDs, and item identifiers in multiplayer games</li>
+                <li><strong>IoT Applications:</strong> Device identifiers and sensor data correlation in Internet of Things projects</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">How unique are UUID v4 identifiers?</h3>
+                <p className="text-sm text-muted-foreground">
+                  UUID v4 uses 122 bits of randomness, providing approximately 5.3 x 10^36 possible values. The probability of generating a duplicate is so low it&apos;s considered practically impossible for normal use cases. You&apos;d need to generate billions of UUIDs to have even a tiny chance of collision.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">Can I use these UUIDs as database primary keys?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Yes, UUIDs are excellent for database primary keys, especially in distributed systems. They eliminate the need for centralized ID generation and prevent ID conflicts when merging data from different sources. However, consider indexing performance implications for very large tables.
+                </p>
+              </div>
+              <div className="border-b pb-4">
+                <h3 className="font-semibold mb-2">What makes this generator cryptographically secure?</h3>
+                <p className="text-sm text-muted-foreground">
+                  Our generator uses the browser&apos;s Web Crypto API, which provides cryptographically strong pseudo-random number generation. This ensures that UUIDs cannot be predicted or reverse-engineered, making them suitable for security-sensitive applications.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">How do UUID v4 compare to other UUID versions?</h3>
+                <p className="text-sm text-muted-foreground">
+                  UUID v4 relies purely on random numbers, making it the most widely used version. Unlike v1 (uses MAC address and timestamp) or v5 (uses namespace and name hashing), v4 provides maximum privacy and unpredictability while maintaining global uniqueness.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         <Card>
           <CardHeader>
