@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { hexToRgb, rgbToHex, rgbToHsl } from "@/lib/color-utils";
 
 interface ColorState {
@@ -26,7 +26,7 @@ export default function ColorPicker() {
   const [color, setColor] = useState<ColorState>({
     hex: "#ff0000",
     rgb: { r: 255, g: 0, b: 0 },
-    hsl: { h: 0, s: 100, l: 50 }
+    hsl: { h: 0, s: 100, l: 50 },
   });
   const [copiedFormat, setCopiedFormat] = useState<string | null>(null);
 
@@ -90,7 +90,8 @@ export default function ColorPicker() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Color Picker & Converter",
-            description: "Pick colors and convert between HEX, RGB, HSL formats with live preview and CSS variable export",
+            description:
+              "Pick colors and convert between HEX, RGB, HSL formats with live preview and CSS variable export",
             url: "https://toolshub.com/color-picker",
             applicationCategory: "DesignApplication",
             operatingSystem: "Web Browser",
@@ -105,8 +106,6 @@ export default function ColorPicker() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -117,7 +116,9 @@ export default function ColorPicker() {
             Color Picker & Converter - HEX, RGB, HSL Tools
           </h1>
           <p className="text-lg text-muted-foreground">
-            Professional color picker and converter tool. Pick colors and convert between HEX, RGB, HSL formats with live preview. Generate CSS variables and color codes instantly for web design projects.
+            Professional color picker and converter tool. Pick colors and
+            convert between HEX, RGB, HSL formats with live preview. Generate
+            CSS variables and color codes instantly for web design projects.
           </p>
         </div>
 
@@ -141,7 +142,9 @@ export default function ColorPicker() {
 
               {/* HTML Color Picker */}
               <div>
-                <label className="block text-sm font-medium mb-2">Pick Color</label>
+                <label className="block text-sm font-medium mb-2">
+                  Pick Color
+                </label>
                 <input
                   type="color"
                   value={color.hex}
@@ -156,43 +159,65 @@ export default function ColorPicker() {
           <Card>
             <CardHeader>
               <CardTitle>RGB Controls</CardTitle>
-              <CardDescription>
-                Adjust color using RGB sliders
-              </CardDescription>
+              <CardDescription>Adjust color using RGB sliders</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Red: {color.rgb.r}</label>
+                <label className="block text-sm font-medium mb-2">
+                  Red: {color.rgb.r}
+                </label>
                 <input
                   type="range"
                   min="0"
                   max="255"
                   value={color.rgb.r}
-                  onChange={(e) => updateColorFromRgb(parseInt(e.target.value), color.rgb.g, color.rgb.b)}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      parseInt(e.target.value),
+                      color.rgb.g,
+                      color.rgb.b
+                    )
+                  }
                   className="w-full h-2 bg-red-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Green: {color.rgb.g}</label>
+                <label className="block text-sm font-medium mb-2">
+                  Green: {color.rgb.g}
+                </label>
                 <input
                   type="range"
                   min="0"
                   max="255"
                   value={color.rgb.g}
-                  onChange={(e) => updateColorFromRgb(color.rgb.r, parseInt(e.target.value), color.rgb.b)}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      color.rgb.r,
+                      parseInt(e.target.value),
+                      color.rgb.b
+                    )
+                  }
                   className="w-full h-2 bg-green-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Blue: {color.rgb.b}</label>
+                <label className="block text-sm font-medium mb-2">
+                  Blue: {color.rgb.b}
+                </label>
                 <input
                   type="range"
                   min="0"
                   max="255"
                   value={color.rgb.b}
-                  onChange={(e) => updateColorFromRgb(color.rgb.r, color.rgb.g, parseInt(e.target.value))}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      color.rgb.r,
+                      color.rgb.g,
+                      parseInt(e.target.value)
+                    )
+                  }
                   className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
@@ -253,9 +278,7 @@ export default function ColorPicker() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>RGB Values</CardTitle>
-            <CardDescription>
-              Enter specific RGB values
-            </CardDescription>
+            <CardDescription>Enter specific RGB values</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4">
@@ -266,7 +289,13 @@ export default function ColorPicker() {
                   min="0"
                   max="255"
                   value={color.rgb.r}
-                  onChange={(e) => updateColorFromRgb(parseInt(e.target.value) || 0, color.rgb.g, color.rgb.b)}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      parseInt(e.target.value) || 0,
+                      color.rgb.g,
+                      color.rgb.b
+                    )
+                  }
                 />
               </div>
               <div className="space-y-2">
@@ -276,7 +305,13 @@ export default function ColorPicker() {
                   min="0"
                   max="255"
                   value={color.rgb.g}
-                  onChange={(e) => updateColorFromRgb(color.rgb.r, parseInt(e.target.value) || 0, color.rgb.b)}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      color.rgb.r,
+                      parseInt(e.target.value) || 0,
+                      color.rgb.b
+                    )
+                  }
                 />
               </div>
               <div className="space-y-2">
@@ -286,7 +321,13 @@ export default function ColorPicker() {
                   min="0"
                   max="255"
                   value={color.rgb.b}
-                  onChange={(e) => updateColorFromRgb(color.rgb.r, color.rgb.g, parseInt(e.target.value) || 0)}
+                  onChange={(e) =>
+                    updateColorFromRgb(
+                      color.rgb.r,
+                      color.rgb.g,
+                      parseInt(e.target.value) || 0
+                    )
+                  }
                 />
               </div>
             </div>
@@ -304,22 +345,25 @@ export default function ColorPicker() {
               <div>
                 <h3 className="font-medium mb-2">HEX Colors</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Hexadecimal color codes use six digits to represent RGB values. Perfect for web development 
-                  and CSS styling. Format: #RRGGBB (e.g., #FF0000 for red).
+                  Hexadecimal color codes use six digits to represent RGB
+                  values. Perfect for web development and CSS styling. Format:
+                  #RRGGBB (e.g., #FF0000 for red).
                 </p>
               </div>
               <div>
                 <h3 className="font-medium mb-2">RGB Colors</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  RGB represents colors using Red, Green, and Blue values from 0-255. Ideal for digital 
-                  displays and programming. Format: rgb(255, 0, 0).
+                  RGB represents colors using Red, Green, and Blue values from
+                  0-255. Ideal for digital displays and programming. Format:
+                  rgb(255, 0, 0).
                 </p>
               </div>
               <div>
                 <h3 className="font-medium mb-2">HSL Colors</h3>
                 <p className="text-sm text-muted-foreground">
-                  HSL uses Hue, Saturation, and Lightness values. More intuitive for color adjustments 
-                  and design work. Format: hsl(0, 100%, 50%).
+                  HSL uses Hue, Saturation, and Lightness values. More intuitive
+                  for color adjustments and design work. Format: hsl(0, 100%,
+                  50%).
                 </p>
               </div>
             </CardContent>
@@ -333,24 +377,29 @@ export default function ColorPicker() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h3 className="font-medium mb-2">Interactive Color Selection</h3>
+                <h3 className="font-medium mb-2">
+                  Interactive Color Selection
+                </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Use the visual color picker or input specific values in any format. Real-time 
-                  conversion between HEX, RGB, and HSL formats with instant preview.
+                  Use the visual color picker or input specific values in any
+                  format. Real-time conversion between HEX, RGB, and HSL formats
+                  with instant preview.
                 </p>
               </div>
               <div>
                 <h3 className="font-medium mb-2">CSS Variable Export</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Generate CSS custom properties for modern web development. Copy color codes 
-                  directly to clipboard in any format for immediate use in your projects.
+                  Generate CSS custom properties for modern web development.
+                  Copy color codes directly to clipboard in any format for
+                  immediate use in your projects.
                 </p>
               </div>
               <div>
                 <h3 className="font-medium mb-2">Professional Design Tool</h3>
                 <p className="text-sm text-muted-foreground">
-                  Perfect for web designers, developers, and digital artists. Accurate color 
-                  representation across different formats ensures consistency in your designs.
+                  Perfect for web designers, developers, and digital artists.
+                  Accurate color representation across different formats ensures
+                  consistency in your designs.
                 </p>
               </div>
             </CardContent>
@@ -360,13 +409,11 @@ export default function ColorPicker() {
         <Alert className="mb-8">
           <Palette className="h-4 w-4" />
           <AlertDescription>
-            <strong>Privacy Note:</strong> All color processing happens in your browser. 
-            No color data is sent to our servers or stored anywhere.
+            <strong>Privacy Note:</strong> All color processing happens in your
+            browser. No color data is sent to our servers or stored anywhere.
           </AlertDescription>
         </Alert>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

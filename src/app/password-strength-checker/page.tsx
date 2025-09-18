@@ -22,7 +22,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import { analyzePassword } from "@/lib/password-strength";
 
 export default function PasswordStrengthChecker() {
@@ -87,8 +86,6 @@ export default function PasswordStrengthChecker() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <AdPlaceholder id="adsense-top" className="mb-8" />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -325,7 +322,7 @@ export default function PasswordStrengthChecker() {
                   <li className="flex items-start space-x-2">
                     <span className="text-red-600 font-bold">•</span>
                     <span>
-Avoid keyboard patterns like &quot;qwerty&quot; or
+                      Avoid keyboard patterns like &quot;qwerty&quot; or
                       &quot;123456&quot;
                     </span>
                   </li>
@@ -417,8 +414,6 @@ Avoid keyboard patterns like &quot;qwerty&quot; or
           </CardContent>
         </Card>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

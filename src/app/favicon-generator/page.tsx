@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { jsonLdApp, jsonLdFAQ, jsonLdHowTo } from "./schema";
 
 export default function FaviconGenerator() {
@@ -155,7 +155,6 @@ export default function FaviconGenerator() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -617,7 +616,6 @@ export default function FaviconGenerator() {
         </Alert>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface AgeResult {
   years: number;
@@ -121,8 +120,6 @@ export default function AgeCalculator() {
           __html: JSON.stringify(schemaData),
         }}
       />
-
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -349,8 +346,6 @@ export default function AgeCalculator() {
           </CardContent>
         </Card>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

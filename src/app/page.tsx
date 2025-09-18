@@ -24,7 +24,6 @@ import {
   Smile,
 } from "lucide-react";
 import ToolCard from "@/components/ToolCard";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -92,8 +91,6 @@ export default function Home() {
           __html: JSON.stringify(softwareApplicationSchema),
         }}
       />
-
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -778,8 +775,6 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

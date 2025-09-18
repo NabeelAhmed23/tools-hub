@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 import {
   generateSecurePassword,
@@ -112,8 +112,6 @@ export default function PasswordGenerator() {
           }),
         }}
       />
-
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -397,8 +395,6 @@ export default function PasswordGenerator() {
           </CardContent>
         </Card>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

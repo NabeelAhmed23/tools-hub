@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 import { encodeBase64, decodeBase64 } from "@/lib/crypto-utils";
 
@@ -116,8 +116,6 @@ export default function Base64Tool() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -128,7 +126,9 @@ export default function Base64Tool() {
             Base64 Encoder/Decoder - Convert Text to Base64
           </h1>
           <p className="text-lg text-muted-foreground">
-            Free Base64 encoder and decoder with UTF-8 support. Convert text to Base64 and decode Base64 strings back to text. Perfect for data transmission and storage with complete privacy protection.
+            Free Base64 encoder and decoder with UTF-8 support. Convert text to
+            Base64 and decode Base64 strings back to text. Perfect for data
+            transmission and storage with complete privacy protection.
           </p>
         </div>
 
@@ -330,8 +330,6 @@ export default function Base64Tool() {
           </CardContent>
         </Card>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

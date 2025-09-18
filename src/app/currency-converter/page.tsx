@@ -18,8 +18,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import AdPlaceholder from "@/components/AdPlaceholder";
-import { ALL_CURRENCIES, POPULAR_CURRENCIES, getCurrencyByCode, getCurrencyDisplay } from "@/constants/currencies";
+
+import {
+  ALL_CURRENCIES,
+  POPULAR_CURRENCIES,
+  getCurrencyByCode,
+  getCurrencyDisplay,
+} from "@/constants/currencies";
 
 interface ExchangeRates {
   [key: string]: number;
@@ -143,7 +148,6 @@ export default function CurrencyConverter() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -155,7 +159,9 @@ export default function CurrencyConverter() {
             Currency Converter - All World Currencies Live Rates
           </h1>
           <p className="text-lg text-muted-foreground">
-            Convert between 180+ world currencies instantly with live exchange rates. Comprehensive currency converter supporting all major and minor currencies with real-time data.
+            Convert between 180+ world currencies instantly with live exchange
+            rates. Comprehensive currency converter supporting all major and
+            minor currencies with real-time data.
           </p>
           {lastUpdated && (
             <p className="text-sm text-muted-foreground mt-2">
@@ -221,7 +227,10 @@ export default function CurrencyConverter() {
                       <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b border-t">
                         All Currencies
                       </div>
-                      {ALL_CURRENCIES.filter(currency => !POPULAR_CURRENCIES.includes(currency.code))
+                      {ALL_CURRENCIES.filter(
+                        (currency) =>
+                          !POPULAR_CURRENCIES.includes(currency.code)
+                      )
                         .sort((a, b) => a.name.localeCompare(b.name))
                         .map((currency) => (
                           <SelectItem key={currency.code} value={currency.code}>
@@ -253,7 +262,10 @@ export default function CurrencyConverter() {
                       <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground border-b border-t">
                         All Currencies
                       </div>
-                      {ALL_CURRENCIES.filter(currency => !POPULAR_CURRENCIES.includes(currency.code))
+                      {ALL_CURRENCIES.filter(
+                        (currency) =>
+                          !POPULAR_CURRENCIES.includes(currency.code)
+                      )
                         .sort((a, b) => a.name.localeCompare(b.name))
                         .map((currency) => (
                           <SelectItem key={currency.code} value={currency.code}>
@@ -315,10 +327,12 @@ export default function CurrencyConverter() {
               <CardContent className="p-6">
                 <div className="text-center space-y-4">
                   <div className="text-2xl font-semibold text-muted-foreground">
-                    {getCurrencyByCode(fromCurrency)?.symbol || ""} {amount} {fromCurrency} =
+                    {getCurrencyByCode(fromCurrency)?.symbol || ""} {amount}{" "}
+                    {fromCurrency} =
                   </div>
                   <div className="text-4xl font-bold text-primary">
-                    {getCurrencyByCode(toCurrency)?.symbol || ""} {convertedAmount.toLocaleString(undefined, {
+                    {getCurrencyByCode(toCurrency)?.symbol || ""}{" "}
+                    {convertedAmount.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}{" "}
@@ -330,7 +344,8 @@ export default function CurrencyConverter() {
                     </div>
                   )}
                   <div className="text-xs text-muted-foreground mt-2">
-                    {getCurrencyByCode(fromCurrency)?.name} → {getCurrencyByCode(toCurrency)?.name}
+                    {getCurrencyByCode(fromCurrency)?.name} →{" "}
+                    {getCurrencyByCode(toCurrency)?.name}
                   </div>
                 </div>
               </CardContent>
@@ -341,20 +356,32 @@ export default function CurrencyConverter() {
         <div className="grid md:grid-cols-3 gap-4 mb-8">
           <Card>
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{ALL_CURRENCIES.length}</div>
-              <div className="text-sm text-muted-foreground">World Currencies</div>
+              <div className="text-3xl font-bold text-primary mb-2">
+                {ALL_CURRENCIES.length}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                World Currencies
+              </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{POPULAR_CURRENCIES.length}</div>
-              <div className="text-sm text-muted-foreground">Popular Currencies</div>
+              <div className="text-3xl font-bold text-primary mb-2">
+                {POPULAR_CURRENCIES.length}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Popular Currencies
+              </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">Real-time</div>
-              <div className="text-sm text-muted-foreground">Exchange Rates</div>
+              <div className="text-3xl font-bold text-primary mb-2">
+                Real-time
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Exchange Rates
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -434,7 +461,6 @@ export default function CurrencyConverter() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

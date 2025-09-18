@@ -18,7 +18,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 export default function CookiePolicyPage() {
   const lastUpdated = "January 15, 2025";
@@ -127,7 +126,6 @@ export default function CookiePolicyPage() {
               </AlertDescription>
             </Alert>
 
-            <AdPlaceholder id="adsense-top" className="mb-8" />
 
             {/* Table of Contents */}
             <Card className="mb-8">
@@ -581,8 +579,7 @@ export default function CookiePolicyPage() {
                 </CardContent>
               </Card>
 
-              <AdPlaceholder id="adsense-top" className="mb-8" />
-
+  
               {/* Managing Cookies */}
               <Card id="managing-cookies">
                 <CardHeader>
@@ -702,8 +699,8 @@ export default function CookiePolicyPage() {
                     <li>Scroll down and tap Safari</li>
                     <li>Under Privacy & Security, manage cookie settings</li>
                     <li>
-                      Choose &quot;Block All Cookies&quot; or &quot;Allow from Websites I
-                      Visit&quot;
+                      Choose &quot;Block All Cookies&quot; or &quot;Allow from
+                      Websites I Visit&quot;
                     </li>
                   </ol>
 
@@ -832,7 +829,8 @@ export default function CookiePolicyPage() {
                   <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
                     <li>Update this Cookie Policy with the new information</li>
                     <li>
-                      Change the &quot;Last updated&quot; date at the top of this page
+                      Change the &quot;Last updated&quot; date at the top of
+                      this page
                     </li>
                     <li>Provide notice on our website for material changes</li>
                     <li>Obtain new consent where required by law</li>
@@ -873,7 +871,6 @@ export default function CookiePolicyPage() {
               </Card> */}
             </div>
 
-            <AdPlaceholder id="adsense-top" className="mt-8" />
 
             {/* Footer Note */}
             <div className="mt-12 p-6 bg-muted/30 rounded-lg text-center">

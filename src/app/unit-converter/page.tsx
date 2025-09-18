@@ -20,7 +20,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface ConversionUnit {
   name: string;
@@ -206,7 +205,8 @@ export default function UnitConverter() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Unit Converter - Convert Length, Weight, Temperature & More",
-    description: "Convert between different units of measurement including length, weight, temperature, speed, and volume. Accurate unit converter with 40+ units and real-time conversion.",
+    description:
+      "Convert between different units of measurement including length, weight, temperature, speed, and volume. Accurate unit converter with 40+ units and real-time conversion.",
     url: "https://www.the-tools-hub.com/unit-converter",
     applicationCategory: "UtilityApplication",
     operatingSystem: "Web Browser",
@@ -216,8 +216,8 @@ export default function UnitConverter() {
       "Temperature conversion (C/F/K)",
       "Speed conversion",
       "Volume conversion",
-      "40+ supported units"
-    ]
+      "40+ supported units",
+    ],
   };
 
   return (
@@ -229,7 +229,6 @@ export default function UnitConverter() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -412,7 +411,6 @@ export default function UnitConverter() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

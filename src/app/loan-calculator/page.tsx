@@ -27,7 +27,6 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface LoanResult {
   monthlyEMI: number;
@@ -125,7 +124,6 @@ export default function LoanCalculator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -137,7 +135,9 @@ export default function LoanCalculator() {
             Loan Calculator - EMI Calculator with Amortization
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate monthly EMI, total interest, and loan breakdown with visual charts. Perfect for home loans, personal loans, and auto loans with detailed amortization schedule and repayment analysis.
+            Calculate monthly EMI, total interest, and loan breakdown with
+            visual charts. Perfect for home loans, personal loans, and auto
+            loans with detailed amortization schedule and repayment analysis.
           </p>
         </div>
 
@@ -376,7 +376,6 @@ export default function LoanCalculator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

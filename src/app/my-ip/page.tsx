@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 
 interface IPInfo {
@@ -118,7 +118,6 @@ export default function MyIP() {
     }
   };
 
-
   useEffect(() => {
     // Get user agent immediately
     const userAgent = navigator.userAgent;
@@ -137,7 +136,8 @@ export default function MyIP() {
     else if (ua.includes("Safari")) browser = "Safari";
 
     // Detect OS (more specific checks first)
-    if (ua.includes("iPhone") || ua.includes("iPad") || ua.includes("iPod")) os = "iOS";
+    if (ua.includes("iPhone") || ua.includes("iPad") || ua.includes("iPod"))
+      os = "iOS";
     else if (ua.includes("Android")) os = "Android";
     else if (ua.includes("Win")) os = "Windows";
     else if (ua.includes("Mac")) os = "macOS";
@@ -154,7 +154,8 @@ export default function MyIP() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "What's My IP Address - IP Lookup Tool",
-    description: "Discover your public IP address, user agent, and approximate location with privacy protection. Free IP lookup tool with browser and device information.",
+    description:
+      "Discover your public IP address, user agent, and approximate location with privacy protection. Free IP lookup tool with browser and device information.",
     url: "https://www.the-tools-hub.com/my-ip",
     applicationCategory: "NetworkingApplication",
     operatingSystem: "Web Browser",
@@ -163,8 +164,8 @@ export default function MyIP() {
       "IPv4 and IPv6 support",
       "Location information (optional)",
       "Browser and OS detection",
-      "Privacy-focused design"
-    ]
+      "Privacy-focused design",
+    ],
   };
 
   return (
@@ -176,7 +177,6 @@ export default function MyIP() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -441,7 +441,6 @@ export default function MyIP() {
         </div>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

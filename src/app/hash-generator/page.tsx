@@ -3,12 +3,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Hash, Loader2 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 import { hashText, md5 } from "@/lib/crypto-utils";
 
@@ -25,7 +31,7 @@ export default function HashGenerator() {
 
   const generateHashes = async () => {
     if (!input.trim()) return;
-    
+
     setLoading(true);
     try {
       const [sha1Hash, sha256Hash, sha512Hash] = await Promise.all([
@@ -62,7 +68,8 @@ export default function HashGenerator() {
       name: "MD5",
       description: "128-bit cryptographic hash (deprecated for security)",
       bits: "128 bits (32 hex characters)",
-      warning: "MD5 is cryptographically broken and not suitable for security purposes",
+      warning:
+        "MD5 is cryptographically broken and not suitable for security purposes",
     },
     sha1: {
       name: "SHA-1",
@@ -92,31 +99,31 @@ export default function HashGenerator() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "How to Generate Hash Values",
-            "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text input",
-            "step": [
+            name: "How to Generate Hash Values",
+            description:
+              "Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text input",
+            step: [
               {
                 "@type": "HowToStep",
-                "text": "Enter or paste your text into the input field"
-              },
-              {
-                "@type": "HowToStep", 
-                "text": "Click 'Generate Hashes' to create hash values"
+                text: "Enter or paste your text into the input field",
               },
               {
                 "@type": "HowToStep",
-                "text": "Select the desired hash algorithm tab"
+                text: "Click 'Generate Hashes' to create hash values",
               },
               {
                 "@type": "HowToStep",
-                "text": "Copy the generated hash value"
-              }
-            ]
-          })
+                text: "Select the desired hash algorithm tab",
+              },
+              {
+                "@type": "HowToStep",
+                text: "Copy the generated hash value",
+              },
+            ],
+          }),
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -128,7 +135,9 @@ export default function HashGenerator() {
             Hash Generator - MD5, SHA-1, SHA-256, SHA-512 Tools
           </h1>
           <p className="text-lg text-muted-foreground">
-            Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text input. Fast, secure hash generation tool with multiple algorithms and detailed security information for data integrity verification.
+            Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from text
+            input. Fast, secure hash generation tool with multiple algorithms
+            and detailed security information for data integrity verification.
           </p>
         </div>
 
@@ -138,9 +147,7 @@ export default function HashGenerator() {
               <Hash className="w-6 h-6 text-primary" />
               <span>Text Input</span>
             </CardTitle>
-            <CardDescription>
-              Enter the text you want to hash
-            </CardDescription>
+            <CardDescription>Enter the text you want to hash</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <Textarea
@@ -150,10 +157,10 @@ export default function HashGenerator() {
               className="min-h-32 font-mono"
               rows={6}
             />
-            
+
             <div className="flex space-x-4">
-              <Button 
-                onClick={generateHashes} 
+              <Button
+                onClick={generateHashes}
                 disabled={!input.trim() || loading}
                 className="flex items-center space-x-2"
               >
@@ -169,7 +176,7 @@ export default function HashGenerator() {
                   </>
                 )}
               </Button>
-              
+
               <Button variant="outline" onClick={clearAll}>
                 Clear All
               </Button>
@@ -198,7 +205,7 @@ export default function HashGenerator() {
                     <TabsTrigger value="sha256">SHA-256</TabsTrigger>
                     <TabsTrigger value="sha512">SHA-512</TabsTrigger>
                   </TabsList>
-                  
+
                   {Object.entries(hashInfo).map(([key, info]) => (
                     <TabsContent key={key} value={key} className="mt-6">
                       <div className="space-y-4">
@@ -213,10 +220,12 @@ export default function HashGenerator() {
                           </div>
                           <div>
                             <span className="font-medium">Description:</span>
-                            <p className="text-muted-foreground">{info.description}</p>
+                            <p className="text-muted-foreground">
+                              {info.description}
+                            </p>
                           </div>
                         </div>
-                        
+
                         {info.warning && (
                           <Alert>
                             <AlertDescription>
@@ -224,14 +233,15 @@ export default function HashGenerator() {
                             </AlertDescription>
                           </Alert>
                         )}
-                        
+
                         <div className="flex space-x-2">
                           <div className="flex-1 p-3 bg-muted rounded-lg font-mono text-sm break-all">
-                            {hashes[key as keyof typeof hashes] || "No hash generated"}
+                            {hashes[key as keyof typeof hashes] ||
+                              "No hash generated"}
                           </div>
                           {hashes[key as keyof typeof hashes] && (
-                            <CopyButton 
-                              text={hashes[key as keyof typeof hashes]} 
+                            <CopyButton
+                              text={hashes[key as keyof typeof hashes]}
                               size="default"
                             />
                           )}
@@ -252,10 +262,11 @@ export default function HashGenerator() {
           <CardContent className="prose prose-sm max-w-none">
             <div className="space-y-4">
               <p>
-                Hash functions are mathematical algorithms that convert input data of any size 
-                into a fixed-size string of characters. They are commonly used for:
+                Hash functions are mathematical algorithms that convert input
+                data of any size into a fixed-size string of characters. They
+                are commonly used for:
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-2">Common Uses:</h4>
@@ -267,9 +278,11 @@ export default function HashGenerator() {
                     <li>File fingerprinting</li>
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold mb-2">Security Considerations:</h4>
+                  <h4 className="font-semibold mb-2">
+                    Security Considerations:
+                  </h4>
                   <ul className="space-y-1 text-sm">
                     <li>MD5 and SHA-1 are deprecated for security</li>
                     <li>SHA-256 and SHA-512 are currently secure</li>
@@ -279,12 +292,13 @@ export default function HashGenerator() {
                   </ul>
                 </div>
               </div>
-              
+
               <Alert>
                 <Hash className="h-4 w-4" />
                 <AlertDescription>
-                  <strong>Privacy Note:</strong> All hash generation is performed locally in your browser. 
-                  Your input text is never sent to our servers.
+                  <strong>Privacy Note:</strong> All hash generation is
+                  performed locally in your browser. Your input text is never
+                  sent to our servers.
                 </AlertDescription>
               </Alert>
             </div>
@@ -292,7 +306,6 @@ export default function HashGenerator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

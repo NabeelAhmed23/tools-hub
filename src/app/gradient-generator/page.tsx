@@ -14,15 +14,22 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
-import { generateGradientCSS, gradientPresets, type ColorStop, type GradientConfig } from "@/lib/gradient-utils";
+
+import {
+  generateGradientCSS,
+  gradientPresets,
+  type ColorStop,
+  type GradientConfig,
+} from "@/lib/gradient-utils";
 
 export default function GradientGenerator() {
-  const [gradientType, setGradientType] = useState<"linear" | "radial">("linear");
+  const [gradientType, setGradientType] = useState<"linear" | "radial">(
+    "linear"
+  );
   const [angle, setAngle] = useState(90);
   const [colorStops, setColorStops] = useState<ColorStop[]>([
     { color: "#ff6b6b", position: 0 },
-    { color: "#4ecdc4", position: 100 }
+    { color: "#4ecdc4", position: 100 },
   ]);
   const [copiedFormat, setCopiedFormat] = useState<string | null>(null);
 
@@ -37,10 +44,17 @@ export default function GradientGenerator() {
 
   const addColorStop = () => {
     if (colorStops.length < 6) {
-      const newPosition = colorStops.length === 0 ? 50 :
-        (colorStops[colorStops.length - 1].position + colorStops[0].position) / 2;
+      const newPosition =
+        colorStops.length === 0
+          ? 50
+          : (colorStops[colorStops.length - 1].position +
+              colorStops[0].position) /
+            2;
 
-      setColorStops([...colorStops, { color: "#ffffff", position: newPosition }]);
+      setColorStops([
+        ...colorStops,
+        { color: "#ffffff", position: newPosition },
+      ]);
     }
   };
 
@@ -96,14 +110,14 @@ export default function GradientGenerator() {
     // Add color stops
     colorStops
       .sort((a, b) => a.position - b.position)
-      .forEach(stop => {
+      .forEach((stop) => {
         gradient.addColorStop(stop.position / 100, stop.color);
       });
 
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 400, 400);
 
-    canvas.toBlob(blob => {
+    canvas.toBlob((blob) => {
       if (blob) {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -133,7 +147,8 @@ export default function GradientGenerator() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Gradient Generator",
-            description: "Create beautiful CSS gradients with live preview and multiple export formats",
+            description:
+              "Create beautiful CSS gradients with live preview and multiple export formats",
             url: "https://toolshub.com/gradient-generator",
             applicationCategory: "DesignApplication",
             operatingSystem: "Web Browser",
@@ -148,7 +163,6 @@ export default function GradientGenerator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -160,7 +174,9 @@ export default function GradientGenerator() {
             CSS Gradient Generator - Create Beautiful Gradients
           </h1>
           <p className="text-lg text-muted-foreground">
-            Create beautiful CSS gradients with live preview and multiple export formats. Generate linear and radial gradients, export as CSS, SCSS, or Tailwind config with instant preview.
+            Create beautiful CSS gradients with live preview and multiple export
+            formats. Generate linear and radial gradients, export as CSS, SCSS,
+            or Tailwind config with instant preview.
           </p>
         </div>
 
@@ -224,11 +240,16 @@ export default function GradientGenerator() {
                 {colorStops
                   .sort((a, b) => a.position - b.position)
                   .map((stop, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 border border-border rounded">
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-3 border border-border rounded"
+                    >
                       <input
                         type="color"
                         value={stop.color}
-                        onChange={(e) => updateColorStop(index, { color: e.target.value })}
+                        onChange={(e) =>
+                          updateColorStop(index, { color: e.target.value })
+                        }
                         className="w-12 h-8 rounded cursor-pointer border border-border"
                       />
 
@@ -236,14 +257,20 @@ export default function GradientGenerator() {
                         <Input
                           type="text"
                           value={stop.color}
-                          onChange={(e) => updateColorStop(index, { color: e.target.value })}
+                          onChange={(e) =>
+                            updateColorStop(index, { color: e.target.value })
+                          }
                         />
                         <Input
                           type="number"
                           min="0"
                           max="100"
                           value={stop.position}
-                          onChange={(e) => updateColorStop(index, { position: parseFloat(e.target.value) })}
+                          onChange={(e) =>
+                            updateColorStop(index, {
+                              position: parseFloat(e.target.value),
+                            })
+                          }
                           placeholder="Position %"
                         />
                       </div>
@@ -266,9 +293,7 @@ export default function GradientGenerator() {
             <Card>
               <CardHeader>
                 <CardTitle>Presets</CardTitle>
-                <CardDescription>
-                  Click a preset to apply it
-                </CardDescription>
+                <CardDescription>Click a preset to apply it</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-2">
@@ -277,7 +302,11 @@ export default function GradientGenerator() {
                       key={index}
                       className="h-12 rounded cursor-pointer border-2 border-border hover:border-primary transition-colors"
                       style={{
-                        background: generateGradientCSS(preset.stops, preset.angle, preset.type)
+                        background: generateGradientCSS(
+                          preset.stops,
+                          preset.angle,
+                          preset.type
+                        ),
                       }}
                       onClick={() => loadPreset(preset)}
                     />
@@ -365,11 +394,15 @@ export default function GradientGenerator() {
 
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <label className="text-sm font-medium">Tailwind Config</label>
+                    <label className="text-sm font-medium">
+                      Tailwind Config
+                    </label>
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => copyToClipboard(tailwindOutput, "tailwind")}
+                      onClick={() =>
+                        copyToClipboard(tailwindOutput, "tailwind")
+                      }
                     >
                       {copiedFormat === "tailwind" ? "Copied!" : "Copy"}
                     </Button>
@@ -389,13 +422,13 @@ export default function GradientGenerator() {
         <Alert className="mb-8">
           <Rainbow className="h-4 w-4" />
           <AlertDescription>
-            <strong>Tip:</strong> Linear gradients flow in a straight line at the specified angle.
-            Radial gradients emanate from the center outward in a circular pattern.
+            <strong>Tip:</strong> Linear gradients flow in a straight line at
+            the specified angle. Radial gradients emanate from the center
+            outward in a circular pattern.
           </AlertDescription>
         </Alert>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

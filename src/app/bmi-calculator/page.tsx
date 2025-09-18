@@ -18,7 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface BMIResult {
   bmi: number;
@@ -109,8 +108,6 @@ export default function BMICalculator() {
           }),
         }}
       />
-
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -343,8 +340,6 @@ export default function BMICalculator() {
           </CardContent>
         </Card>
       </motion.div>
-
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface DateDifference {
   years: number;
@@ -122,7 +121,6 @@ export default function DateDifferenceCalculator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -134,7 +132,9 @@ export default function DateDifferenceCalculator() {
             Date Difference Calculator - Calculate Days Between Dates
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate the exact difference between two dates in years, months, days, hours, minutes, and seconds. Perfect for project planning, age calculations, and event planning with precise results.
+            Calculate the exact difference between two dates in years, months,
+            days, hours, minutes, and seconds. Perfect for project planning, age
+            calculations, and event planning with precise results.
           </p>
         </div>
 
@@ -416,7 +416,6 @@ export default function DateDifferenceCalculator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

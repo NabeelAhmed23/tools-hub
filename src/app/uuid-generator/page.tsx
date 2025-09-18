@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 import { generateUUID } from "@/lib/crypto-utils";
 
@@ -61,7 +61,8 @@ export default function UUIDGenerator() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "UUID v4 Generator - Unique Identifier Generator",
-    description: "Generate cryptographically secure UUID version 4 identifiers in bulk. RFC 4122 compliant UUID generator for database keys, API tracking, and distributed systems.",
+    description:
+      "Generate cryptographically secure UUID version 4 identifiers in bulk. RFC 4122 compliant UUID generator for database keys, API tracking, and distributed systems.",
     url: "https://www.the-tools-hub.com/uuid-generator",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Web Browser",
@@ -70,8 +71,8 @@ export default function UUIDGenerator() {
       "Bulk generation (1-100)",
       "RFC 4122 compliant",
       "Cryptographically secure",
-      "Export to file"
-    ]
+      "Export to file",
+    ],
   };
 
   return (
@@ -83,7 +84,6 @@ export default function UUIDGenerator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -296,7 +296,6 @@ export default function UUIDGenerator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

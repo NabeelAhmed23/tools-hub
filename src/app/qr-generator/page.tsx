@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import QRCodeLib from "qrcode";
 
 export default function QRGenerator() {
@@ -118,7 +118,8 @@ export default function QRGenerator() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "QR Code Generator - Create Custom QR Codes Online",
-    description: "Generate QR codes from text, URLs, or any data with customizable size and error correction. Download as PNG or SVG for business cards, marketing, and sharing.",
+    description:
+      "Generate QR codes from text, URLs, or any data with customizable size and error correction. Download as PNG or SVG for business cards, marketing, and sharing.",
     url: "https://www.the-tools-hub.com/qr-generator",
     applicationCategory: "DesignApplication",
     operatingSystem: "Web Browser",
@@ -127,8 +128,8 @@ export default function QRGenerator() {
       "Multiple size options",
       "Error correction levels",
       "PNG and SVG download",
-      "Real-time preview"
-    ]
+      "Real-time preview",
+    ],
   };
 
   return (
@@ -140,7 +141,6 @@ export default function QRGenerator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -382,7 +382,6 @@ export default function QRGenerator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

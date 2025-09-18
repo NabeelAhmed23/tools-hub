@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 export default function TermsOfServicePage() {
   const version = "2.1";
@@ -93,7 +92,6 @@ export default function TermsOfServicePage() {
               </AlertDescription>
             </Alert>
 
-            <AdPlaceholder id="adsense-top" className="mb-8" />
 
             {/* Table of Contents */}
             <Card className="mb-8">
@@ -243,11 +241,12 @@ export default function TermsOfServicePage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p>
-                    These Terms of Service (&quot;Terms&quot;) constitute a legally
-                    binding agreement between you (&quot;User,&quot; &quot;you,&quot; or &quot;your&quot;) and
-                    ToolsHub (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) regarding your access to and
-                    use of the ToolsHub website and services located at
-                    www.the-tools-hub.com.
+                    These Terms of Service (&quot;Terms&quot;) constitute a
+                    legally binding agreement between you (&quot;User,&quot;
+                    &quot;you,&quot; or &quot;your&quot;) and ToolsHub
+                    (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
+                    regarding your access to and use of the ToolsHub website and
+                    services located at www.the-tools-hub.com.
                   </p>
 
                   <h3 className="text-lg font-semibold">
@@ -515,8 +514,7 @@ export default function TermsOfServicePage() {
                 </CardContent>
               </Card>
 
-              <AdPlaceholder id="adsense-top" className="mb-8" />
-
+  
               {/* User Content */}
               <Card id="user-content">
                 <CardHeader>
@@ -596,17 +594,17 @@ export default function TermsOfServicePage() {
                     <AlertTriangle className="h-4 w-4" />
                     <AlertDescription>
                       <strong>Important Disclaimer:</strong> Our services are
-                      provided &quot;as is&quot; without warranties of any kind. Use our
-                      tools at your own risk and always verify results
+                      provided &quot;as is&quot; without warranties of any kind.
+                      Use our tools at your own risk and always verify results
                       independently.
                     </AlertDescription>
                   </Alert>
 
                   <h3 className="text-lg font-semibold">8.1 No Warranties</h3>
                   <p>
-                    We provide our services &quot;as is&quot; and &quot;as available&quot; without
-                    warranties of any kind, either express or implied, including
-                    but not limited to:
+                    We provide our services &quot;as is&quot; and &quot;as
+                    available&quot; without warranties of any kind, either
+                    express or implied, including but not limited to:
                   </p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>
@@ -895,7 +893,6 @@ export default function TermsOfServicePage() {
               </Card> */}
             </div>
 
-            <AdPlaceholder id="adsense-top" className="mt-8" />
 
             {/* Footer Note */}
             <div className="mt-12 p-6 bg-muted/30 rounded-lg text-center">

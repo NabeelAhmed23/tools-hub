@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
+
 import { CopyButton } from "@/components/copy-button";
 import { encodeURL, decodeURL } from "@/lib/crypto-utils";
 
@@ -82,7 +82,8 @@ export default function URLEncodeDecode() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "URL Encoder/Decoder - Percent Encoding Tool",
-    description: "Encode and decode URLs with percent-encoding for safe URL transmission. Auto-detect encoding/decoding with support for all ASCII characters and special symbols.",
+    description:
+      "Encode and decode URLs with percent-encoding for safe URL transmission. Auto-detect encoding/decoding with support for all ASCII characters and special symbols.",
     url: "https://www.the-tools-hub.com/url-encode-decode",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Web Browser",
@@ -91,8 +92,8 @@ export default function URLEncodeDecode() {
       "URL decoding",
       "Auto-detection mode",
       "Reserved character handling",
-      "Developer-friendly interface"
-    ]
+      "Developer-friendly interface",
+    ],
   };
 
   return (
@@ -104,7 +105,6 @@ export default function URLEncodeDecode() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -272,7 +272,6 @@ export default function URLEncodeDecode() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

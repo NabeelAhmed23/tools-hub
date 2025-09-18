@@ -19,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 export default function PercentageCalculator() {
   // Percentage of a number
@@ -97,7 +96,8 @@ export default function PercentageCalculator() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Percentage Calculator - Calculate Percentages & Discounts",
-    description: "Calculate percentages, percentage changes, and discounts online. Easy-to-use percentage calculator with multiple calculation modes for business, finance, and everyday use.",
+    description:
+      "Calculate percentages, percentage changes, and discounts online. Easy-to-use percentage calculator with multiple calculation modes for business, finance, and everyday use.",
     url: "https://www.the-tools-hub.com/percentage-calculator",
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web Browser",
@@ -106,8 +106,8 @@ export default function PercentageCalculator() {
       "Percentage change calculator",
       "Discount calculator",
       "Multiple calculation modes",
-      "Real-time results"
-    ]
+      "Real-time results",
+    ],
   };
 
   return (
@@ -119,7 +119,6 @@ export default function PercentageCalculator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -451,7 +450,6 @@ export default function PercentageCalculator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }

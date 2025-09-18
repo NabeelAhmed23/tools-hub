@@ -13,8 +13,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
-import { resizeImage, downloadBlob, calculateResizeDimensions } from "@/lib/image-utils";
+
+import {
+  resizeImage,
+  downloadBlob,
+  calculateResizeDimensions,
+} from "@/lib/image-utils";
 
 interface ImageData {
   file: File;
@@ -32,13 +36,15 @@ interface ProcessedImage {
 
 export default function ImageCompressor() {
   const [originalImage, setOriginalImage] = useState<ImageData | null>(null);
-  const [processedImage, setProcessedImage] = useState<ProcessedImage | null>(null);
+  const [processedImage, setProcessedImage] = useState<ProcessedImage | null>(
+    null
+  );
   const [isProcessing, setIsProcessing] = useState(false);
   const [settings, setSettings] = useState({
     quality: 0.8,
     maxWidth: "",
     maxHeight: "",
-    format: "jpeg" as "jpeg" | "png" | "webp"
+    format: "jpeg" as "jpeg" | "png" | "webp",
   });
   const [dragOver, setDragOver] = useState(false);
 
@@ -56,47 +62,53 @@ export default function ImageCompressor() {
     };
   }, [originalImage?.url, processedImage?.url]);
 
-  const handleFileSelect = useCallback((file: File) => {
-    if (!file.type.startsWith("image/")) {
-      alert("Please select a valid image file");
-      return;
-    }
+  const handleFileSelect = useCallback(
+    (file: File) => {
+      if (!file.type.startsWith("image/")) {
+        alert("Please select a valid image file");
+        return;
+      }
 
-    // Clean up previous image URL if it exists
-    if (originalImage?.url) {
-      URL.revokeObjectURL(originalImage.url);
-    }
-    if (processedImage?.url) {
-      URL.revokeObjectURL(processedImage.url);
-      setProcessedImage(null);
-    }
+      // Clean up previous image URL if it exists
+      if (originalImage?.url) {
+        URL.revokeObjectURL(originalImage.url);
+      }
+      if (processedImage?.url) {
+        URL.revokeObjectURL(processedImage.url);
+        setProcessedImage(null);
+      }
 
-    const url = URL.createObjectURL(file);
-    const img = new Image();
+      const url = URL.createObjectURL(file);
+      const img = new Image();
 
-    img.onload = () => {
-      setOriginalImage({
-        file,
-        url,
-        width: img.width,
-        height: img.height,
-        size: file.size
-      });
-      // Don't revoke URL here - we need it for display
-    };
+      img.onload = () => {
+        setOriginalImage({
+          file,
+          url,
+          width: img.width,
+          height: img.height,
+          size: file.size,
+        });
+        // Don't revoke URL here - we need it for display
+      };
 
-    img.src = url;
-  }, [originalImage?.url, processedImage?.url]);
+      img.src = url;
+    },
+    [originalImage?.url, processedImage?.url]
+  );
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setDragOver(false);
+  const handleDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      setDragOver(false);
 
-    const files = Array.from(e.dataTransfer.files);
-    if (files.length > 0) {
-      handleFileSelect(files[0]);
-    }
-  }, [handleFileSelect]);
+      const files = Array.from(e.dataTransfer.files);
+      if (files.length > 0) {
+        handleFileSelect(files[0]);
+      }
+    },
+    [handleFileSelect]
+  );
 
   const processImage = async () => {
     if (!originalImage) return;
@@ -104,8 +116,12 @@ export default function ImageCompressor() {
     setIsProcessing(true);
 
     try {
-      const maxWidth = settings.maxWidth ? parseInt(settings.maxWidth) : undefined;
-      const maxHeight = settings.maxHeight ? parseInt(settings.maxHeight) : undefined;
+      const maxWidth = settings.maxWidth
+        ? parseInt(settings.maxWidth)
+        : undefined;
+      const maxHeight = settings.maxHeight
+        ? parseInt(settings.maxHeight)
+        : undefined;
 
       const blob = await resizeImage(
         originalImage.file,
@@ -120,7 +136,7 @@ export default function ImageCompressor() {
       setProcessedImage({
         blob,
         url,
-        size: blob.size
+        size: blob.size,
       });
     } catch (error) {
       console.error("Error processing image:", error);
@@ -134,7 +150,9 @@ export default function ImageCompressor() {
     if (!processedImage || !originalImage) return;
 
     const extension = settings.format === "jpeg" ? "jpg" : settings.format;
-    const fileName = `compressed_${originalImage.file.name.split(".")[0]}.${extension}`;
+    const fileName = `compressed_${
+      originalImage.file.name.split(".")[0]
+    }.${extension}`;
     downloadBlob(processedImage.blob, fileName);
   };
 
@@ -146,16 +164,19 @@ export default function ImageCompressor() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
-  const compressionRatio = originalImage && processedImage
-    ? ((1 - processedImage.size / originalImage.size) * 100).toFixed(1)
-    : "0";
+  const compressionRatio =
+    originalImage && processedImage
+      ? ((1 - processedImage.size / originalImage.size) * 100).toFixed(1)
+      : "0";
 
-  const previewDimensions = originalImage ? calculateResizeDimensions(
-    originalImage.width,
-    originalImage.height,
-    settings.maxWidth ? parseInt(settings.maxWidth) : undefined,
-    settings.maxHeight ? parseInt(settings.maxHeight) : undefined
-  ) : null;
+  const previewDimensions = originalImage
+    ? calculateResizeDimensions(
+        originalImage.width,
+        originalImage.height,
+        settings.maxWidth ? parseInt(settings.maxWidth) : undefined,
+        settings.maxHeight ? parseInt(settings.maxHeight) : undefined
+      )
+    : null;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -166,7 +187,8 @@ export default function ImageCompressor() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Image Compressor & Resizer",
-            description: "Compress and resize images directly in browser with quality control and multiple formats",
+            description:
+              "Compress and resize images directly in browser with quality control and multiple formats",
             url: "https://toolshub.com/image-compressor",
             applicationCategory: "DesignApplication",
             operatingSystem: "Web Browser",
@@ -181,7 +203,6 @@ export default function ImageCompressor() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -193,7 +214,9 @@ export default function ImageCompressor() {
             Image Compressor & Resizer - Optimize Images Online
           </h1>
           <p className="text-lg text-muted-foreground">
-            Compress and resize images directly in your browser with no uploads required. Supports JPEG, PNG, WebP with quality control and privacy protection - your files stay private.
+            Compress and resize images directly in your browser with no uploads
+            required. Supports JPEG, PNG, WebP with quality control and privacy
+            protection - your files stay private.
           </p>
         </div>
 
@@ -215,7 +238,9 @@ export default function ImageCompressor() {
                 onDragLeave={() => setDragOver(false)}
               >
                 <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-medium mb-2">Drop your image here</h3>
+                <h3 className="text-lg font-medium mb-2">
+                  Drop your image here
+                </h3>
                 <p className="text-muted-foreground mb-4">
                   or click to select a file
                 </p>
@@ -226,7 +251,9 @@ export default function ImageCompressor() {
                   ref={fileInputRef}
                   type="file"
                   accept="image/*"
-                  onChange={(e) => e.target.files && handleFileSelect(e.target.files[0])}
+                  onChange={(e) =>
+                    e.target.files && handleFileSelect(e.target.files[0])
+                  }
                   className="hidden"
                 />
               </div>
@@ -250,8 +277,10 @@ export default function ImageCompressor() {
                   <div className="space-y-2">
                     <label className="block text-sm font-medium">
                       Quality: {Math.round(settings.quality * 100)}%
-                      {settings.format === 'png' && (
-                        <span className="text-xs text-muted-foreground ml-2">(PNG ignores quality - always lossless)</span>
+                      {settings.format === "png" && (
+                        <span className="text-xs text-muted-foreground ml-2">
+                          (PNG ignores quality - always lossless)
+                        </span>
                       )}
                     </label>
                     <input
@@ -260,39 +289,67 @@ export default function ImageCompressor() {
                       max="1"
                       step="0.1"
                       value={settings.quality}
-                      onChange={(e) => setSettings(prev => ({ ...prev, quality: parseFloat(e.target.value) }))}
+                      onChange={(e) =>
+                        setSettings((prev) => ({
+                          ...prev,
+                          quality: parseFloat(e.target.value),
+                        }))
+                      }
                       className={`w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer ${
-                        settings.format === 'png' ? 'opacity-50 cursor-not-allowed' : ''
+                        settings.format === "png"
+                          ? "opacity-50 cursor-not-allowed"
+                          : ""
                       }`}
-                      disabled={settings.format === 'png'}
+                      disabled={settings.format === "png"}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium">Max Width (px)</label>
+                    <label className="block text-sm font-medium">
+                      Max Width (px)
+                    </label>
                     <Input
                       type="number"
                       placeholder="Auto"
                       value={settings.maxWidth}
-                      onChange={(e) => setSettings(prev => ({ ...prev, maxWidth: e.target.value }))}
+                      onChange={(e) =>
+                        setSettings((prev) => ({
+                          ...prev,
+                          maxWidth: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium">Max Height (px)</label>
+                    <label className="block text-sm font-medium">
+                      Max Height (px)
+                    </label>
                     <Input
                       type="number"
                       placeholder="Auto"
                       value={settings.maxHeight}
-                      onChange={(e) => setSettings(prev => ({ ...prev, maxHeight: e.target.value }))}
+                      onChange={(e) =>
+                        setSettings((prev) => ({
+                          ...prev,
+                          maxHeight: e.target.value,
+                        }))
+                      }
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium">Output Format</label>
+                    <label className="block text-sm font-medium">
+                      Output Format
+                    </label>
                     <select
                       value={settings.format}
-                      onChange={(e) => setSettings(prev => ({ ...prev, format: e.target.value as "jpeg" | "png" | "webp" }))}
+                      onChange={(e) =>
+                        setSettings((prev) => ({
+                          ...prev,
+                          format: e.target.value as "jpeg" | "png" | "webp",
+                        }))
+                      }
                       className="w-full p-2 border border-border rounded-md bg-background"
                     >
                       <option value="jpeg">JPEG</option>
@@ -325,23 +382,26 @@ export default function ImageCompressor() {
                   </Button>
                 </div>
 
-                {settings.format === 'png' && (
+                {settings.format === "png" && (
                   <Alert>
                     <ImageIcon className="h-4 w-4" />
                     <AlertDescription>
-                      <strong>PNG Format:</strong> PNG is a lossless format that preserves all image data. 
-                      Converting from JPEG to PNG will often increase file size significantly as the original 
-                      JPEG compression is removed. Use PNG only when you need transparency or perfect quality.
+                      <strong>PNG Format:</strong> PNG is a lossless format that
+                      preserves all image data. Converting from JPEG to PNG will
+                      often increase file size significantly as the original
+                      JPEG compression is removed. Use PNG only when you need
+                      transparency or perfect quality.
                     </AlertDescription>
                   </Alert>
                 )}
 
-                {settings.format === 'webp' && (
+                {settings.format === "webp" && (
                   <Alert>
                     <ImageIcon className="h-4 w-4" />
                     <AlertDescription>
-                      <strong>WebP Format:</strong> WebP typically provides 25-35% better compression than JPEG 
-                      with similar quality. It supports both lossy and lossless compression.
+                      <strong>WebP Format:</strong> WebP typically provides
+                      25-35% better compression than JPEG with similar quality.
+                      It supports both lossy and lossless compression.
                     </AlertDescription>
                   </Alert>
                 )}
@@ -364,7 +424,9 @@ export default function ImageCompressor() {
                   />
                   <div className="text-sm space-y-1">
                     <div>Size: {formatFileSize(originalImage.size)}</div>
-                    <div>Dimensions: {originalImage.width} × {originalImage.height}</div>
+                    <div>
+                      Dimensions: {originalImage.width} × {originalImage.height}
+                    </div>
                     <div>Format: {originalImage.file.type}</div>
                   </div>
                 </CardContent>
@@ -387,7 +449,9 @@ export default function ImageCompressor() {
                     />
                   ) : (
                     <div className="w-full h-64 bg-muted rounded flex items-center justify-center">
-                      <span className="text-muted-foreground">Click &quot;Compress Image&quot; to see result</span>
+                      <span className="text-muted-foreground">
+                        Click &quot;Compress Image&quot; to see result
+                      </span>
                     </div>
                   )}
 
@@ -395,25 +459,34 @@ export default function ImageCompressor() {
                     {processedImage ? (
                       <>
                         <div>Size: {formatFileSize(processedImage.size)}</div>
-                        <div className={`font-medium ${
-                          parseFloat(compressionRatio) > 0 
-                            ? 'text-green-600' 
-                            : 'text-red-600'
-                        }`}>
-                          {parseFloat(compressionRatio) > 0 
+                        <div
+                          className={`font-medium ${
+                            parseFloat(compressionRatio) > 0
+                              ? "text-green-600"
+                              : "text-red-600"
+                          }`}
+                        >
+                          {parseFloat(compressionRatio) > 0
                             ? `Reduced by ${compressionRatio}%`
-                            : `Increased by ${Math.abs(parseFloat(compressionRatio))}%`
-                          }
+                            : `Increased by ${Math.abs(
+                                parseFloat(compressionRatio)
+                              )}%`}
                         </div>
                       </>
                     ) : previewDimensions ? (
                       <>
-                        <div>Preview size: {
-                          settings.format === 'png' 
+                        <div>
+                          Preview size:{" "}
+                          {settings.format === "png"
                             ? formatFileSize(originalImage.size * 1.5) // PNG is often larger than original JPEG
-                            : formatFileSize(originalImage.size * settings.quality)
-                        }</div>
-                        <div>Dimensions: {previewDimensions.width} × {previewDimensions.height}</div>
+                            : formatFileSize(
+                                originalImage.size * settings.quality
+                              )}
+                        </div>
+                        <div>
+                          Dimensions: {previewDimensions.width} ×{" "}
+                          {previewDimensions.height}
+                        </div>
                       </>
                     ) : null}
                     <div>Format: image/{settings.format}</div>
@@ -434,13 +507,13 @@ export default function ImageCompressor() {
         <Alert className="mb-8">
           <ImageIcon className="h-4 w-4" />
           <AlertDescription>
-            <strong>Privacy Note:</strong> All image processing happens in your browser.
-            Your images never leave your device and are not uploaded to any server.
+            <strong>Privacy Note:</strong> All image processing happens in your
+            browser. Your images never leave your device and are not uploaded to
+            any server.
           </AlertDescription>
         </Alert>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = "January 15, 2025";
@@ -92,7 +91,6 @@ export default function PrivacyPolicyPage() {
               </AlertDescription>
             </Alert>
 
-            <AdPlaceholder id="adsense-top" className="mb-8" />
 
             {/* Table of Contents */}
             <Card className="mb-8">
@@ -497,7 +495,6 @@ export default function PrivacyPolicyPage() {
                 </CardContent>
               </Card>
 
-              <AdPlaceholder id="adsense-middle" className="my-8" />
 
               {/* Cookies */}
               <Card id="cookies">
@@ -688,7 +685,6 @@ export default function PrivacyPolicyPage() {
               </Card> */}
             </div>
 
-            <AdPlaceholder id="adsense-bottom" className="mt-8" />
 
             {/* Footer Note */}
             <div className="mt-12 p-6 bg-muted/30 rounded-lg text-center">

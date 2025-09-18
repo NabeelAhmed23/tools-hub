@@ -19,7 +19,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import AdPlaceholder from "@/components/AdPlaceholder";
 
 interface Subject {
   id: number;
@@ -207,7 +206,6 @@ export default function GPACalculator() {
         }}
       />
 
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -219,7 +217,9 @@ export default function GPACalculator() {
             GPA Calculator - Calculate Grade Point Average
           </h1>
           <p className="text-lg text-muted-foreground">
-            Calculate your Grade Point Average with multiple subjects and credit hours. Supports both letter grades and numeric grades with accurate GPA calculation and academic classification.
+            Calculate your Grade Point Average with multiple subjects and credit
+            hours. Supports both letter grades and numeric grades with accurate
+            GPA calculation and academic classification.
           </p>
         </div>
 
@@ -555,7 +555,6 @@ export default function GPACalculator() {
         </Card>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" className="mt-8" />
     </div>
   );
 }
