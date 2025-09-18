@@ -124,7 +124,7 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm text-left">
                   Every tool includes detailed explanations, use cases, and
                   learning resources to help you understand the concepts behind
                   the calculations.
@@ -140,7 +140,7 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm text-left">
                   Most processing happens in your browser. When server-side
                   processing is used for performance, data is processed
                   immediately and never stored.
@@ -156,7 +156,7 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm text-left">
                   Built with modern web technologies and industry best practices
                   to ensure accurate results and optimal performance.
                 </p>
@@ -171,7 +171,7 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm text-left">
                   Step-by-step instructions, FAQ sections, and practical
                   examples help you get the most out of each tool.
                 </p>
