@@ -257,7 +257,7 @@ export default function CookiePolicyPage() {
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>
                       <strong>Storage:</strong> Cookies are stored in your web
-                      browser's memory or on your device
+                      browser&apos;s memory or on your device
                     </li>
                     <li>
                       <strong>Information:</strong> They contain small amounts
@@ -702,8 +702,8 @@ export default function CookiePolicyPage() {
                     <li>Scroll down and tap Safari</li>
                     <li>Under Privacy & Security, manage cookie settings</li>
                     <li>
-                      Choose "Block All Cookies" or "Allow from Websites I
-                      Visit"
+                      Choose &quot;Block All Cookies&quot; or &quot;Allow from Websites I
+                      Visit&quot;
                     </li>
                   </ol>
 
@@ -832,7 +832,7 @@ export default function CookiePolicyPage() {
                   <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
                     <li>Update this Cookie Policy with the new information</li>
                     <li>
-                      Change the "Last updated" date at the top of this page
+                      Change the &quot;Last updated&quot; date at the top of this page
                     </li>
                     <li>Provide notice on our website for material changes</li>
                     <li>Obtain new consent where required by law</li>
@@ -866,7 +866,7 @@ export default function CookiePolicyPage() {
                   <Alert className="mt-6 border-primary/20 bg-primary/5">
                     <CheckCircle className="h-4 w-4" />
                     <AlertDescription>
-                      For cookie-related inquiries, please use the subject line "Cookie Policy" to ensure prompt handling.
+                      For cookie-related inquiries, please use the subject line &quot;Cookie Policy&quot; to ensure prompt handling.
                     </AlertDescription>
                   </Alert>
                 </CardContent>

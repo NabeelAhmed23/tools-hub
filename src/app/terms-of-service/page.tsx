@@ -243,9 +243,9 @@ export default function TermsOfServicePage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p>
-                    These Terms of Service ("Terms") constitute a legally
-                    binding agreement between you ("User," "you," or "your") and
-                    ToolsHub ("we," "us," or "our") regarding your access to and
+                    These Terms of Service (&quot;Terms&quot;) constitute a legally
+                    binding agreement between you (&quot;User,&quot; &quot;you,&quot; or &quot;your&quot;) and
+                    ToolsHub (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) regarding your access to and
                     use of the ToolsHub website and services located at
                     www.the-tools-hub.com.
                   </p>
@@ -411,7 +411,7 @@ export default function TermsOfServicePage() {
                     </li>
                     <li>
                       Attempt to gain unauthorized access to our systems or
-                      other users' data
+                      other users&apos; data
                     </li>
                     <li>
                       Engage in any form of harassment, abuse, or harmful
@@ -596,7 +596,7 @@ export default function TermsOfServicePage() {
                     <AlertTriangle className="h-4 w-4" />
                     <AlertDescription>
                       <strong>Important Disclaimer:</strong> Our services are
-                      provided "as is" without warranties of any kind. Use our
+                      provided &quot;as is&quot; without warranties of any kind. Use our
                       tools at your own risk and always verify results
                       independently.
                     </AlertDescription>
@@ -604,7 +604,7 @@ export default function TermsOfServicePage() {
 
                   <h3 className="text-lg font-semibold">8.1 No Warranties</h3>
                   <p>
-                    We provide our services "as is" and "as available" without
+                    We provide our services &quot;as is&quot; and &quot;as available&quot; without
                     warranties of any kind, either express or implied, including
                     but not limited to:
                   </p>
@@ -820,7 +820,7 @@ export default function TermsOfServicePage() {
                   </p>
                   <ul className="list-disc list-inside space-y-1 ml-4 mt-4">
                     <li>Posting the updated Terms on this page</li>
-                    <li>Updating the "Last modified" date</li>
+                    <li>Updating the &quot;Last modified&quot; date</li>
                     <li>
                       Providing prominent notice on our website for significant
                       changes
