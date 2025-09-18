@@ -7,7 +7,6 @@ import {
   Eye,
   Users,
   FileText,
-  Mail,
   Calendar,
   Globe,
   CheckCircle,

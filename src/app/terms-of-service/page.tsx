@@ -12,7 +12,6 @@ import {
   Calendar,
   CheckCircle,
   XCircle,
-  Mail,
   Gavel,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

@@ -10,10 +10,8 @@ import {
   Globe,
   FileText,
   Calendar,
-  CheckCircle,
   AlertTriangle,
   Info,
-  Mail,
   Monitor,
   Smartphone,
 } from "lucide-react";
