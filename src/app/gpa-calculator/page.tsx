@@ -548,8 +548,8 @@ export default function GPACalculator() {
                 <li>Enter the subject name for each course you want to include</li>
                 <li>Input the credit hours for each subject (typically 1-6 credits per course)</li>
                 <li>Select the grade you received for each subject from the dropdown</li>
-                <li>Add more subjects using the "Add Subject" button as needed</li>
-                <li>Click "Calculate GPA" to see your Grade Point Average</li>
+                <li>Add more subjects using the &quot;Add Subject&quot; button as needed</li>
+                <li>Click &quot;Calculate GPA&quot; to see your Grade Point Average</li>
               </ol>
             </div>
             <div>

@@ -405,9 +405,9 @@ export default function DateDifferenceCalculator() {
             <div>
               <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
               <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-                <li>Select your start date using the date picker or click "Today" for the current date</li>
+                <li>Select your start date using the date picker or click &quot;Today&quot; for the current date</li>
                 <li>Choose your end date (must be after the start date)</li>
-                <li>Click "Calculate Difference" to see the results</li>
+                <li>Click &quot;Calculate Difference&quot; to see the results</li>
                 <li>Review the primary difference in years, months, and days</li>
                 <li>Check the total differences in various time units</li>
                 <li>View the detailed summary with formatted dates</li>

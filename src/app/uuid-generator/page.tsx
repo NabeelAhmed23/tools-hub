@@ -275,12 +275,12 @@ export default function UUIDGenerator() {
               <h3 className="font-semibold mb-3">Step-by-Step Instructions</h3>
               <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
                 <li>Set the quantity of UUIDs you need (1-100) using the number input</li>
-                <li>Click "Generate New" to create fresh UUIDs and replace any existing ones</li>
-                <li>Use "Generate More" to add additional UUIDs to your current list</li>
+                <li>Click &quot;Generate New&quot; to create fresh UUIDs and replace any existing ones</li>
+                <li>Use &quot;Generate More&quot; to add additional UUIDs to your current list</li>
                 <li>Click on any individual UUID to copy it to your clipboard instantly</li>
-                <li>Use "Copy All" to copy all generated UUIDs as a list separated by line breaks</li>
-                <li>Click "Download" to save all UUIDs as a text file for later use</li>
-                <li>Use "Clear" to remove all generated UUIDs and start fresh</li>
+                <li>Use &quot;Copy All&quot; to copy all generated UUIDs as a list separated by line breaks</li>
+                <li>Click &quot;Download&quot; to save all UUIDs as a text file for later use</li>
+                <li>Use &quot;Clear&quot; to remove all generated UUIDs and start fresh</li>
               </ol>
             </div>
             <div>

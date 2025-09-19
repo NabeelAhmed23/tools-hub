@@ -265,11 +265,11 @@ export default function HashGenerator() {
               <h3 className="font-semibold mb-3">Step-by-Step Instructions</h3>
               <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
                 <li>Enter or paste your text into the input field above</li>
-                <li>Click the "Generate Hashes" button to create hash values for all four algorithms</li>
+                <li>Click the &quot;Generate Hashes&quot; button to create hash values for all four algorithms</li>
                 <li>Select the desired hash algorithm tab (MD5, SHA-1, SHA-256, or SHA-512) to view specific results</li>
                 <li>Review the algorithm information including output size and security considerations</li>
                 <li>Click the copy button next to any hash value to copy it to your clipboard</li>
-                <li>Use "Clear All" to reset the input and start with new text</li>
+                <li>Use &quot;Clear All&quot; to reset the input and start with new text</li>
               </ol>
             </div>
             <div>
@@ -345,7 +345,7 @@ export default function HashGenerator() {
             <div>
               <h3 className="font-semibold mb-3">Key Benefits</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><strong>Data Integrity:</strong> Verify that data hasn't been altered or corrupted during transmission or storage</li>
+                <li><strong>Data Integrity:</strong> Verify that data hasn&apos;t been altered or corrupted during transmission or storage</li>
                 <li><strong>Security Applications:</strong> Generate unique fingerprints for passwords, digital signatures, and authentication systems</li>
                 <li><strong>Multiple Algorithms:</strong> Support for MD5, SHA-1, SHA-256, and SHA-512 for various compatibility requirements</li>
                 <li><strong>Privacy Protection:</strong> All processing happens locally in your browser - no data is transmitted to our servers</li>
@@ -372,7 +372,7 @@ export default function HashGenerator() {
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <div className="border-b pb-4">
-                <h3 className="font-semibold mb-2">What's the difference between hash algorithms?</h3>
+                <h3 className="font-semibold mb-2">What&apos;s the difference between hash algorithms?</h3>
                 <p className="text-sm text-muted-foreground">
                   Different hash algorithms produce different output lengths and security levels. SHA-256 (256 bits) and SHA-512 (512 bits) are currently considered secure, while MD5 (128 bits) and SHA-1 (160 bits) are deprecated for security applications due to vulnerability discoveries.
                 </p>
@@ -380,13 +380,13 @@ export default function HashGenerator() {
               <div className="border-b pb-4">
                 <h3 className="font-semibold mb-2">Can I reverse a hash to get the original text?</h3>
                 <p className="text-sm text-muted-foreground">
-                  No, hash functions are designed to be one-way. It's computationally infeasible to reverse a hash back to its original input. However, identical inputs will always produce identical hashes, which is why rainbow table attacks exist for common passwords.
+                  No, hash functions are designed to be one-way. It&apos;s computationally infeasible to reverse a hash back to its original input. However, identical inputs will always produce identical hashes, which is why rainbow table attacks exist for common passwords.
                 </p>
               </div>
               <div className="border-b pb-4">
                 <h3 className="font-semibold mb-2">Which hash algorithm should I use?</h3>
                 <p className="text-sm text-muted-foreground">
-                  For security applications, use SHA-256 or SHA-512. For legacy compatibility where security isn't critical, MD5 may be acceptable. Avoid using MD5 or SHA-1 for new security-sensitive applications as they have known vulnerabilities.
+                  For security applications, use SHA-256 or SHA-512. For legacy compatibility where security isn&apos;t critical, MD5 may be acceptable. Avoid using MD5 or SHA-1 for new security-sensitive applications as they have known vulnerabilities.
                 </p>
               </div>
               <div>

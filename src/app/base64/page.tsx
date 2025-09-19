@@ -302,9 +302,9 @@ export default function Base64Tool() {
                 <li>Choose your operation: encoding (text to Base64) or decoding (Base64 to text)</li>
                 <li>Enter your text in the input field - the tool supports all Unicode characters</li>
                 <li>The conversion happens automatically as you type - no need to click any buttons</li>
-                <li>Use the "Switch" button to change between encoding and decoding modes</li>
+                <li>Use the &quot;Switch&quot; button to change between encoding and decoding modes</li>
                 <li>Copy the output using the copy button or download it as a text file</li>
-                <li>Use "Clear All" to reset both input and output fields for a fresh start</li>
+                <li>Use &quot;Clear All&quot; to reset both input and output fields for a fresh start</li>
               </ol>
             </div>
             <div>
@@ -330,7 +330,7 @@ export default function Base64Tool() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><strong>Data Safety:</strong> Convert binary data to text format for safe transmission through text-only channels</li>
                 <li><strong>Web Development:</strong> Embed images and files directly in HTML, CSS, or JavaScript using data URLs</li>
-                <li><strong>API Integration:</strong> Encode binary data for JSON APIs that don't support binary formats</li>
+                <li><strong>API Integration:</strong> Encode binary data for JSON APIs that don&apos;t support binary formats</li>
                 <li><strong>Email Compatibility:</strong> MIME encoding for email attachments and content</li>
                 <li><strong>Privacy Protection:</strong> All processing happens locally - your data never leaves your browser</li>
               </ul>
@@ -358,13 +358,13 @@ export default function Base64Tool() {
               <div className="border-b pb-4">
                 <h3 className="font-semibold mb-2">What is Base64 encoding used for?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Base64 encoding converts binary data into text format using only printable ASCII characters. It's commonly used for email attachments, data URLs in web development, API data transmission, and storing binary data in text-based formats like JSON or XML.
+                  Base64 encoding converts binary data into text format using only printable ASCII characters. It&apos;s commonly used for email attachments, data URLs in web development, API data transmission, and storing binary data in text-based formats like JSON or XML.
                 </p>
               </div>
               <div className="border-b pb-4">
                 <h3 className="font-semibold mb-2">Does Base64 encoding provide security or encryption?</h3>
                 <p className="text-sm text-muted-foreground">
-                  No, Base64 is not encryption or security - it's simply an encoding method. Anyone can easily decode Base64 strings back to their original form. It's designed for data compatibility, not security. Never use Base64 alone to protect sensitive information.
+                  No, Base64 is not encryption or security - it&apos;s simply an encoding method. Anyone can easily decode Base64 strings back to their original form. It&apos;s designed for data compatibility, not security. Never use Base64 alone to protect sensitive information.
                 </p>
               </div>
               <div className="border-b pb-4">

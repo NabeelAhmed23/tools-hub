@@ -519,11 +519,11 @@ export default function ImageCompressor() {
             <div>
               <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
               <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-                <li>Upload your image by dragging and dropping it onto the upload area or clicking "Choose Image"</li>
+                <li>Upload your image by dragging and dropping it onto the upload area or clicking &quot;Choose Image&quot;</li>
                 <li>Adjust the quality slider to control compression level (lower quality = smaller file size)</li>
                 <li>Set maximum width and height dimensions if you need to resize the image</li>
                 <li>Choose your preferred output format: JPEG for photos, PNG for graphics with transparency, WebP for best compression</li>
-                <li>Click "Compress Image" to process your file using advanced client-side algorithms</li>
+                <li>Click &quot;Compress Image&quot; to process your file using advanced client-side algorithms</li>
                 <li>Compare the original and compressed versions side by side with detailed statistics</li>
                 <li>Download your optimized image when satisfied with the results</li>
               </ol>
@@ -587,7 +587,7 @@ export default function ImageCompressor() {
             <div>
               <h3 className="font-medium mb-2">No Registration or Storage Required</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Use our image compressor immediately without creating accounts or providing personal information. We don't store, cache, or track any of your images or usage patterns. Process unlimited images with complete anonymity and peace of mind.
+                Use our image compressor immediately without creating accounts or providing personal information. We don&apos;t store, cache, or track any of your images or usage patterns. Process unlimited images with complete anonymity and peace of mind.
               </p>
             </div>
             <div>

@@ -376,11 +376,11 @@ export default function PasswordGenerator() {
             <div>
               <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
               <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
-                <li>Click "Generate New Password" to create your first secure password instantly</li>
+                <li>Click &quot;Generate New Password&quot; to create your first secure password instantly</li>
                 <li>Adjust the length slider to set your desired password length (8-64 characters)</li>
                 <li>Toggle character type options to include or exclude uppercase, lowercase, numbers, and symbols</li>
-                <li>Use "Exclude similar characters" to avoid confusing characters like 0, O, l, 1</li>
-                <li>Click the "Copy" button to copy your password to clipboard</li>
+                <li>Use &quot;Exclude similar characters&quot; to avoid confusing characters like 0, O, l, 1</li>
+                <li>Click the &quot;Copy&quot; button to copy your password to clipboard</li>
                 <li>Click the refresh icon to generate a new password with the same settings</li>
               </ol>
             </div>

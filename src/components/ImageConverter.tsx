@@ -137,7 +137,6 @@ export default function ImageConverter({
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <AdPlaceholder id="adsense-top" className="mb-8" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -394,7 +393,6 @@ export default function ImageConverter({
         </Alert>
       </motion.div>
 
-      <AdPlaceholder id="adsense-bottom" />
     </div>
   );
 }

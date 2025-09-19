@@ -31,6 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "image-converter/png-to-webp",
     "image-converter/webp-to-jpg",
     "image-converter/webp-to-png",
+    "about",
+    "privacy-policy",
+    "terms-of-service",
+    "cookie-policy",
+    "contact",
   ];
 
   const toolPages = tools.map((tool) => ({

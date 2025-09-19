@@ -446,12 +446,12 @@ export default function CurrencyConverter() {
             <div>
               <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
               <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-                <li>Enter the amount you want to convert in the "Amount" field</li>
-                <li>Select your source currency from the "From" dropdown menu</li>
-                <li>Choose your target currency from the "To" dropdown menu</li>
-                <li>Click the "Convert" button to see the converted amount</li>
-                <li>Use the "Swap" button to quickly reverse currency pairs</li>
-                <li>Click "Reset" to clear all fields and start over</li>
+                <li>Enter the amount you want to convert in the &quot;Amount&quot; field</li>
+                <li>Select your source currency from the &quot;From&quot; dropdown menu</li>
+                <li>Choose your target currency from the &quot;To&quot; dropdown menu</li>
+                <li>Click the &quot;Convert&quot; button to see the converted amount</li>
+                <li>Use the &quot;Swap&quot; button to quickly reverse currency pairs</li>
+                <li>Click &quot;Reset&quot; to clear all fields and start over</li>
               </ol>
             </div>
             <div>

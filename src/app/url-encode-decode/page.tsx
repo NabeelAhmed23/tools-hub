@@ -244,10 +244,10 @@ export default function URLEncodeDecode() {
                 <li>Paste your URL or encoded text into the input field</li>
                 <li>The tool automatically detects if your input needs encoding or decoding</li>
                 <li>View the converted result in the output field instantly</li>
-                <li>Use the "Encode" button to force encoding of plain text URLs</li>
-                <li>Use the "Decode" button to force decoding of percent-encoded URLs</li>
+                <li>Use the &quot;Encode&quot; button to force encoding of plain text URLs</li>
+                <li>Use the &quot;Decode&quot; button to force decoding of percent-encoded URLs</li>
                 <li>Copy the result using the copy button or download it for later use</li>
-                <li>Click "Clear" to reset both input and output fields</li>
+                <li>Click &quot;Clear&quot; to reset both input and output fields</li>
               </ol>
             </div>
             <div>
@@ -302,7 +302,7 @@ export default function URLEncodeDecode() {
               <div className="border-b pb-4">
                 <h3 className="font-semibold mb-2">What is URL encoding and why is it necessary?</h3>
                 <p className="text-sm text-muted-foreground">
-                  URL encoding (percent-encoding) converts unsafe ASCII characters into a format that can be safely transmitted over the internet. It's necessary because URLs can only contain certain characters, and special characters like spaces, symbols, and international characters must be encoded to prevent errors and security issues.
+                  URL encoding (percent-encoding) converts unsafe ASCII characters into a format that can be safely transmitted over the internet. It&apos;s necessary because URLs can only contain certain characters, and special characters like spaces, symbols, and international characters must be encoded to prevent errors and security issues.
                 </p>
               </div>
               <div className="border-b pb-4">

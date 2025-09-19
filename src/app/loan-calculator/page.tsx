@@ -371,7 +371,7 @@ export default function LoanCalculator() {
                 <li>Input the annual interest rate offered by your lender (as a percentage)</li>
                 <li>Specify the loan tenure (duration) in years or months</li>
                 <li>Select whether your tenure is in years or months from the dropdown</li>
-                <li>Click "Calculate EMI" to see your monthly payment and loan breakdown</li>
+                <li>Click &quot;Calculate EMI&quot; to see your monthly payment and loan breakdown</li>
                 <li>Review the visual charts and detailed breakdown for complete analysis</li>
               </ol>
             </div>

@@ -403,12 +403,12 @@ export default function UnitConverter() {
               <h3 className="font-medium mb-2">Step-by-Step Instructions</h3>
               <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
                 <li>Select the category of units you want to convert (Length, Weight, Temperature, Speed, or Volume)</li>
-                <li>Enter the value you want to convert in the "From" input field</li>
+                <li>Enter the value you want to convert in the &quot;From&quot; input field</li>
                 <li>Choose the source unit from the dropdown menu next to the input</li>
-                <li>Select the target unit from the "To" dropdown menu</li>
+                <li>Select the target unit from the &quot;To&quot; dropdown menu</li>
                 <li>The conversion result appears automatically in real-time</li>
-                <li>Use "Swap Units" to quickly reverse the conversion direction</li>
-                <li>Click "Reset" to clear all values and start over</li>
+                <li>Use &quot;Swap Units&quot; to quickly reverse the conversion direction</li>
+                <li>Click &quot;Reset&quot; to clear all values and start over</li>
               </ol>
             </div>
             <div>
