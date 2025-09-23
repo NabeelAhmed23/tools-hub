@@ -1,11 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { z } from 'zod';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  message: z.string().min(10, 'Message must be at least 10 characters').max(1000, 'Message must be less than 1000 characters'),
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
 // Rate limiting - simple in-memory store (in production, use Redis or database)
@@ -38,13 +44,15 @@ function checkRateLimit(ip: string): boolean {
 export async function POST(request: NextRequest) {
   try {
     // Get client IP for rate limiting
-    const forwarded = request.headers.get('x-forwarded-for');
-    const ip = forwarded ? forwarded.split(',')[0] : request.headers.get('x-real-ip') || 'unknown';
+    const forwarded = request.headers.get("x-forwarded-for");
+    const ip = forwarded
+      ? forwarded.split(",")[0]
+      : request.headers.get("x-real-ip") || "unknown";
 
     // Check rate limit
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
+        { error: "Too many requests. Please try again later." },
         { status: 429 }
       );
     }
@@ -55,23 +63,26 @@ export async function POST(request: NextRequest) {
 
     // Check if required environment variables are set
     const emailConfig = {
-      service: process.env.EMAIL_SERVICE || 'gmail',
+      service: process.env.EMAIL_SERVICE || "gmail",
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
       to: process.env.EMAIL_TO,
+      port: process.env.EMAIL_PORT,
     };
 
     if (!emailConfig.user || !emailConfig.pass || !emailConfig.to) {
-      console.error('Email configuration missing. Please set EMAIL_USER, EMAIL_PASS, and EMAIL_TO environment variables.');
+      console.error(
+        "Email configuration missing. Please set EMAIL_USER, EMAIL_PASS, and EMAIL_TO environment variables."
+      );
       return NextResponse.json(
-        { error: 'Email service is not configured. Please try again later.' },
+        { error: "Email service is not configured. Please try again later." },
         { status: 500 }
       );
     }
 
     // Create transporter
     const transporter = nodemailer.createTransport({
-      service: emailConfig.service,
+      host: emailConfig.service,
       auth: {
         user: emailConfig.user,
         pass: emailConfig.pass,
@@ -82,9 +93,12 @@ export async function POST(request: NextRequest) {
     try {
       await transporter.verify();
     } catch (error) {
-      console.error('Email transporter verification failed:', error);
+      console.error("Email transporter verification failed:", error);
       return NextResponse.json(
-        { error: 'Email service is temporarily unavailable. Please try again later.' },
+        {
+          error:
+            "Email service is temporarily unavailable. Please try again later.",
+        },
         { status: 500 }
       );
     }
@@ -105,7 +119,9 @@ export async function POST(request: NextRequest) {
 
         <div style="background-color: #fff; padding: 20px; margin: 20px 0; border: 1px solid #ddd; border-radius: 5px;">
           <h3 style="color: #333; margin-top: 0;">Message</h3>
-          <p style="white-space: pre-wrap; line-height: 1.6;">${validatedData.message}</p>
+          <p style="white-space: pre-wrap; line-height: 1.6;">${
+            validatedData.message
+          }</p>
         </div>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
@@ -145,7 +161,7 @@ IP Address: ${ip}
       await transporter.sendMail({
         from: `"ToolsHub" <${emailConfig.user}>`,
         to: validatedData.email,
-        subject: 'Thank you for contacting ToolsHub',
+        subject: "Thank you for contacting ToolsHub",
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #0066cc;">Thank you for contacting ToolsHub!</h2>
@@ -191,16 +207,18 @@ This is an automated response. Please do not reply to this email.
       });
     } catch (confirmationError) {
       // Don't fail the main request if confirmation email fails
-      console.warn('Failed to send confirmation email:', confirmationError);
+      console.warn("Failed to send confirmation email:", confirmationError);
     }
 
     return NextResponse.json(
-      { message: 'Your message has been sent successfully! We\'ll get back to you soon.' },
+      {
+        message:
+          "Your message has been sent successfully! We'll get back to you soon.",
+      },
       { status: 200 }
     );
-
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error("Contact form error:", error);
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
@@ -210,7 +228,7 @@ This is an automated response. Please do not reply to this email.
     }
 
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again later.' },
+      { error: "Failed to send message. Please try again later." },
       { status: 500 }
     );
   }
@@ -221,9 +239,9 @@ export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
     },
   });
 }
